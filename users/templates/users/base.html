@@ -1,0 +1,62 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'bootstrap-5.2.3/css/bootstrap.rtl.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}"
+</head>
+<body>
+    <header class="py-3 main-header border border-secondary">
+        <div class="container-xxl">
+            <div class="d-flex justify-content-between align-items-center">
+                <div>
+                    <img src="{% static 'images/iran-logo.png' %}">
+                </div>
+                <div>
+                    <h1 class="text-white h3">
+                        دموی سامانه جامعه تجارت
+                    </h1>
+                </div>
+                <div>
+                    <img src="{% static 'images/logo.png' %}">
+                </div>
+            </div>
+        </div>
+    </header>
+    <main id="wrap">
+        <div class="container-xxl">
+            {% block main %}
+            {% endblock main %}
+        </div>
+    </main>
+    <footer class="border-top border-5 border-secondary main-footer py-4">
+        <div class="container-xxl">
+            <div class="d-flex justify-content-between text-white">
+                <div>
+                </div>
+                <div >
+                    <p>
+                    نلفن مرکز پشتیبانی : - ساعت پاسخگویی : شنبه الی چهارشنبه ساعت 7 الی 15:30 و پنجشنبه ها ساعت 7 الی 13
+                    </p>
+                    <p>
+                    ارتباط با مدیر سامانه : -
+                    </p>
+                    <p>
+                    کلیه حقوق این سامانه برای وزارت صنعت ، معدن و تجارت محفوظ است.
+                    </p>
+                </div>
+                <div>
+                    <p>
+                        نسخه:0.1
+                    </p>
+                </div>            
+            </div>
+        </div>
+    </footer>
+    {% block js %}
+    {% endblock js %}
+</body>
+</html>
