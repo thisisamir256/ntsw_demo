@@ -7,6 +7,9 @@
         <form method="post" class="p-4">
             {% csrf_token %}
             <div class="row">
+                <div class="col-12">
+                    {{ form.errors }}
+                </div>
                 <div class="col">
                     <div class="input-group mb-3">
                         <span class="input-group-text" id="basic-addon2">{{ form.national_code.label }}*</span>
