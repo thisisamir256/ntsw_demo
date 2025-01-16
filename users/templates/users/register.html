@@ -2,83 +2,81 @@
 {% load static %}
 {% load widget_tweaks %}
 {% block main %}
-<div class="bg-white rounded shadow">
-    <p class="bg-primary text-white p-2 mb-0 rounded-top ">
-        ثبت نام
-    </p>
-    <form method="POST" class="p-4">
-        {% csrf_token %}
-        <div class="row">
-            <div class="col">
-                <div class="input-group mb-3">
-                    <span class="input-group-text" id="basic-addon2">{{ form.national_code.label }}</span>
-                    {% render_field form.national_code class="form-control"  %}
-                </div>                              
-                <div class="input-group mb-3">
-                    <span class="input-group-text" id="basic-addon2">{{ form.birth_date.label }}</span>
-                    {% render_field form.birth_date class="form-control"  %}
-                </div>                              
-                <div class="input-group mb-3">
-                    <span class="input-group-text" id="basic-addon2">{{ form.username.label }}</span>
-                    {% render_field form.username class="form-control"  %}
-                </div>                              
-                <div class="input-group mb-3">
-                    <span class="input-group-text" id="basic-addon2">{{ form.password1.label }}</span>
-                    {% render_field form.password1 class="form-control"  %}
-                </div>                              
-                <div class="input-group mb-3">
-                    <span class="input-group-text" id="basic-addon2">{{ form.password2.label }}</span>
-                    {% render_field form.password2 class="form-control"  %}
-                </div>                              
-            </div>
-            <div class="col">
-                <div class="input-group mb-3">
-                    <span class="input-group-text" id="basic-addon2">{{ form.mobile.label }}</span>
-                    {% render_field form.mobile class="form-control"  %}
-                </div>                              
-                <div class="input-group mb-3">
-                    <span class="input-group-text" id="{{ form.phone.auto_id }}">{{ form.phone.label }}</span>
-                    {% render_field form.phone class="form-control"  %}
-                </div>
-                <div class="input-group mb-3">
-                    <span class="input-group-text" id="{{ form.postal_code.auto_id}}">{{ form.postal_code.label }}</span>
-                    {% render_field form.postal_code class="form-control"  %}
-                </div>
-                <div class="input-group mb-3">
-                    <span class="input-group-text" id="{{ form.email.auto_id}}">{{ form.email.label }}</span>
-                    {% render_field form.email class="form-control"  %}
-                </div>
-                <div class="form-check">
-                    {% comment %} <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"> {% endcomment %}
-                    {% render_field form.use_2fa class="form-check-input"  %}
-                    <label class="form-check-label" for="{{ form.use_2fa.auto_id}}">
-                      {{ form.use_2fa.label }}
-                    </label>
-                </div>
-                  
-            </div>
-            <div class="col">
-                <p>تصویر پرسنلی</p>
-                <div class="">
-                    <div class="w-50">
-                        <img src="{% static 'images/avatar.png' %}" class="img-fluid rounded-top">
-                        <label class="btn btn-primary w-100 rounded-0 rounded-bottom" role="button">
-                            <span>آپلود فایل</span>
-                        {% render_field form.avatar class="hidden-image-input" %}
-                        </label>
+    <div class="bg-white rounded shadow">
+        <p class="bg-primary text-white p-2 mb-0 rounded-top ">ثبت نام</p>
+        <form method="POST" class="p-4">
+            {% csrf_token %}
+            <div class="row">
+                <div class="col">
+                    <div class="input-group mb-3">
+                        <span class="input-group-text" id="basic-addon2">{{ form.national_code.label }}</span>
+                        {% render_field form.national_code class="form-control" %}
+                    </div>
+                    <div class="input-group mb-3">
+                        <span class="input-group-text" id="basic-addon2">{{ form.birth_date.label }}</span>
+                        {% render_field form.birth_date class="form-control" %}
+                    </div>
+                    <div class="input-group mb-3">
+                        <span class="input-group-text" id="basic-addon2">{{ form.username.label }}</span>
+                        {% render_field form.username class="form-control" %}
+                    </div>
+                    <div class="input-group mb-3">
+                        <span class="input-group-text" id="basic-addon2">{{ form.password1.label }}</span>
+                        {% render_field form.password1 class="form-control" %}
+                    </div>
+                    <div class="input-group mb-3">
+                        <span class="input-group-text" id="basic-addon2">{{ form.password2.label }}</span>
+                        {% render_field form.password2 class="form-control" %}
                     </div>
                 </div>
-                <p><small>اندازه تصویر بایستی کمتر از ۲۰۰KB باشد</small></p>
-            </div>                        
-        </div>
-        <div class="d-flex justify-content-between mt-5">        
-            <div>
-                <a href="#" class="btn btn-secondary">بازگشت</a>
+                <div class="col">
+                    <div class="input-group mb-3">
+                        <span class="input-group-text" id="basic-addon2">{{ form.mobile.label }}</span>
+                        {% render_field form.mobile class="form-control" %}
+                    </div>
+                    <div class="input-group mb-3">
+                        <span class="input-group-text" id="{{ form.phone.auto_id }}">{{ form.phone.label }}</span>
+                        {% render_field form.phone class="form-control" %}
+                    </div>
+                    <div class="input-group mb-3">
+                        <span class="input-group-text" id="{{ form.postal_code.auto_id }}">{{ form.postal_code.label }}</span>
+                        {% render_field form.postal_code class="form-control" %}
+                    </div>
+                    <div class="input-group mb-3">
+                        <span class="input-group-text" id="{{ form.email.auto_id }}">{{ form.email.label }}</span>
+                        {% render_field form.email class="form-control" %}
+                    </div>
+                    <div class="form-check">                    
+                        {% render_field form.use_2fa class="form-check-input" %}
+                        <label class="form-check-label" for="{{ form.use_2fa.auto_id }}">{{ form.use_2fa.label }}</label>
+                    </div>
+                </div>
+                <div class="col">
+                    <p>تصویر پرسنلی</p>
+                    <div class="">
+                        <div class="w-50">
+                            <img src="{% static 'images/avatar.png' %}" class="img-fluid rounded-top">
+                            <label class="btn btn-primary w-100 rounded-0 rounded-bottom" role="button">
+                                <span>آپلود فایل</span>
+                                {% render_field form.avatar class="hidden-image-input" %}
+                            </label>
+                        </div>
+                    </div>
+                    <p>
+                        <small>اندازه تصویر بایستی کمتر از ۲۰۰KB باشد</small>
+                    </p>
+                </div>
             </div>
-            <div>
-                <button type="submit" class="btn btn-primary">ذخیره و ادامه</button>
+            <div class="d-flex justify-content-between mt-5">
+                <div>
+                    <a href="#" class="btn btn-secondary">بازگشت</a>
+                </div>
+                <div>
+                    <button type="submit" class="btn btn-primary">ذخیره و ادامه</button>
+                </div>
             </div>
-        </div>
-    </form>
-</div>
+        </form>
+    </div>
 {% endblock main %}
+{% block js %}
+{% endblock js %}
