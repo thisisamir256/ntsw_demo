@@ -1,0 +1,16 @@
+.main-header {
+    background-color: #004175;
+}
+
+.main-footer {
+    background-color: #00508f;
+}
+
+#wrap {
+    background: linear-gradient(180deg,#00508f 41%, #61b3f4);
+    padding: 110px 0;
+}
+
+.hidden-image-input {
+    display: none;
+}

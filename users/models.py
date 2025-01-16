@@ -8,7 +8,7 @@ from django.core.exceptions import ValidationError
 
 class CustomUser(AbstractUser):
     national_code = models.CharField('کد ملی', max_length=10)
-    birth_date = models.DateField('تاریخ تولید')
+    birth_date = models.DateField('تاریخ تولد')
     mobile = models.CharField(
         'تلفن همراه',
         max_length=11,
@@ -26,8 +26,8 @@ class CustomUser(AbstractUser):
         'تایید موبایل', default=False)
     phone = models.CharField('شماره تلفن',max_length=11)
     postal_code = models.CharField('کد پستی', max_length=10)
-    use_2fa = models.BooleanField('استفاده از رمز دو عاملی', default= False)
-    avatar = models.FileField('تصویر پرسنلی', upload_to='uploads/users/avatar', max_length=100)
+    use_2fa = models.BooleanField('مایل به استفاده از رمز دو عاملی هستم', default= False)
+    avatar = models.ImageField('تصویر پرسنلی', upload_to='uploads/users/avatar', max_length=100, blank=True, default=None)
     
     class Meta:
         verbose_name = 'کاربر'
