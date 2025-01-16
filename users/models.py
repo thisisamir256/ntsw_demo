@@ -8,7 +8,6 @@ from django.core.exceptions import ValidationError
 
 
 class CustomUser(AbstractUser):
-    objects = jmodels.jManager()
     national_code = models.CharField('کد ملی', max_length=10)
     birth_date = models.DateField('تاریخ تولد')
     mobile = models.CharField(

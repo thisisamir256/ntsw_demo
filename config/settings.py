@@ -44,7 +44,6 @@ INSTALLED_APPS = [
 
 INSTALLED_APPS +=[
     'widget_tweaks',
-    'django_jalali',
 ]
 
 INSTALLED_APPS += [
