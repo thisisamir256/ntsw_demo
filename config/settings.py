@@ -44,6 +44,7 @@ INSTALLED_APPS = [
 
 INSTALLED_APPS +=[
     'widget_tweaks',
+    'django_jalali',
 ]
 
 INSTALLED_APPS += [
@@ -147,3 +148,23 @@ if IS_DEVELOPMENT_ENVIRONMENT:
     EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
 else:
     EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
+
+
+JALALI_SETTINGS = {
+    # JavaScript static files for the admin Jalali date widget
+    "ADMIN_JS_STATIC_FILES": [
+        "admin/jquery.ui.datepicker.jalali/scripts/jquery-1.10.2.min.js",
+        "admin/jquery.ui.datepicker.jalali/scripts/jquery.ui.core.js",
+        "admin/jquery.ui.datepicker.jalali/scripts/jquery.ui.datepicker-cc.js",
+        "admin/jquery.ui.datepicker.jalali/scripts/calendar.js",
+        "admin/jquery.ui.datepicker.jalali/scripts/jquery.ui.datepicker-cc-fa.js",
+        "admin/main.js",
+    ],
+    # CSS static files for the admin Jalali date widget
+    "ADMIN_CSS_STATIC_FILES": {
+        "all": [
+            "admin/jquery.ui.datepicker.jalali/themes/base/jquery-ui.min.css",
+            "admin/css/main.css",
+        ]
+    },
+}

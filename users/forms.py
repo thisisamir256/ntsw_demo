@@ -1,8 +1,6 @@
 from django.contrib.auth.forms import UserCreationForm
 from .models import CustomUser
 
-from jalali_date.fields import JalaliDateField, SplitJalaliDateTimeField
-from jalali_date.widgets import AdminJalaliDateWidget, AdminSplitJalaliDateTime
 
 class RegisterForm(UserCreationForm):
     class Meta:
