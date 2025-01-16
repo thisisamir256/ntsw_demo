@@ -18,3 +18,7 @@ class RegisterForm(UserCreationForm):
             'use_2fa',
             'avatar',
         )
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.fields["username"].disabled = True
+        self.fields["username"].widget.attrs["readonly"] = True
