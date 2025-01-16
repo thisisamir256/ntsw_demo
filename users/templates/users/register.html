@@ -1,45 +1,45 @@
-{% extends 'users/base.html' %}
+{% extends "users/base.html" %}
 {% load static %}
 {% load widget_tweaks %}
 {% block main %}
     <div class="bg-white rounded shadow">
         <p class="bg-primary text-white p-2 mb-0 rounded-top ">ثبت نام</p>
-        <form method="POST" class="p-4">
+        <form method="post" class="p-4">
             {% csrf_token %}
             <div class="row">
                 <div class="col">
                     <div class="input-group mb-3">
-                        <span class="input-group-text" id="basic-addon2">{{ form.national_code.label }}</span>
+                        <span class="input-group-text" id="basic-addon2">{{ form.national_code.label }}*</span>
                         {% render_field form.national_code class="form-control" %}
                     </div>
                     <div class="input-group mb-3">
-                        <span class="input-group-text" id="basic-addon2">{{ form.birth_date.label }}</span>
+                        <span class="input-group-text" id="basic-addon2">{{ form.birth_date.label }}*</span>
                         {% render_field form.birth_date class="form-control" %}
                     </div>
                     <div class="input-group mb-3">
-                        <span class="input-group-text" id="basic-addon2">{{ form.username.label }}</span>
+                        <span class="input-group-text" id="basic-addon2">{{ form.username.label }}*</span>
                         {% render_field form.username class="form-control" %}
                     </div>
                     <div class="input-group mb-3">
-                        <span class="input-group-text" id="basic-addon2">{{ form.password1.label }}</span>
+                        <span class="input-group-text" id="basic-addon2">{{ form.password1.label }}*</span>
                         {% render_field form.password1 class="form-control" %}
                     </div>
                     <div class="input-group mb-3">
-                        <span class="input-group-text" id="basic-addon2">{{ form.password2.label }}</span>
+                        <span class="input-group-text" id="basic-addon2">{{ form.password2.label }}*</span>
                         {% render_field form.password2 class="form-control" %}
                     </div>
                 </div>
                 <div class="col">
                     <div class="input-group mb-3">
-                        <span class="input-group-text" id="basic-addon2">{{ form.mobile.label }}</span>
+                        <span class="input-group-text" id="basic-addon2">{{ form.mobile.label }}*</span>
                         {% render_field form.mobile class="form-control" %}
                     </div>
                     <div class="input-group mb-3">
-                        <span class="input-group-text" id="{{ form.phone.auto_id }}">{{ form.phone.label }}</span>
+                        <span class="input-group-text" id="{{ form.phone.auto_id }}">{{ form.phone.label }}*</span>
                         {% render_field form.phone class="form-control" %}
                     </div>
                     <div class="input-group mb-3">
-                        <span class="input-group-text" id="{{ form.postal_code.auto_id }}">{{ form.postal_code.label }}</span>
+                        <span class="input-group-text" id="{{ form.postal_code.auto_id }}">{{ form.postal_code.label }}*</span>
                         {% render_field form.postal_code class="form-control" %}
                     </div>
                     <div class="input-group mb-3">
@@ -53,12 +53,12 @@
                 </div>
                 <div class="col">
                     <p>تصویر پرسنلی</p>
-                    <div class="">
+                    <div>
                         <div class="w-50">
-                            <img src="{% static 'images/avatar.png' %}" class="img-fluid rounded-top">
+                            <img src="{% static 'images/avatar.png' %}" class="img-fluid rounded-top" alt="تصویر پرسنل" id="img-preview">
                             <label class="btn btn-primary w-100 rounded-0 rounded-bottom" role="button">
                                 <span>آپلود فایل</span>
-                                {% render_field form.avatar class="hidden-image-input" %}
+                                {% render_field form.avatar class="hidden-image-input" id="choose-file" %}
                             </label>
                         </div>
                     </div>
@@ -79,4 +79,23 @@
     </div>
 {% endblock main %}
 {% block js %}
+    <script>
+        const chooseFile = document.getElementById("choose-file");
+        const imgPreview = document.getElementById("img-preview");
+        chooseFile.addEventListener("change", function () {
+            getImgData();
+            console.log('ok');
+          });
+          function getImgData() {
+            const files = chooseFile.files[0];
+            if (files) {
+                console.log('alert ok');
+              const fileReader = new FileReader();
+              fileReader.readAsDataURL(files);
+              fileReader.addEventListener("load", function () {
+                imgPreview.src = this.result
+              });    
+            }
+          }
+    </script>
 {% endblock js %}
