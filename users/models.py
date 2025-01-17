@@ -40,3 +40,5 @@ class CustomUser(AbstractUser):
     def clean(self):
         if len(self.mobile) != 11:
             raise ValidationError("طول این فیلد باید دقیقاً ۱۱ کاراکتر باشد.")
+            
+        
