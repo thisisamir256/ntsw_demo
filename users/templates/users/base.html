@@ -6,7 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="{% static 'bootstrap-5.2.3/css/bootstrap.rtl.css' %}">
-    <link rel="stylesheet" href="{% static 'css/style.css' %}"
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+	{% block head %}
+	{% endblock head %}
 </head>
 <body>
     <header class="py-3 main-header border border-secondary">

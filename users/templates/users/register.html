@@ -1,6 +1,9 @@
 {% extends "users/base.html" %}
 {% load static %}
 {% load widget_tweaks %}
+{% block head %}
+    <link rel="stylesheet" href="{% static 'persianDatepicker/css/persianDatepicker-default.css' %}">
+{% endblock head %}
 {% block main %}
     <div class="bg-white rounded shadow">
         <p class="bg-primary text-white p-2 mb-0 rounded-top ">ثبت نام</p>
@@ -82,6 +85,8 @@
     </div>
 {% endblock main %}
 {% block js %}
+		<script src="{% static 'js/jquery.min.js' %}"></script>
+		<script src="{% static 'persianDatepicker/js/persianDatepicker.min.js' %}"></script>
     <script>
 	//show user avatar after select file
         const chooseFile = document.getElementById("choose-file");
@@ -128,5 +133,8 @@
 	nationalCode.addEventListener('change',e=>{
 	document.getElementById('id_username').value = e.target.value;
 	})
+	
+	//create persian date picker
+	  $("#id_birthday").persianDatepicker();
     </script>
 {% endblock js %}
