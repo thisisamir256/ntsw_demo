@@ -20,9 +20,9 @@ class RegisterView(CreateView):
         print('1')
         user = form.save(commit=False)
         user.is_active = False
+        user.username = form.cleaned.data.get('national_code')
         user.save()
         print('2')
-        current_site = get_current_site(self.request)
         message = render_to_string('sms.txt',{
             'otp':12334
         })

@@ -4,7 +4,7 @@
 {% block main %}
     <div class="bg-white rounded shadow">
         <p class="bg-primary text-white p-2 mb-0 rounded-top ">ثبت نام</p>
-        <form method="post" class="p-4">
+        <form method="post" class="p-4 needs-validation" novalidate>
             {% csrf_token %}
             <div class="row">
                 <div class="col-12">
@@ -15,9 +15,9 @@
                         <span class="input-group-text" id="basic-addon2">{{ form.national_code.label }}*</span>
                         {% render_field form.national_code class="form-control" %}
                     </div>
-                    <div class="input-group mb-3">
-                        <span class="input-group-text" id="basic-addon2">{{ form.birth_date.label }}*</span>
-                        {% render_field form.birth_date class="form-control" %}
+					<div class="input-group mb-3">
+                        <span class="input-group-text" id="basic-addon2">{{ form.birthday.label }}*</span>
+                        {% render_field form.birthday class="form-control" %}
                     </div>
                     <div class="input-group mb-3">
                         <span class="input-group-text" id="basic-addon2">{{ form.username.label }}*</span>
@@ -83,6 +83,7 @@
 {% endblock main %}
 {% block js %}
     <script>
+	//show user avatar after select file
         const chooseFile = document.getElementById("choose-file");
         const imgPreview = document.getElementById("img-preview");
         chooseFile.addEventListener("change", function () {
@@ -101,6 +102,31 @@
             }
           }
 
-          
+		const forms = document.querySelectorAll('.needs-validation')
+		console.log(forms)
+
+
+		// validate form with bootstrap
+		Array.from(forms).forEach(form => {
+		form.addEventListener('submit', event => {
+		console.log('ok1');
+		if (!form.checkValidity()) {
+			console.log('ok');
+		
+			event.preventDefault()
+			event.stopPropagation()
+		}
+		console.log('looooog')
+		form.classList.add('was-validated')
+		}, false)
+	})
+
+
+	/*آپدیت فیلد نام کاربری موقع تغییر کد ملی*/
+	const nationalCode = document.getElementById('id_national_code');
+	console.log(nationalCode);
+	nationalCode.addEventListener('change',e=>{
+	document.getElementById('id_username').value = e.target.value;
+	})
     </script>
 {% endblock js %}

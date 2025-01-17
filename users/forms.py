@@ -1,13 +1,15 @@
 from django.contrib.auth.forms import UserCreationForm
+from django import forms
 from .models import CustomUser
 
 
 class RegisterForm(UserCreationForm):
+    birthday = forms.CharField(label='تاریخ تولد')
     class Meta:
         model = CustomUser
         fields = (
             'national_code',
-            'birth_date',
+            'birthday',
             'username',
             'password1',
             'password2',
@@ -22,3 +24,5 @@ class RegisterForm(UserCreationForm):
         super().__init__(*args, **kwargs)
         self.fields["username"].disabled = True
         self.fields["username"].widget.attrs["readonly"] = True
+        self.fields['password1'].required = True
+        self.fields['password2'].required = True
