@@ -1,0 +1,84 @@
+{% extends "users/base.html" %}
+{% load static %}
+{% load widget_tweaks %}
+{% block title %}
+    ورود
+{% endblock title %}
+{% block main %}
+    <div class="row bg-white rounded shadow p-5 align-items-center">
+        <div class="col-5">
+            {% if messages %}
+                <ul class="messages">
+                    {% for message in messages %}<li class="alert {{ message.tags }}">{{ message }}</li>{% endfor %}
+                </ul>
+            {% endif %}
+            <form method="post">
+                {% csrf_token %}
+                <div class="input-group mb-3">
+                    <span class="input-group-text" id="basic-addon2">{{ form.username.label }}*</span>
+                    {% render_field form.username class="form-control" %}
+                </div>
+                <div class="input-group mb-3">
+                    <span class="input-group-text" id="basic-addon2">{{ form.password.label }}*</span>
+                    {% render_field form.password class="form-control" %}
+                </div>
+                <div class="row row-col-2">
+                    <div class="col text-center">
+                        <button type="submit" class="btn btn-success me-2 w-100 mb-4">ورود</button>
+                        <a href="{% url 'users:send_reset_code' %}">بازیابی کلمه عبور</a>
+                    </div>
+                    <div class="col text-center">
+                        {% comment %} <button type="button" class="btn btn-primary ms-2 w-100 mb-4">ثبت نام</button> {% endcomment %}
+                        <div class="dropdown ms-2 w-100 mb-4">
+                            <button class="btn btn-primary dropdown-toggle w-100"
+                                    type="button"
+                                    data-bs-toggle="dropdown"
+                                    aria-expanded="false">ثبت نام</button>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a class="dropdown-item" href="{% url 'users:register' %}">ثبت نام کاربران ایرانی</a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item disabled" href="#">ثبت نام کاربران خارجی</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <a href="#">تغییر شماره تلفن همراه</a>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="col-7">
+            <div id="carouselExampleControls"
+                 class="carousel carousel-dark slide"
+                 data-bs-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img src="{% static 'images/mosharekat.png' %}"
+                             class="d-block w-100"
+                             alt="سال تولید ملی">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="{% static 'images/ntsw.png' %}"
+                             class="d-block w-100"
+                             alt="دموی سامانه جامع تجارت">
+                    </div>
+                </div>
+                <button class="carousel-control-prev"
+                        type="button"
+                        data-bs-target="#carouselExampleControls"
+                        data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next"
+                        type="button"
+                        data-bs-target="#carouselExampleControls"
+                        data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+        </div>
+    </div>
+{% endblock main %}

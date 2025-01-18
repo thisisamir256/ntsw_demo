@@ -5,6 +5,12 @@ from django.contrib.auth.models import AbstractUser
 from django.core.validators import RegexValidator
 
 from django.core.exceptions import ValidationError
+from django.core.validators import MinValueValidator, MaxValueValidator
+
+from datetime import timedelta, datetime
+from django.utils import timezone
+import uuid
+from decouple import config
 
 
 class CustomUser(AbstractUser):
@@ -29,6 +35,7 @@ class CustomUser(AbstractUser):
     postal_code = models.CharField('کد پستی', max_length=10)
     use_2fa = models.BooleanField('مایل به استفاده از رمز دو عاملی هستم', default= False)
     avatar = models.ImageField('تصویر پرسنلی', upload_to='uploads/users/avatar', max_length=100, blank=True, default=None)
+    uuid = models.UUIDField('uuid کد', default=uuid.uuid4, editable=False, unique=True)
     
     class Meta:
         verbose_name = 'کاربر'
@@ -41,4 +48,27 @@ class CustomUser(AbstractUser):
         if len(self.mobile) != 11:
             raise ValidationError("طول این فیلد باید دقیقاً ۱۱ کاراکتر باشد.")
             
-        
+
+class VerificationCode(models.Model):
+    user = models.ForeignKey(CustomUser, verbose_name='کاربر', on_delete=models.CASCADE)
+    uuid = models.UUIDField('uuid کد', default=uuid.uuid4, editable=False, unique=True)
+    created_at = models.DateTimeField('ایجاد شده در', auto_now_add=True)
+    verification_code =  models.PositiveSmallIntegerField(
+    'کد تایید',
+    validators=[MinValueValidator(1000), MaxValueValidator(9999)]
+)
+    
+    class Meta:
+        verbose_name = 'کد تایید'
+        verbose_name_plural = 'کدهای تایید'
+        indexes = [
+        models.Index(fields=['user', 'verification_code']),
+    ]
+
+    def __str__(self):
+        return f'کد {self.verification_code} برای کاربر {self.user} ایجاد شد'
+    
+    @property
+    def is_valid(self):
+        time_turtling = config('SMS_TIME_TURTLING',cast=int,default=3)
+        return self.created_at + timedelta(seconds=time_turtling) > timezone.now()

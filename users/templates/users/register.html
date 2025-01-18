@@ -2,7 +2,8 @@
 {% load static %}
 {% load widget_tweaks %}
 {% block head %}
-    <link rel="stylesheet" href="{% static 'persianDatepicker/css/persianDatepicker-default.css' %}">
+    <link rel="stylesheet"
+          href="{% static 'persianDatepicker/css/persianDatepicker-default.css' %}">
 {% endblock head %}
 {% block main %}
     <div class="bg-white rounded shadow">
@@ -10,15 +11,13 @@
         <form method="post" class="p-4 needs-validation" novalidate>
             {% csrf_token %}
             <div class="row">
-                <div class="col-12">
-                    {{ form.errors }}
-                </div>
+                <div class="col-12">{{ form.errors }}</div>
                 <div class="col">
                     <div class="input-group mb-3">
                         <span class="input-group-text" id="basic-addon2">{{ form.national_code.label }}*</span>
                         {% render_field form.national_code class="form-control" %}
                     </div>
-					<div class="input-group mb-3">
+                    <div class="input-group mb-3">
                         <span class="input-group-text" id="basic-addon2">{{ form.birthday.label }}*</span>
                         {% render_field form.birthday class="form-control" %}
                     </div>
@@ -52,7 +51,7 @@
                         <span class="input-group-text" id="{{ form.email.auto_id }}">{{ form.email.label }}</span>
                         {% render_field form.email class="form-control" %}
                     </div>
-                    <div class="form-check">                    
+                    <div class="form-check">
                         {% render_field form.use_2fa class="form-check-input" %}
                         <label class="form-check-label" for="{{ form.use_2fa.auto_id }}">{{ form.use_2fa.label }}</label>
                     </div>
@@ -61,7 +60,12 @@
                     <p>تصویر پرسنلی</p>
                     <div>
                         <div class="w-50">
-                            <img src="{% static 'images/avatar.png' %}" class="img-fluid rounded-top" alt="تصویر پرسنل" id="img-preview" width="100%" height="100%%">
+                            <img src="{% static 'images/avatar.png' %}"
+                                 class="img-fluid rounded-top"
+                                 alt="تصویر پرسنل"
+                                 id="img-preview"
+                                 width="100%"
+                                 height="100%%">
                             <label class="btn btn-primary w-100 rounded-0 rounded-bottom" role="button">
                                 <span>آپلود فایل</span>
                                 {% render_field form.avatar class="hidden-image-input" id="choose-file" %}
@@ -85,8 +89,8 @@
     </div>
 {% endblock main %}
 {% block js %}
-		<script src="{% static 'js/jquery.min.js' %}"></script>
-		<script src="{% static 'persianDatepicker/js/persianDatepicker.min.js' %}"></script>
+    <script src="{% static 'js/jquery.min.js' %}"></script>
+    <script src="{% static 'persianDatepicker/js/persianDatepicker.min.js' %}"></script>
     <script>
 	//show user avatar after select file
         const chooseFile = document.getElementById("choose-file");

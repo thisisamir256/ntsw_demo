@@ -1,0 +1,17 @@
+{% extends "users/base.html" %}
+{% load static %}
+{% block title %}
+    ثبت نام
+{% endblock title %}
+{% block main %}
+    <div class="bg-white rounded shadow">
+        <p class="bg-primary text-white p-2 mb-0 rounded-top ">ثبت نام</p>
+        <div class="d-grid gap-2 col-6 mx-auto py-5">
+            <a class="btn btn-success"
+               href="{% url 'users:verify_phone' user_uuid %}">صحت سنجی و ارسال کد اعتبار سنجی به شماره تلفن همراه</a>
+            <button class="btn btn-primary" type="button" disabled>
+                اعتبار سنجی  شماره همراه جدید از طریق شماره گیری کد (USSD)
+            </button>
+        </div>
+    </div>
+{% endblock main %}
