@@ -12,7 +12,8 @@ from django.contrib import messages
 
 
 from persiantools.jdatetime import JalaliDate
-from persiantools.jdatetime import JalaliDateTime
+from persiantools.jdatetime import JalaliDateTime        
+from persiantools import  digits
 
 from decouple import config
 import uuid
@@ -38,7 +39,6 @@ class RegisterView(CreateView):
 
 class SelectVerificationMod(View):
     def get(self, request, user_uuid, *args, **kwargs):
-        User = get_user_model()
         user = get_object_or_404(User,uuid=user_uuid)
         return render(request, 'users/select_verification_mod.html',{'user_uuid':user_uuid})
 
@@ -50,8 +50,8 @@ class VerifyPhoneView(FormView):
         user = get_object_or_404(User, uuid=user_uuid)
         verification_codes =VerificationCode.objects.filter(user=user).order_by('created_at')
         verification_code = verification_codes.last()
-        msg = 'کد تایید قبلا برای شما ارسال شده است. لطفا پس از اتمام دو دقیقه از آخرین ارسال کد تایید دوباره درخواست دهید.'
-        if not verification_code.is_valid:
+        msg = 'کد تایید قبلا برای شما ارسال شده است. لطفا پس از اتمام سه دقیقه از آخرین ارسال کد تایید دوباره درخواست دهید.'
+        if not verification_codes or  not verification_code.is_valid:        
             msg = 'کد اعتبار سنجی برای تلفن همراه شما ارسال گردید، لطفا پس از دریافت در کادر زیر وارد نمایید.'
             verification_code = VerificationCode.objects.create(
                 verification_code = code,
@@ -71,6 +71,7 @@ class VerifyPhoneView(FormView):
         verification_cod_uuid = uuid.UUID(uuid_str)
         verification = get_object_or_404(VerificationCode, uuid=verification_cod_uuid)
         code = request.POST.get('verification_code')
+        code = digits.fa_to_en(code)
 
         # بررسی کد تأیید
         if str(verification.verification_code) == code:
@@ -79,7 +80,8 @@ class VerifyPhoneView(FormView):
                 user.is_active = True
                 user.is_mobile_verified = True
                 user.save()
-                return HttpResponse("شماره موبایل تأیید شد و حساب شما فعال گردید.")
+                messages.success(self.request, "شماره موبایل شما با موفقیت تایید شد")
+                return redirect('users:login')
             else:
                 return HttpResponse("کد تأیید منقضی شده است.")
         else:
@@ -114,7 +116,7 @@ class ResetPasswordView(FormView):
     success_url = reverse_lazy('users:login')
 
     def form_valid(self, form):
-        code = form.cleaned_data['code']
+        code = digits.fa_to_en(form.cleaned_data['code'])
         new_password = form.cleaned_data['new_password']
 
         # بازیابی کاربر از UUID
@@ -124,15 +126,15 @@ class ResetPasswordView(FormView):
         user = verification_code.user
 
         # بررسی کد تأیید
-        if not verification_code or not verification_code.is_valid:
+        if not verification_code or not verification_code.is_valid or code != verification_code.verification_code:
             messages.error(self.request, "کد تأیید نامعتبر یا منقضی شده است.")
             return redirect('users:send_reset_code')  # هدایت به صفحه ارسال کد
 
-            
         user.set_password(new_password)  # تغییر رمز عبور
         user.save()
         messages.success(self.request, "رمز عبور با موفقیت تغییر یافت.")
         return redirect('users:login')
+        
 
 
 
