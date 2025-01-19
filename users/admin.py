@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import CustomUser, VerificationCode
+from .models import CustomUser, VerificationCode, Role, UserRole
 
 
 @admin.register(CustomUser)
@@ -24,3 +24,13 @@ class VerificationCodeAdmin(admin.ModelAdmin):
         'verification_code',
         'is_valid',
     )
+
+
+@admin.register(Role)
+class RoleAdmin(admin.ModelAdmin):
+    pass
+
+
+@admin.register(UserRole)
+class UserRoleAdmin(admin.ModelAdmin):
+    pass
