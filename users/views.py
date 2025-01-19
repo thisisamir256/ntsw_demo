@@ -3,7 +3,6 @@ from django.contrib.auth import get_user_model
 from django.shortcuts import render, redirect, get_object_or_404
 from django.views.generic import CreateView, TemplateView, View, FormView
 from django.contrib.sites.shortcuts import get_current_site
-from django.template.loader import render_to_string
 from django.urls import reverse_lazy
 from django.contrib import messages
 
@@ -139,15 +138,3 @@ class ResetPasswordView(FormView):
         user.save()
         messages.success(self.request, "رمز عبور با موفقیت تغییر یافت.")
         return redirect('users:login')
-
-
-# message = render_to_string('users/sms.txt',{
-#             'otp':12334
-#         })
-#         print('message is: ', message)
-#         verification_code = random.randint(1000, 9999)
-#         verification = VerificationCode.objects.create(
-#             user=user,
-#             verification_code=verification_code,
-#         )
-#         to_mobile = form.cleaned_data.get('mobile')
