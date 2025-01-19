@@ -1,9 +1,6 @@
 from django.http import HttpResponse
 from django.contrib.auth import get_user_model
-from django.http import HttpRequest
 from django.shortcuts import render, redirect, get_object_or_404
-from .forms import RegisterForm, UsernameForm, PasswordResetForm
-from .models import VerificationCode
 from django.views.generic import CreateView, TemplateView, View, FormView
 from django.contrib.sites.shortcuts import get_current_site
 from django.template.loader import render_to_string
@@ -12,11 +9,13 @@ from django.contrib import messages
 
 
 from persiantools.jdatetime import JalaliDate
-from persiantools.jdatetime import JalaliDateTime
 from persiantools import digits
 
 from decouple import config
 import uuid
+
+from .forms import RegisterForm, UsernameForm, PasswordResetForm
+from .models import VerificationCode
 
 
 User = get_user_model()
