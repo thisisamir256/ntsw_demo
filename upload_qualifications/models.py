@@ -1,5 +1,10 @@
 from django.db import models
 from django.conf import settings
+import random
+
+
+def generate_random_number():
+    return random.randint(100000000, 999999999)
 
 
 class BusinessCard(models.Model):
@@ -8,7 +13,8 @@ class BusinessCard(models.Model):
     }
     user = models.ForeignKey(settings.AUTH_USER_MODEL,
                              verbose_name='کاربر', on_delete=models.CASCADE)
-    request_number = models.PositiveIntegerField('شماره درخواست')
+    request_number = models.PositiveIntegerField(
+        'شماره درخواست', default=generate_random_number)
     request_type = models.CharField(
         'نوع درخواست', max_length=50, default='صدور')
     created_at = models.DateField('زمان ارسال', auto_now_add=True)
