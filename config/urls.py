@@ -27,7 +27,9 @@ urlpatterns = [
 
 urlpatterns += [
     path('users/', include('users.urls')),
-    path('dashboard/', include('dashboard.urls'))
+    path('dashboard/', include('dashboard.urls')),
+    path('upload-qualification/', include('upload_qualifications.urls')),
+
 ]
 
 urlpatterns += [
@@ -39,8 +41,8 @@ urlpatterns += [
 ]
 
 
-
-if settings.IS_DEVELOPMENT_ENVIRONMENT :
+if settings.IS_DEVELOPMENT_ENVIRONMENT:
     from django.conf import settings
     from django.conf.urls.static import static
-    urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+    urlpatterns += static(settings.STATIC_URL,
+                          document_root=settings.STATIC_ROOT)

@@ -36,6 +36,11 @@ class CustomUser(AbstractUser):
         'تصویر پرسنلی', upload_to='uploads/users/avatar', max_length=100, blank=True, default=None)
     uuid = models.UUIDField('uuid کد', default=uuid.uuid4,
                             editable=False, unique=True)
+    base = models.BooleanField('پایه حقیقی/حقوقی', default=True)
+    has_business_card = models.BooleanField(
+        'بازرگان حقیقی/ حقوقی', default=False)
+    has_internal_trader = models.BooleanField(
+        'تاجر حقیقی/ حقوقی', default=False)
 
     class Meta:
         verbose_name = 'کاربر'
@@ -74,29 +79,3 @@ class VerificationCode(models.Model):
     def is_valid(self):
         time_turtling = config('SMS_TIME_TURTLING', cast=int, default=3)
         return self.created_at + timedelta(seconds=time_turtling) > timezone.now()
-
-
-class Role(models.Model):
-    name = models.CharField(max_length=50, unique=True)  # عنوان نقش
-    description = models.TextField(blank=True, null=True)  # توضیحات نقش
-
-    class Meta:
-        verbose_name = 'نقش'
-        verbose_name_plural = 'نقش‌ها'
-
-    def __str__(self):
-        return self.name
-
-
-class UserRole(models.Model):
-    user = models.ForeignKey(
-        CustomUser, on_delete=models.CASCADE)  # اتصال به کاربر
-    role = models.ForeignKey(Role, on_delete=models.CASCADE)  # اتصال به نقش
-    assigned_at = models.DateTimeField(auto_now_add=True)  # زمان تخصیص نقش
-
-    class Meta:
-        verbose_name = 'نقش کاربر'
-        verbose_name_plural = 'نقش کاربران'
-
-    def __str__(self):
-        return f"{self.user.username} - {self.role.name}"

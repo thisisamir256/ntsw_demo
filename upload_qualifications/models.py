@@ -26,7 +26,4 @@ class BusinessCard(models.Model):
         verbose_name_plural = "کارت‌های بازرگانی"
 
     def __str__(self):
-        return self.name
-
-    def get_absolute_url(self):
-        return reverse("BusinessCard_detail", kwargs={"pk": self.pk})
+        return f'درخواست صدور کارت بازرگانی با شماره {self.request_number} برای {self.user}'
