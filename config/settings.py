@@ -13,7 +13,7 @@ https://docs.djangoproject.com/en/5.1/ref/settings/
 from pathlib import Path
 from decouple import config
 
-IS_DEVELOPMENT_ENVIRONMENT = config('IS_DEVELOPMENT_ENVIRONMENT',cast=bool)
+IS_DEVELOPMENT_ENVIRONMENT = config('IS_DEVELOPMENT_ENVIRONMENT', cast=bool)
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -42,12 +42,13 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 ]
 
-INSTALLED_APPS +=[
+INSTALLED_APPS += [
     'widget_tweaks',
 ]
 
 INSTALLED_APPS += [
     'users.apps.UsersConfig',
+    'upload_qualifications.apps.UploadQualificationsConfig',
 ]
 
 
