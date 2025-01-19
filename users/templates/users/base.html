@@ -8,7 +8,10 @@
         <link rel="stylesheet"
               href="{% static 'bootstrap-5.2.3/css/bootstrap.rtl.css' %}">
         <link rel="stylesheet" href="{% static 'css/style.css' %}">
-        <title>دموی سامانه جامع تجارت-{% block title %}{% endblock title %}</title>
+        <title>دموی سامانه جامع تجارت-
+            {% block title %}
+            {% endblock title %}
+        </title>
         {% block head %}
         {% endblock head %}
     </head>
@@ -29,9 +32,9 @@
             </div>
         </header>
         <main id="wrap">
-            <div class="container-xxl">                
-                    {% block main %}
-                    {% endblock main %}
+            <div class="container-xxl">
+                {% block main %}
+                {% endblock main %}
             </div>
         </main>
         <footer class="border-top border-5 border-secondary main-footer py-4">
