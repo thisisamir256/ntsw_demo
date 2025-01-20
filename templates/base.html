@@ -8,7 +8,6 @@
         <meta name="description" content="">
         <meta name="author"
               content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
-        <meta name="generator" content="Hugo 0.122.0">
         <title>
             دموی سامانه جامع تجارت-
             {% block title %}
@@ -37,12 +36,14 @@
                                     <ul class="dropdown-menu">
                                         {% if request.user.base %}
                                             <li>
-                                                <a class="dropdown-item" href="#">پایه حقیقی / حقوقی</a>
+                                                <a class="dropdown-item"
+                                                   href="{% url 'dashboard:base_role_dashboard' %}">پایه حقیقی / حقوقی</a>
                                             </li>
                                         {% endif %}
                                         {% if request.user.has_business_card %}
                                             <li>
-                                                <a class="dropdown-item" href="#">بازرگان حقیقی / حقوقی</a>
+                                                <a class="dropdown-item"
+                                                   href="{% url 'dashboard:business_role_dashboard' %}">بازرگان حقیقی / حقوقی</a>
                                             </li>
                                         {% endif %}
                                         {% if request.user.has_internal_trader %}
