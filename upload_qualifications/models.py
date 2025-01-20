@@ -17,7 +17,7 @@ class BusinessCard(models.Model):
         'شماره درخواست', default=generate_random_number)
     request_type = models.CharField(
         'نوع درخواست', max_length=50, default='صدور')
-    created_at = models.DateField('زمان ارسال', auto_now_add=True)
+    created_at = models.DateTimeField('زمان ارسال', auto_now_add=True)
     status = models.CharField('وضعیت', max_length=5,
                               choices=STATUS_CHOISES, default='FC')
 

@@ -49,6 +49,7 @@ INSTALLED_APPS += [
 INSTALLED_APPS += [
     'users.apps.UsersConfig',
     'upload_qualifications.apps.UploadQualificationsConfig',
+    'dashboard.apps.DashboardConfig',
 ]
 
 

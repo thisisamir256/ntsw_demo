@@ -1,5 +1,6 @@
 {% extends 'base.html' %}
 {% load static %}
+{% load date_filters %}
 {% block title %}
     بارگذاری صلاحیت‌ها
 {% endblock title %}
@@ -250,7 +251,7 @@
                                     <td>{{ forloop.counter }}</td>
                                     <td>{{ card.request_number }}</td>
                                     <td>{{ card.request_type }}</td>
-                                    <td>{{ card.created_at }}</td>
+                                    <td>{{ card.created_at | to_jalali }}</td>
                                     <td>{{ card.get_status_display }}</td>
                                     <td></td>
                                 </tr>
