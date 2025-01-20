@@ -147,6 +147,6 @@ AUTH_USER_MODEL = 'users.CustomUser'
 
 SITE_ID = config('SITE_ID', cast=int)
 
-LOGIN_REDIRECT_URL = 'dashboard:home'
+LOGIN_REDIRECT_URL = 'dashboard:base_role_dashboard'
 LOGIN_URL = 'users:login'
 LOGOUT_REDIRECT_URL = 'users:login'
