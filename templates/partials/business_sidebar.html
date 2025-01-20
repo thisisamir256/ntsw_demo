@@ -2,3 +2,54 @@
    class="d-flex align-items-center pb-3 mb-3 link-body-emphasis text-decoration-none border-bottom text-black">
     صفحه اصلی
 </a>
+<ul class="list-unstyled ps-0">
+    <li class="mb-1">
+        <button class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed"
+                data-bs-toggle="collapse"
+                data-bs-target="#home-collapse"
+                aria-expanded="true">عملیات پایه</button>
+        <div class="collapse show" id="home-collapse">
+            <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                <li>
+                    <a href="{% url 'upload_qualifications:business_cards' %}"
+                       class="link-body-emphasis d-inline-flex text-decoration-none rounded">مدیریت نمایندگان</a>
+                </li>
+                <li>
+                    <a href="#"
+                       class="link-body-emphasis d-inline-flex text-decoration-none rounded">مدیریت کارتابل</a>
+                </li>
+                <li>
+                    <a href="#"
+                       class="link-body-emphasis d-inline-flex text-decoration-none rounded">بارگذاری صلاحیت‌ها</a>
+                </li>
+            </ul>
+        </div>
+    </li>
+    <li class="border-top my-3"></li>
+    <li class="mb-1">
+        <button class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed"
+                data-bs-toggle="collapse"
+                data-bs-target="#dashboard-collapse"
+                aria-expanded="false">عملیات شناسه کالا</button>
+        <div class="collapse" id="dashboard-collapse">
+            <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                <li>
+                    <a href="#"
+                       class="link-body-emphasis d-inline-flex text-decoration-none rounded">ثبت کالای جدید</a>
+                </li>
+                <li>
+                    <a href="#"
+                       class="link-body-emphasis d-inline-flex text-decoration-none rounded">فهرست کالاهای وارداتی</a>
+                </li>
+                <li>
+                    <a href="#"
+                       class="link-body-emphasis d-inline-flex text-decoration-none rounded">درخواست‌های در گردش</a>
+                </li>
+                <li>
+                    <a href="#"
+                       class="link-body-emphasis d-inline-flex text-decoration-none rounded">جستجوی کالا</a>
+                </li>
+            </ul>
+        </div>
+    </li>
+</ul>
