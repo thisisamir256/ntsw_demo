@@ -29,11 +29,29 @@
                         <div>
                             <div class="input-group mb-3">
                                 <label class="input-group-text" for="inputGroupSelect01">نقش جاری</label>
-                                <select class="form-select" id="inputGroupSelect01">
-                                    {% if request.user.base %}<option selected>پایه حقیقی / حقوقی</option>{% endif %}
-                                    {% if request.user.has_business_card %}<option>بازرگان حقیقی / حقوقی</option>{% endif %}
-                                    {% if request.user.has_internal_trader %}<option>تاجر حقیقی / حقوقی</option>{% endif %}
-                                </select>
+                                <div class="btn-group">
+                                    <button type="button"
+                                            class="btn btn-light dropdown-toggle border rounded-0 rounded-0 rounded-end"
+                                            data-bs-toggle="dropdown"
+                                            aria-expanded="false">{{ request.user.get_active_role_display }}</button>
+                                    <ul class="dropdown-menu">
+                                        {% if request.user.base %}
+                                            <li>
+                                                <a class="dropdown-item" href="#">پایه حقیقی / حقوقی</a>
+                                            </li>
+                                        {% endif %}
+                                        {% if request.user.has_business_card %}
+                                            <li>
+                                                <a class="dropdown-item" href="#">بازرگان حقیقی / حقوقی</a>
+                                            </li>
+                                        {% endif %}
+                                        {% if request.user.has_internal_trader %}
+                                            <li>
+                                                <a class="dropdown-item" href="#">بازرگان حقیقی / حقوقی</a>
+                                            </li>
+                                        {% endif %}
+                                    </ul>
+                                </div>
                             </div>
                         </div>
                     </div>

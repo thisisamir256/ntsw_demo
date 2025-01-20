@@ -11,6 +11,11 @@ import uuid
 
 
 class CustomUser(AbstractUser):
+    ROLE_CHOICES = {
+        'br': 'پایه حقیقی / حقوقی',  # base rolde
+        'bc': 'بازرگانی حقیقی / حقوقی',  # business card
+        'it': 'تاجر حقیقی /حقوقی',  # internal trader
+    }
     national_code = models.CharField('کد ملی', max_length=10)
     birth_date = models.DateField('تاریخ تولد')
     mobile = models.CharField(
@@ -41,6 +46,8 @@ class CustomUser(AbstractUser):
         'بازرگان حقیقی / حقوقی', default=False)
     has_internal_trader = models.BooleanField(
         'تاجر حقیقی / حقوقی', default=False)
+    active_role = models.CharField(
+        'نقش فعال', choices=ROLE_CHOICES, max_length=2, default='br')
 
     class Meta:
         verbose_name = 'کاربر'
