@@ -3,11 +3,13 @@
        class="d-flex align-items-center pb-3 mb-3 link-body-emphasis text-decoration-none border-bottom text-black">
         صفحه اصلی
     </a>
-    {% if request.user.has_business_card %}
+    {% if request.user.has_business_card and request.user.active_role == 'bc' %}
         {% include "partials/business_sidebar.html" %}
-    {% elif request.user.has_internal_trader %}
+        ddd
+    {% elif request.user.has_internal_trader and request.user.active_role == 'it' %}
         {% include "partials/internal_trader_siderbar.html" %}
     {% else %}
         {% include "partials/base_role_sidebar.html" %}
+        sss
     {% endif %}
 </aside>
