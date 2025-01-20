@@ -162,9 +162,13 @@
                                 </div>
                             </div>
                         </div>
+                        <div class="col-12">
+                            <button class="btn btn-primary" type="button">جستجو</button>
+                        </div>
                     </div>
-                    <div class="col-12">
-                        <table class="table table-striped table-hover table-bordered">
+                    <div class="col-12 mt-5">
+                        <div class="pagination"></div>
+                        <table class="table table-striped table-hover table-bordered text-center">
                             <thead class="text-white" style="background:rgb(2, 65, 88);">
                                 <tr>
                                     <th>دریف</th>
@@ -226,12 +230,10 @@
                             </div>
                         </div>
                     </div>
-                    <button class="btn btn-primary me-2">
-                        درخواست تمدید
-                        <button class="btn btn-primary me-2">درخواست تغییر</button>
-                        <button class="btn btn-primary me-2">بروزرسانی اطلاعات</button>
-                    </div>
-                    <table class="table table-striped table-hover table-bordered">
+                    <button class="btn btn-primary me-2">درخواست تمدید</button>
+                    <button class="btn btn-primary me-2">درخواست تغییر</button>
+                    <button class="btn btn-primary me-2">بروزرسانی اطلاعات</button>
+                    <table class="table table-striped table-hover table-bordered text-center mt-3">
                         <thead class="text-white" style="background:rgb(2, 65, 88);">
                             <tr>
                                 <th>دریف</th>
@@ -256,22 +258,23 @@
                         </tbody>
                     </table>
                 </div>
-                <div class="tab-pane fade"
-                     id="pills-contact"
-                     role="tabpanel"
-                     aria-labelledby="pills-contact-tab"
-                     tabindex="0">استعلام مجوز فعالیت مناطق آزاد</div>
-                <div class="tab-pane fade"
-                     id="pills-marz"
-                     role="tabpanel"
-                     aria-labelledby="pills-moredi-tab"
-                     tabindex="0">استعلام مبادلات مرزی و گمرکی</div>
-                <div class="tab-pane fade"
-                     id="pills-moredi"
-                     role="tabpanel"
-                     aria-labelledby="pills-moredi-tab"
-                     tabindex="0">استعلام مجوز موردی</div>
             </div>
+            <div class="tab-pane fade"
+                 id="pills-contact"
+                 role="tabpanel"
+                 aria-labelledby="pills-contact-tab"
+                 tabindex="0">استعلام مجوز فعالیت مناطق آزاد</div>
+            <div class="tab-pane fade"
+                 id="pills-marz"
+                 role="tabpanel"
+                 aria-labelledby="pills-moredi-tab"
+                 tabindex="0">استعلام مبادلات مرزی و گمرکی</div>
+            <div class="tab-pane fade"
+                 id="pills-moredi"
+                 role="tabpanel"
+                 aria-labelledby="pills-moredi-tab"
+                 tabindex="0">استعلام مجوز موردی</div>
         </div>
-    {% endblock main %}
-    <script></script>
+    </div>
+{% endblock main %}
+<script></script>

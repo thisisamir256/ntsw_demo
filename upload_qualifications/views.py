@@ -3,6 +3,8 @@ from django.views.generic import CreateView, ListView
 from django.urls import reverse_lazy
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.auth import get_user_model
+from django.contrib import messages
+
 
 from persiantools.jdatetime import JalaliDateTime
 
@@ -26,10 +28,13 @@ class BusinessCardCreateView(LoginRequiredMixin, CreateView):
     def form_valid(self, form):
         user = self.request.user
         form.instance.user = user
+        messages.success(self.request, 'کارت بازرگانی شما با موفقیت صادر شد')
         return super().form_valid(form)
 
     def form_invalid(self, form):
-        return 'amir'
+        messages.error(
+            self.request, 'مشکلی در صدور کارت بازرگانی شما پیش آمده است لطفا با پشتیبانی دمو تماس بگیرید.')
+        return reverse_lazy('upload_qualifications:business_cards')
 
 
 class BusinessCardListView(LoginRequiredMixin, ListView):
@@ -38,4 +43,4 @@ class BusinessCardListView(LoginRequiredMixin, ListView):
 
     def get_queryset(self):
         q = super().get_queryset()
-        return q.filter(user=self.request.user)
+        return q.filter(user=self.request.user).order_by('-created_at')
