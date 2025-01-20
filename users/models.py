@@ -36,11 +36,11 @@ class CustomUser(AbstractUser):
         'تصویر پرسنلی', upload_to='uploads/users/avatar', max_length=100, blank=True, default=None)
     uuid = models.UUIDField('uuid کد', default=uuid.uuid4,
                             editable=False, unique=True)
-    base = models.BooleanField('پایه حقیقی/حقوقی', default=True)
+    base = models.BooleanField('پایه حقیقی / حقوقی', default=True)
     has_business_card = models.BooleanField(
-        'بازرگان حقیقی/ حقوقی', default=False)
+        'بازرگان حقیقی / حقوقی', default=False)
     has_internal_trader = models.BooleanField(
-        'تاجر حقیقی/ حقوقی', default=False)
+        'تاجر حقیقی / حقوقی', default=False)
 
     class Meta:
         verbose_name = 'کاربر'

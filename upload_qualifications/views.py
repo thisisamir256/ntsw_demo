@@ -29,7 +29,7 @@ class BusinessCardCreateView(LoginRequiredMixin, CreateView):
         user = self.request.user
         form.instance.user = user
         user.has_business_card = True
-        user.save
+        user.save()
         messages.success(self.request, 'کارت بازرگانی شما با موفقیت صادر شد')
         return super().form_valid(form)
 

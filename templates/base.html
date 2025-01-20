@@ -23,10 +23,19 @@
         <section class="d-flex flex-nowrap">
             {% include "partials/sidebar.html" %}
             <main class="bg-light flex-fill">
-                <div class="container-fluid">
+                <div class="container-fluid mt-3">
                     <div class="d-md-flex justify-content-between">
                         <div>برید کرامب</div>
-                        <div>نقش‌ها</div>
+                        <div>
+                            <div class="input-group mb-3">
+                                <label class="input-group-text" for="inputGroupSelect01">نقش جاری</label>
+                                <select class="form-select" id="inputGroupSelect01">
+                                    {% if request.user.base %}<option selected>پایه حقیقی / حقوقی</option>{% endif %}
+                                    {% if request.user.has_business_card %}<option>بازرگان حقیقی / حقوقی</option>{% endif %}
+                                    {% if request.user.has_internal_trader %}<option>تاجر حقیقی / حقوقی</option>{% endif %}
+                                </select>
+                            </div>
+                        </div>
                     </div>
                     <div class="d-md-flex justify-content-between">
                         <div>
