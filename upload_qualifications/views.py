@@ -2,12 +2,15 @@ from django.shortcuts import render
 from django.views.generic import CreateView, ListView
 from django.urls import reverse_lazy
 from django.contrib.auth.mixins import LoginRequiredMixin
+from django.contrib.auth import get_user_model
 
 from persiantools.jdatetime import JalaliDateTime
 
 from .models import BusinessCard
 from datetime import datetime
 from urllib.parse import urlencode
+
+User = get_user_model()
 
 
 class BusinessCardCreateView(LoginRequiredMixin, CreateView):
@@ -32,3 +35,7 @@ class BusinessCardCreateView(LoginRequiredMixin, CreateView):
 class BusinessCardListView(LoginRequiredMixin, ListView):
     model = BusinessCard
     template_name = "upload_qualifications/business_card_list.html"
+
+    def get_queryset(self):
+        q = super().get_queryset()
+        return q.filter(user=self.request.user)

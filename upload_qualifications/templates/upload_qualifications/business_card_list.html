@@ -9,7 +9,7 @@
 {% block main %}
     <div class="shadow mt-3">
         <nav class="nav nav-tabs flex-column flex-sm-row">
-            <a class="flex-sm-fill text-sm-center nav-link"
+            <a class="flex-sm-fill text-sm-center nav-link {% if not request.GET.active %}active{% endif %}"
                id="pills-home-tab"
                data-bs-toggle="pill"
                data-bs-target="#pills-home"
@@ -17,7 +17,7 @@
                role="tab"
                aria-controls="pills-home"
                aria-selected="true">سوابق و جزئیات</a>
-            <a class="flex-sm-fill text-sm-center nav-link"
+            <a class="flex-sm-fill text-sm-center nav-link {% if request.GET.active %}active{% endif %}"
                id="pills-profile-tab"
                data-bs-toggle="pill"
                data-bs-target="#pills-profile"
@@ -59,12 +59,138 @@
                aria-selected="false">استعلام تاجر داخلی</a>
         </nav>
         <div class="tab-content bg-white" id="pills-tabContent">
-            <div class="tab-pane fade show active"
+            <div class="tab-pane fade  {% if not request.GET.active %}show active{% endif %}"
                  id="pills-home"
                  role="tabpanel"
                  aria-labelledby="pills-home-tab"
-                 tabindex="0">سوابق و جزئیات</div>
-            <div class="tab-pane fade"
+                 tabindex="0">
+                <div class="p-3">
+                    <div class="row">
+                        <div class="col-12 col-sm-12 col-md-6">
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <div class="input-group mb-3">
+                                        <span class="input-group-text" id="basic-addon1">تاریخ استعلام از</span>
+                                        <input type="text"
+                                               class="form-control"
+                                               placeholder="Username"
+                                               aria-label="Username"
+                                               aria-describedby="basic-addon1">
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="input-group mb-3">
+                                        <span class="input-group-text" id="basic-addon1">تاریخ استعلام تا</span>
+                                        <input type="text"
+                                               class="form-control"
+                                               placeholder="Username"
+                                               aria-label="Username"
+                                               aria-describedby="basic-addon1">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-sm-12 col-md-6">
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <div class="input-group mb-3">
+                                        <span class="input-group-text" id="basic-addon1">تاریخ صدور از</span>
+                                        <input type="text"
+                                               class="form-control"
+                                               placeholder="Username"
+                                               aria-label="Username"
+                                               aria-describedby="basic-addon1">
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="input-group mb-3">
+                                        <span class="input-group-text" id="basic-addon1">تاریخ صدور تا</span>
+                                        <input type="text"
+                                               class="form-control"
+                                               placeholder="Username"
+                                               aria-label="Username"
+                                               aria-describedby="basic-addon1">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-sm-12 col-md-6">
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <div class="input-group mb-3">
+                                        <span class="input-group-text" id="basic-addon1">تاریخ اعتبار از</span>
+                                        <input type="text"
+                                               class="form-control"
+                                               placeholder="Username"
+                                               aria-label="Username"
+                                               aria-describedby="basic-addon1">
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="input-group mb-3">
+                                        <span class="input-group-text" id="basic-addon1">تاریخ اعتبار تا</span>
+                                        <input type="text"
+                                               class="form-control"
+                                               placeholder="Username"
+                                               aria-label="Username"
+                                               aria-describedby="basic-addon1">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-sm-12 col-md-6">
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <div class="input-group mb-3">
+                                        <span class="input-group-text" id="basic-addon1">نوع استعلام</span>
+                                        <input type="text"
+                                               class="form-control"
+                                               placeholder="Username"
+                                               aria-label="Username"
+                                               aria-describedby="basic-addon1">
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="input-group mb-3">
+                                        <span class="input-group-text" id="basic-addon1">وضعیت صلاحیت</span>
+                                        <input type="text"
+                                               class="form-control"
+                                               placeholder="Username"
+                                               aria-label="Username"
+                                               aria-describedby="basic-addon1">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <table class="table table-striped table-hover table-bordered">
+                            <thead class="text-white" style="background:rgb(2, 65, 88);">
+                                <tr>
+                                    <th>دریف</th>
+                                    <th>تاریخ و زمان استعلام</th>
+                                    <th>وضعیت استعلام</th>
+                                    <th>نتیجه استعلام</th>
+                                    <th>تاریخ اعتبار</th>
+                                    <th>تاریخ صدور</th>
+                                    <th>وضعیت صلاحیت</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div class="tab-pane fade {% if  request.GET.active %}show active{% endif %}"
                  id="pills-profile"
                  role="tabpanel"
                  aria-labelledby="pills-profile-tab"
@@ -105,8 +231,8 @@
                         <button class="btn btn-primary me-2">درخواست تغییر</button>
                         <button class="btn btn-primary me-2">بروزرسانی اطلاعات</button>
                     </div>
-                    <table class="table">
-                        <thead class="table-light">
+                    <table class="table table-striped table-hover table-bordered">
+                        <thead class="text-white" style="background:rgb(2, 65, 88);">
                             <tr>
                                 <th>دریف</th>
                                 <th>شماره درخواست</th>
