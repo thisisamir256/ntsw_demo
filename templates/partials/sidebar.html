@@ -1,11 +1,9 @@
 <aside class="flex-shrink-0 p-3 bg-white" style="width: 280px;">
     {% if request.user.has_business_card and request.user.active_role == 'bc' %}
         {% include "partials/business_sidebar.html" %}
-        ddd
     {% elif request.user.has_internal_trader and request.user.active_role == 'it' %}
         {% include "partials/internal_trader_siderbar.html" %}
     {% else %}
         {% include "partials/base_role_sidebar.html" %}
-        sss
     {% endif %}
 </aside>
