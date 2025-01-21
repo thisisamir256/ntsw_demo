@@ -12,7 +12,23 @@ class DocumentType(models.Model):
         return self.name
 
 
-class Person(models.Model):
+class supplier(models.Model):
+    user = models.ForeignKey(
+        "users.CustomUser",
+        verbose_name='کاربر مربوطه',
+        on_delete=models.CASCADE
+    )
+    status = models.BooleanField("وضعیت", default=True)
+    description = models.TextField('توضیحات')
+    identifier = models.PositiveIntegerField('شناسه فروشنده خارجی')
+    created_at = models.DateField('تاریخ ایجاد', auto_now_add=False)
+    # todo: add image upload
+
+    class Meta:
+        abstract = True
+
+
+class Person(supplier):
     SEX_CHOISES = {
         'mail': 'مرد',
         'fmail': 'زن'
@@ -60,7 +76,6 @@ class Person(models.Model):
     document_number = models.CharField('شماره مدرک شناسایی', max_length=100)
     create_date = models.DateField('تاریخ صدور')
     expire_date = models.DateField('تاریخ انقضا')
-    # todo: add document image field
 
     class Meta:
         verbose_name = 'شخص حقیقی'
@@ -70,7 +85,7 @@ class Person(models.Model):
         return self.name
 
 
-class Company(models.Model):
+class Company(supplier):
 
     name = models.CharField('نام فارسی شرکت خارجی', max_length=100)
     en_name = models.CharField('نام لاتین شرکت خارجی', max_length=100)
@@ -85,6 +100,10 @@ class Company(models.Model):
     address = models.TextField('آدرس')
     postal_code = models.PositiveSmallIntegerField('کد پستی')
     phone = models.CharField('شماره تلفن', max_length=20)
+    status = models.BooleanField("وضعیت", default=True)
+    description = models.TextField('توضیحات')
+    identifier = models.PositiveIntegerField('شناسه فروشنده خارجی')
+    created_at = models.DateField('تاریخ ایجاد', auto_now_add=False)
 
     class Meta:
         verbose_name = _("company")
@@ -92,6 +111,3 @@ class Company(models.Model):
 
     def __str__(self):
         return self.name
-
-    def get_absolute_url(self):
-        return reverse("company_detail", kwargs={"pk": self.pk})
