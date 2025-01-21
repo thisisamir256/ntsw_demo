@@ -65,7 +65,7 @@ class Person(supplier):
     maried = models.CharField('وضعیت تاهل', max_length=50)  # tod: add choises
     personal_image = models.ImageField(
         'تصویر پرسنلی',
-        upload_to='/uploads/overseas_supplier/',
+        upload_to='uploads/overseas_supplier/',
         max_length=100
     )
     document_type = models.ForeignKey(
@@ -106,8 +106,8 @@ class Company(supplier):
     created_at = models.DateField('تاریخ ایجاد', auto_now_add=False)
 
     class Meta:
-        verbose_name = _("company")
-        verbose_name_plural = _("companys")
+        verbose_name = 'شرکت'
+        verbose_name_plural = 'شرکت‌'
 
     def __str__(self):
         return self.name
