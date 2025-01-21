@@ -15,4 +15,4 @@ class OverSeasSuplierListView(View):
             'person': p_q,
             'company': c_q,
         }
-        return render(request, 'overseas_suplier/list.html', context)
+        return render(request, 'overseas_supplier/list.html', context)
