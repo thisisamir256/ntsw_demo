@@ -29,6 +29,7 @@ urlpatterns += [
     path('users/', include('users.urls')),
     path('dashboard/', include('dashboard.urls')),
     path('upload-qualification/', include('upload_qualifications.urls')),
+    path('supplier/', include('overseas_supplier.urls'))
 
 ]
 
