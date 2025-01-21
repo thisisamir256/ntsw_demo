@@ -60,3 +60,7 @@ class ProductIdentifier(models.Model):
 
     def __str__(self):
         return self.name
+
+
+# bootstrap breadcrumb
+# https:// bootsnipp.com/snippets/44am
