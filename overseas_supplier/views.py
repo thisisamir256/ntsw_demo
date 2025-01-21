@@ -7,5 +7,12 @@ User = get_user_model()
 
 
 class OverSeasSuplierListView(View):
-    def get(self):
-        p_q = Person.objects.filter()
+    def get(self, request):
+        user = request.user
+        p_q = Person.objects.filter(user=user)
+        c_q = Company.objects.filter(user=user)
+        context = {
+            'person': p_q,
+            'company': c_q,
+        }
+        return render(request, 'overseas_suplier/list.html', context)
