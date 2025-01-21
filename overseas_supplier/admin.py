@@ -12,6 +12,6 @@ class CompanyAdmin(admin.ModelAdmin):
     pass
 
 
-@admin.register(DocumentType)
-class DocumentTypeAdmin(admin.ModelAdmin):
+@admin.register(Person)
+class PersonAdmin(admin.ModelAdmin):
     pass
