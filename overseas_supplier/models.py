@@ -74,7 +74,7 @@ class Person(supplier):
         on_delete=models.CASCADE
     )
     document_number = models.CharField('شماره مدرک شناسایی', max_length=100)
-    create_date = models.DateField('تاریخ صدور')
+    issue_date = models.DateField('تاریخ صدور')
     expire_date = models.DateField('تاریخ انقضا')
 
     class Meta:
@@ -103,7 +103,6 @@ class Company(supplier):
     status = models.BooleanField("وضعیت", default=True)
     description = models.TextField('توضیحات')
     identifier = models.PositiveIntegerField('شناسه فروشنده خارجی')
-    created_at = models.DateField('تاریخ ایجاد', auto_now_add=False)
 
     class Meta:
         verbose_name = 'شرکت'
