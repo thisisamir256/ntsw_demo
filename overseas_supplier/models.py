@@ -55,13 +55,14 @@ class Person(supplier):
         blank=True,
         default=None
     )
-    country = models.CharField(
-        'کشور محل تولید', max_length=50)
+    country = models.ForeignKey(
+        "dashboard.Country", verbose_name='کشور محل تولد', on_delete=models.PROTECT)
     city = models.CharField('شهر محل تولد', max_length=50,
                             default=None,  blank=True)
     sex = models.CharField('جنسیت', choices=SEX_CHOISES, max_length=5)
     birthday = models.DateField('تاریخ تولید')
-    nationality = models.CharField('ملیت', max_length=50)
+    nationality = models.ForeignKey(
+        "dashboard.Country", verbose_name='ملیت', related_name='natinality_country', on_delete=models.PROTECT)
     maried = models.CharField('وضعیت تاهل', max_length=50)  # tod: add choises
     personal_image = models.ImageField(
         'تصویر پرسنلی',
