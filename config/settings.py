@@ -51,7 +51,7 @@ INSTALLED_APPS += [
     'upload_qualifications.apps.UploadQualificationsConfig',
     'dashboard.apps.DashboardConfig',
     # 'product_identifier.apps.ProductIdentifierConfig',
-    'overseas_supplier.apps.OverseasSupplier',
+    'overseas_supplier.apps.OverseasSupplierConfig',
 ]
 
 
