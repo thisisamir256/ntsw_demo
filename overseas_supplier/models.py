@@ -1,4 +1,8 @@
 from django.db import models
+from extensions.utils import generate_random_number
+from functools import partial
+
+rand = partial(generate_random_number, 13)
 
 
 class DocumentType(models.Model):
@@ -20,8 +24,9 @@ class supplier(models.Model):
     )
     status = models.BooleanField("وضعیت", default=True)
     description = models.TextField('توضیحات')
-    identifier = models.PositiveIntegerField('شناسه فروشنده خارجی')
-    created_at = models.DateField('تاریخ ایجاد', auto_now_add=False)
+    identifier = models.PositiveIntegerField(
+        'شناسه فروشنده خارجی', default=rand)
+    created_at = models.DateField('تاریخ ایجاد', auto_now_add=True)
     # todo: add image upload
 
     class Meta:
@@ -86,7 +91,7 @@ class Person(supplier):
         verbose_name_plural = 'شخص حقیقی'
 
     def __str__(self):
-        return self.name
+        return self.first_name
 
 
 class Company(supplier):

@@ -1,5 +1,5 @@
 {% load widget_tweaks %}
-<form class="row needs-validation"
+<form class="row"
       method="post"
       id="personal-form"
       action="{% url 'supplier:create_person' %}"
@@ -7,73 +7,73 @@
     {% csrf_token %}
     <div class="col col-md-6">
         <div class="input-group mb-3">
-            <span class="input-group-text" id="basic-addon2">{{ person_form.first_name.label }}*</span>
-            {% render_field person_form.first_name class="form-control" %}
+            <span class="input-group-text" id="basic-addon2">{{ form.first_name.label }}*</span>
+            {% render_field form.first_name class="form-control" %}
         </div>
         <div class="input-group mb-3">
-            <span class="input-group-text" id="basic-addon2">{{ person_form.last_name.label }}*</span>
-            {% render_field person_form.last_name class="form-control" %}
+            <span class="input-group-text" id="basic-addon2">{{ form.last_name.label }}*</span>
+            {% render_field form.last_name class="form-control" %}
         </div>
         <div class="input-group mb-3">
-            <span class="input-group-text" id="basic-addon2">{{ person_form.father_name.label }}*</span>
-            {% render_field person_form.father_name class="form-control" %}
+            <span class="input-group-text" id="basic-addon2">{{ form.father_name.label }}*</span>
+            {% render_field form.father_name class="form-control" %}
         </div>
         <div class="input-group mb-3">
-            <span class="input-group-text" id="basic-addon2">{{ person_form.mother_name.label }}</span>
-            {% render_field person_form.mother_name class="form-control" %}
+            <span class="input-group-text" id="basic-addon2">{{ form.mother_name.label }}</span>
+            {% render_field form.mother_name class="form-control" %}
         </div>
         <div class="input-group mb-3">
-            <span class="input-group-text" id="basic-addon2">{{ person_form.grandfather_name.label }}</span>
-            {% render_field person_form.grandfather_name class="form-control" %}
+            <span class="input-group-text" id="basic-addon2">{{ form.grandfather_name.label }}</span>
+            {% render_field form.grandfather_name class="form-control" %}
         </div>
         <div class="input-group mb-3">
-            <span class="input-group-text" id="basic-addon2">{{ person_form.country.label }}*</span>
-            {% render_field person_form.country class="form-control p-0" %}
+            <span class="input-group-text" id="basic-addon2">{{ form.country.label }}*</span>
+            {% render_field form.country class="form-control p-0" %}
         </div>
         <div class="input-group mb-3">
-            <span class="input-group-text" id="basic-addon2">{{ person_form.city.label }}</span>
-            {% render_field person_form.city class="form-control" %}
+            <span class="input-group-text" id="basic-addon2">{{ form.city.label }}</span>
+            {% render_field form.city class="form-control" %}
         </div>
         <div class="d-flex justify-content-start mb-3">
             <p class="me-5">جنسیت*</p>
-            {{ person_form.gender }}
+            {{ form.gender }}
         </div>
         <div class="input-group mb-3">
-            <span class="input-group-text" id="basic-addon2">{{ person_form.birthday.label }}*</span>
-            {% render_field person_form.birthday class="form-control" %}
+            <span class="input-group-text" id="basic-addon2">{{ form.birthday.label }}*</span>
+            {% render_field form.birthday class="form-control" %}
         </div>
         <div class="input-group mb-3">
-            <span class="input-group-text" id="basic-addon2">{{ person_form.nationality.label }}*</span>
-            {% render_field person_form.nationality class="form-control p-0" %}
+            <span class="input-group-text" id="basic-addon2">{{ form.nationality.label }}*</span>
+            {% render_field form.nationality class="form-control p-0" %}
         </div>
         <div class="input-group mb-3">
-            <span class="input-group-text" id="basic-addon2">{{ person_form.maried.label }}*</span>
-            {% render_field person_form.maried class="form-control" %}
+            <span class="input-group-text" id="basic-addon2">{{ form.maried.label }}*</span>
+            {% render_field form.maried class="form-control" %}
         </div>
     </div>
     <div class="col col-md-6">
         <div class="input-group mb-3">
-            <span class="input-group-text" id="basic-addon2">{{ person_form.personal_image.label }}</span>
-            {% render_field person_form.personal_image class="form-control" %}
+            <span class="input-group-text" id="basic-addon2">{{ form.personal_image.label }}</span>
+            {% render_field form.personal_image class="form-control" %}
         </div>
         <div class="input-group mb-3">
             <span class="px-4 py-2 shadow border-start border-dark border-4">اطلاعات مدرک شناسایی</span>
         </div>
         <div class="input-group mb-3">
-            <span class="input-group-text" id="basic-addon2">{{ person_form.document_type.label }}*</span>
-            {% render_field person_form.document_type class="form-control p-0" %}
+            <span class="input-group-text" id="basic-addon2">{{ form.document_type.label }}*</span>
+            {% render_field form.document_type class="form-control p-0" %}
         </div>
         <div class="input-group mb-3">
-            <span class="input-group-text" id="basic-addon2">{{ person_form.document_number.label }}*</span>
-            {% render_field person_form.document_number class="form-control" %}
+            <span class="input-group-text" id="basic-addon2">{{ form.document_number.label }}*</span>
+            {% render_field form.document_number class="form-control" %}
         </div>
         <div class="input-group mb-3">
-            <span class="input-group-text" id="basic-addon2">{{ person_form.issue_date.label }}*</span>
-            {% render_field person_form.issue_date class="form-control" %}
+            <span class="input-group-text" id="basic-addon2">{{ form.issue_date.label }}*</span>
+            {% render_field form.issue_date class="form-control" %}
         </div>
         <div class="input-group mb-3">
-            <span class="input-group-text" id="basic-addon2">{{ person_form.expire_date.label }}*</span>
-            {% render_field person_form.expire_date class="form-control" %}
+            <span class="input-group-text" id="basic-addon2">{{ form.expire_date.label }}*</span>
+            {% render_field form.expire_date class="form-control" %}
         </div>
     </div>
     <div class="d-flex justify-content-between">

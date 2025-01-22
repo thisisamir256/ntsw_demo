@@ -1,5 +1,6 @@
 {% extends "base.html" %}
 {% load static %}
+{% load date_filters %}
 {% load widget_tweaks %}
 {% load date_filters %}
 {% block title %}
@@ -53,25 +54,31 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                    </tr>
+                    {% for p in person %}
+                        <tr>
+                            <td>{{ forloop.counter }}</td>
+                            <td>{{ p.identifier }}</td>
+                            <td>{{ p.first_name }}</td>
+                            <td>{{ p.last_name }}</td>
+                            <td>{{ p.country }}</td>
+                            <td>{{ p.created_at| to_jalali }}</td>
+                            <td>
+                                {% if p.status %}تایید شده{% endif %}
+                            </td>
+                        </tr>
+                    {% endfor %}
                 </tbody>
             </table>
         </div>
     </div>
     {% comment %} form modal {% endcomment %}
     <!-- Modal -->
-    <div class="modal fade show"
+    <div class="modal fade "
          id="exampleModal"
          tabindex="-1"
+         {% comment %}
          style="display:block"
+         {% endcomment %}
          aria-labelledby="exampleModalLabel"
          aria-hidden="true"
          role="dialog">
@@ -86,13 +93,14 @@
                 </div>
                 <div class="modal-body">
                     <div class="input-group mb-3">
-                        <label class="input-group-text" for="inputGroupSelect01">انتخاب نوع فروشنده خارجی</label>
-                        <select class="form-select" id="inputGroupSelect01">
+                        <label class="input-group-text" for="select-supplier-type">انتخاب نوع فروشنده خارجی</label>
+                        <select class="form-select" id="select-supplier-type">
                             <option value="p">شخص حقیقی</option>
                             <option value="c">شخص حقوقی</option>
                         </select>
+                        <div id="supplier-container"></div>
                     </div>
-                    {% include "overseas_supplier/partials/person_form.html" %}
+                    {% comment %} {% include "overseas_supplier/partials/person_form.html" %} {% endcomment %}
                 </div>
             </div>
         </div>
@@ -103,11 +111,29 @@
     <script src="{% static 'selectize-master/js/selectize.min.js' %}"> </script>
     <script src="{% static 'bootstrap-datepicker/js/bootstrap-datepicker.min.js' %}"></script>
     <script>
-        $('#id_country, #id_nationality, #id_document_type ').selectize({
+    $('#select-supplier-type').change(function(e){
+        console.log(e.target.value)
+        let url = '';
+        if (e.target.value == 'p') {
+            url = '{% url 'supplier:create_person' %}';
+        }
+        else {
+            url = '';
+            return
+        }
+        $.ajax({
+            url: url,
+            type:'get',
+            success: function(data) {                
+                $('#supplier-container').html(data)
+                    $('#id_country, #id_nationality, #id_document_type ').selectize({
     create: false,
     sortField: 'text'
 });
     $('#id_birthday, #id_issue_date,#id_expire_date').datepicker({
     });
+            }
+        })
+    })
     </script>
 {% endblock js %}

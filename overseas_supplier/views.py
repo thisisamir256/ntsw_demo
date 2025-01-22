@@ -27,11 +27,31 @@ class OverSeasSuplierListView(LoginRequiredMixin, View):
 class PersonCreateView(LoginRequiredMixin, SuccessMessageMixin, CreateView):
     model = Person
     fields = (
-        
+        'first_name',
+        'last_name',
+        'father_name',
+        'mother_name',
+        'grandfather_name',
+        'country',
+        'city',
+        'gender',
+        'birthday',
+        'nationality',
+        'maried',
+        'personal_image',
+        'document_type',
+        'document_number',
+        'issue_date',
+        'expire_date',
     )
-    template_name = "overseas_supplier.html"
+    template_name = "overseas_supplier/partials/person_form.html"
     success_url = reverse_lazy('supplier:supplier_list')
     success_message = 'فروشنده‌ی شما با موفقیت ایجاد شد'
+
+    def form_valid(self, form):
+        user = self.request.user
+        form.instance.user = user
+        return super().form_valid(form)
 
     def form_invalid(self, form):
         return reverse_lazy('supplier:supplier_list')
