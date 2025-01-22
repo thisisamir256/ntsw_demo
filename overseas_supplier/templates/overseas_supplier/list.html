@@ -9,6 +9,10 @@
     مدیریت فروشندگان خارجی
 {% endblock page-title %}
 {% block head %}
+    <link href="{% static 'selectize-master/css/selectize.css' %}"
+          rel="stylesheet">
+    <link href="{% static 'bootstrap-datepicker/css/bootstrap-datepicker.min.css' %}"
+          rel="stylesheet">
 {% endblock head %}
 {% block main %}
     <div class="bg-white p-3 shadow mt-3">
@@ -129,7 +133,7 @@
                             </div>
                             <div class="input-group mb-3">
                                 <span class="input-group-text" id="basic-addon2">{{ person_form.nationality.label }}*</span>
-                                {% render_field person_form.nationality class="form-control" %}
+                                {% render_field person_form.nationality class="form-control p-0" %}
                             </div>
                             <div class="input-group mb-3">
                                 <span class="input-group-text" id="basic-addon2">{{ person_form.maried.label }}*</span>
@@ -147,7 +151,7 @@
                             </div>
                             <div class="input-group mb-3">
                                 <span class="input-group-text" id="basic-addon2">{{ person_form.document_type.label }}*</span>
-                                {% render_field person_form.document_type class="form-control" %}
+                                {% render_field person_form.document_type class="form-control p-0" %}
                             </div>
                             <div class="input-group mb-3">
                                 <span class="input-group-text" id="basic-addon2">{{ person_form.document_number.label }}*</span>
@@ -180,10 +184,13 @@
 {% block js %}
     <script src="{% static 'js/jquery.min.js' %}"></script>
     <script src="{% static 'selectize-master/js/selectize.min.js' %}"> </script>
+    <script src="{% static 'bootstrap-datepicker/js/bootstrap-datepicker.min.js' %}"></script>
     <script>
-        $('#id_country').selectize({
+        $('#id_country, #id_nationality, #id_document_type ').selectize({
     create: false,
     sortField: 'text'
 });
+    $('#id_birthday, #id_issue_date,#id_expire_date').datepicker({
+    });
     </script>
 {% endblock js %}

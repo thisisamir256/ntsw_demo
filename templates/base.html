@@ -12,14 +12,12 @@
             {% block title %}
             {% endblock title %}
         </title>
-        <link href="{% static 'selectize-master/css/selectize.css' %}"
-              rel="stylesheet">
+        {% block head %}
+        {% endblock head %}
         <link rel="stylesheet"
               href="{% static 'bootstrap-5.2.3/css/bootstrap.rtl.css' %}">
         <link href="{% static 'css/sidebars.css' %}" rel="stylesheet">
         <link href="{% static 'css/dashboard-style.css' %}" rel="stylesheet">
-        {% block head %}
-        {% endblock head %}
     </head>
     <body>
         {% include "partials/header.html" %}
