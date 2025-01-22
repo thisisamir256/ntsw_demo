@@ -26,6 +26,9 @@ class OverSeasSuplierListView(LoginRequiredMixin, View):
 
 class PersonCreateView(LoginRequiredMixin, SuccessMessageMixin, CreateView):
     model = Person
+    fields = (
+        
+    )
     template_name = "overseas_supplier.html"
     success_url = reverse_lazy('supplier:supplier_list')
     success_message = 'فروشنده‌ی شما با موفقیت ایجاد شد'

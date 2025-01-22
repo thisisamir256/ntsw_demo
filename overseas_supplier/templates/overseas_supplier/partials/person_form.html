@@ -2,6 +2,7 @@
 <form class="row needs-validation"
       method="post"
       id="personal-form"
+      action="{% url 'supplier:create_person' %}"
       novalidate>
     {% csrf_token %}
     <div class="col col-md-6">
@@ -49,15 +50,14 @@
             <span class="input-group-text" id="basic-addon2">{{ person_form.maried.label }}*</span>
             {% render_field person_form.maried class="form-control" %}
         </div>
-        <div class="input-group mb-3">
-            <span class="input-group-text" id="basic-addon2">{{ person_form.document_number.label }}*</span>
-            {% render_field person_form.document_number class="form-control" %}
-        </div>
     </div>
     <div class="col col-md-6">
         <div class="input-group mb-3">
             <span class="input-group-text" id="basic-addon2">{{ person_form.personal_image.label }}</span>
             {% render_field person_form.personal_image class="form-control" %}
+        </div>
+        <div class="input-group mb-3">
+            <span class="px-4 py-2 shadow border-start border-dark border-4">اطلاعات مدرک شناسایی</span>
         </div>
         <div class="input-group mb-3">
             <span class="input-group-text" id="basic-addon2">{{ person_form.document_type.label }}*</span>
