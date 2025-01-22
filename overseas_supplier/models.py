@@ -68,7 +68,9 @@ class Person(supplier):
     personal_image = models.ImageField(
         'تصویر پرسنلی',
         upload_to='uploads/overseas_supplier/',
-        max_length=100
+        max_length=1000,
+        default=None,
+        blank=True
     )
     document_type = models.ForeignKey(
         DocumentType,
