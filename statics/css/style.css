@@ -7,10 +7,6 @@
 }
 
 #wrap {
-    background: linear-gradient(180deg,#00508f 41%, #61b3f4);
+    background: linear-gradient(180deg, #00508f 41%, #61b3f4);
     padding: 110px 0 !important;
-}
-
-.hidden-image-input {
-    display: none;
 }

@@ -4,6 +4,10 @@ from .models import Person, Company
 
 
 class PersonCreationForm(forms.ModelForm):
+    gender = forms.ChoiceField(
+        widget=forms.RadioSelect,
+        choices=Person.GENDER_CHOISES
+    )
 
     class Meta:
         model = Person
@@ -15,7 +19,7 @@ class PersonCreationForm(forms.ModelForm):
             'grandfather_name',
             'country',
             'city',
-            'sex',
+            'gender',
             'birthday',
             'nationality',
             'maried',

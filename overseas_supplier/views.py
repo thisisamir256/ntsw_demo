@@ -3,13 +3,14 @@ from django.views.generic import View, CreateView
 from django.contrib.auth import get_user_model
 from django.urls import reverse_lazy
 from django.contrib.messages.views import SuccessMessageMixin
+from django.contrib.auth.mixins import LoginRequiredMixin
 
 from .models import Person, Company
 from .forms import PersonCreationForm
 User = get_user_model()
 
 
-class OverSeasSuplierListView(View):
+class OverSeasSuplierListView(LoginRequiredMixin, View):
     def get(self, request):
         user = request.user
         p_q = Person.objects.filter(user=user)
@@ -23,7 +24,7 @@ class OverSeasSuplierListView(View):
         return render(request, 'overseas_supplier/list.html', context)
 
 
-class PersonCreateView(SuccessMessageMixin, CreateView):
+class PersonCreateView(LoginRequiredMixin, SuccessMessageMixin, CreateView):
     model = Person
     template_name = "overseas_supplier.html"
     success_url = reverse_lazy('supplier:supplier_list')

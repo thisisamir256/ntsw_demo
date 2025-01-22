@@ -8,6 +8,8 @@
 {% block page-title %}
     مدیریت فروشندگان خارجی
 {% endblock page-title %}
+{% block head %}
+{% endblock head %}
 {% block main %}
     <div class="bg-white p-3 shadow mt-3">
         <div class="d-md-flex">
@@ -88,7 +90,6 @@
                     </div>
                     <form class="row" method="post" id ="personal-form">
                         {% csrf_token %}
-                        {{ person_form.as_p }}
                         <div class="col col-md-6">
                             <div class="input-group mb-3">
                                 <span class="input-group-text" id="basic-addon2">{{ person_form.first_name.label }}*</span>
@@ -111,11 +112,56 @@
                                 {% render_field person_form.grandfather_name class="form-control" %}
                             </div>
                             <div class="input-group mb-3">
-                                <span class="input-group-text" id="basic-addon2">{{ person_form.dddddd.label }}*</span>
-                                {% render_field person_form.dddddd class="form-control" %}
+                                <span class="input-group-text" id="basic-addon2">{{ person_form.country.label }}*</span>
+                                {% render_field person_form.country class="form-control p-0" %}
+                            </div>
+                            <div class="input-group mb-3">
+                                <span class="input-group-text" id="basic-addon2">{{ person_form.city.label }}*</span>
+                                {% render_field person_form.city class="form-control" %}
+                            </div>
+                            <div class="d-flex justify-content-start mb-3">
+                                <p class="me-5">جنسیت*</p>
+                                {{ person_form.gender }}
+                            </div>
+                            <div class="input-group mb-3">
+                                <span class="input-group-text" id="basic-addon2">{{ person_form.birthday.label }}*</span>
+                                {% render_field person_form.birthday class="form-control" %}
+                            </div>
+                            <div class="input-group mb-3">
+                                <span class="input-group-text" id="basic-addon2">{{ person_form.nationality.label }}*</span>
+                                {% render_field person_form.nationality class="form-control" %}
+                            </div>
+                            <div class="input-group mb-3">
+                                <span class="input-group-text" id="basic-addon2">{{ person_form.maried.label }}*</span>
+                                {% render_field person_form.maried class="form-control" %}
+                            </div>
+                            <div class="input-group mb-3">
+                                <span class="input-group-text" id="basic-addon2">{{ person_form.document_number.label }}*</span>
+                                {% render_field person_form.document_number class="form-control" %}
                             </div>
                         </div>
-                        <div class="col col-md-6"></div>
+                        <div class="col col-md-6">
+                            <div class="input-group mb-3">
+                                <span class="input-group-text" id="basic-addon2">{{ person_form.personal_image.label }}*</span>
+                                {% render_field person_form.personal_image class="form-control" %}
+                            </div>
+                            <div class="input-group mb-3">
+                                <span class="input-group-text" id="basic-addon2">{{ person_form.document_type.label }}*</span>
+                                {% render_field person_form.document_type class="form-control" %}
+                            </div>
+                            <div class="input-group mb-3">
+                                <span class="input-group-text" id="basic-addon2">{{ person_form.document_number.label }}*</span>
+                                {% render_field person_form.document_number class="form-control" %}
+                            </div>
+                            <div class="input-group mb-3">
+                                <span class="input-group-text" id="basic-addon2">{{ person_form.issue_date.label }}*</span>
+                                {% render_field person_form.issue_date class="form-control" %}
+                            </div>
+                            <div class="input-group mb-3">
+                                <span class="input-group-text" id="basic-addon2">{{ person_form.expire_date.label }}*</span>
+                                {% render_field person_form.expire_date class="form-control" %}
+                            </div>
+                        </div>
                     </form>
                 </div>
                 <div class="modal-footer justify-content-between">
@@ -131,3 +177,13 @@
         </div>
     </div>
 {% endblock main %}
+{% block js %}
+    <script src="{% static 'js/jquery.min.js' %}"></script>
+    <script src="{% static 'selectize-master/js/selectize.min.js' %}"> </script>
+    <script>
+        $('#id_country').selectize({
+    create: false,
+    sortField: 'text'
+});
+    </script>
+{% endblock js %}

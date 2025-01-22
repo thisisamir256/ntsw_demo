@@ -2,7 +2,6 @@
 <!DOCTYPE html>
 <html lang="fa" data-bs-theme="auto" dir="rtl">
     <head>
-        <script src="../assets/js/color-modes.js"></script>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="description" content="">
@@ -13,9 +12,14 @@
             {% block title %}
             {% endblock title %}
         </title>
+        <link href="{% static 'selectize-master/css/selectize.css' %}"
+              rel="stylesheet">
         <link rel="stylesheet"
               href="{% static 'bootstrap-5.2.3/css/bootstrap.rtl.css' %}">
         <link href="{% static 'css/sidebars.css' %}" rel="stylesheet">
+        <link href="{% static 'css/dashboard-style.css' %}" rel="stylesheet">
+        {% block head %}
+        {% endblock head %}
     </head>
     <body>
         {% include "partials/header.html" %}
@@ -78,6 +82,5 @@
         <script src="{% static 'bootstrap-5.2.3/js/bootstrap.bundle.js' %}"></script>
         {% block js %}
         {% endblock js %}
-        {% comment %} <script src="sidebars.js"></script> {% endcomment %}
     </body>
 </html>

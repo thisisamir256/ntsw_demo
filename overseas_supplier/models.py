@@ -29,7 +29,7 @@ class supplier(models.Model):
 
 
 class Person(supplier):
-    SEX_CHOISES = {
+    GENDER_CHOISES = {
         'mail': 'مرد',
         'fmail': 'زن'
     }
@@ -59,11 +59,12 @@ class Person(supplier):
         "dashboard.Country", verbose_name='کشور محل تولد', on_delete=models.PROTECT)
     city = models.CharField('شهر محل تولد', max_length=50,
                             default=None,  blank=True)
-    sex = models.CharField('جنسیت', choices=SEX_CHOISES, max_length=5)
-    birthday = models.DateField('تاریخ تولید')
+    gender = models.CharField('جنسیت', choices=GENDER_CHOISES, max_length=5)
+    birthday = models.DateField('تاریخ تولد')
     nationality = models.ForeignKey(
         "dashboard.Country", verbose_name='ملیت', related_name='natinality_country', on_delete=models.PROTECT)
-    maried = models.CharField('وضعیت تاهل', max_length=50)  # tod: add choises
+    maried = models.CharField(
+        'وضعیت تاهل', max_length=50, choices=MARIED_CHOISES)  # tod: add choises
     personal_image = models.ImageField(
         'تصویر پرسنلی',
         upload_to='uploads/overseas_supplier/',

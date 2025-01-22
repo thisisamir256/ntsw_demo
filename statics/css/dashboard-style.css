@@ -1,0 +1,13 @@
+#id_gender {
+    display: flex;
+}
+
+#id_gender div {
+    margin-left: 1rem;
+}
+
+.selectize-input,
+.selectize-input.focus {
+    border: none;
+    box-shadow: none;
+}
