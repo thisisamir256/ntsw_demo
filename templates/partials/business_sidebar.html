@@ -52,4 +52,33 @@
             </ul>
         </div>
     </li>
+    <li class="border-top my-3"></li>
+    <li class="mb-1">
+        <button class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed"
+                data-bs-toggle="collapse"
+                data-bs-target="#business-collapse"
+                aria-expanded="false">عملیات تجارت خارجی</button>
+        <div class="collapse" id="business-collapse">
+            <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                <li>
+                    <a href="#"
+                       class="link-body-emphasis d-inline-flex text-decoration-none rounded">مدیریت گواهی بازرسی</a>
+                </li>
+                <li>
+                    <a href="{% url 'supplier:supplier_list' %}"
+                       class="link-body-emphasis d-inline-flex text-decoration-none rounded">مدیریت فروشندگان خارجی</a>
+                </li>
+                <li>
+                    <a href="#"
+                       class="link-body-emphasis d-inline-flex text-decoration-none rounded">مدیریت پرونده ثبت سفارش</a>
+                </li>
+                <li>
+                    <a href="#"
+                       class="link-body-emphasis d-inline-flex text-decoration-none rounded">مدیریت مجوزها</a>
+                    <a href="#"
+                       class="link-body-emphasis d-inline-flex text-decoration-none rounded">کالاهای دارای تاییدیه خدمات پس از فروش</a>
+                </li>
+            </ul>
+        </div>
+    </li>
 </ul>
