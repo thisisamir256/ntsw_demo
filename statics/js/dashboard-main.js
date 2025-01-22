@@ -8,5 +8,8 @@ Array.from(forms).forEach(form => {
             event.stopPropagation()
         }
         form.classList.add('was-validated')
+        let selectize = form.querySelectorAll('.selectize-input')
+        console.log(selectize)
+        form.selec
     }, false)
 })
