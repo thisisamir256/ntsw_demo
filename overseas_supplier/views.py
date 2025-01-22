@@ -4,6 +4,8 @@ from django.contrib.auth import get_user_model
 from django.urls import reverse_lazy
 from django.contrib.messages.views import SuccessMessageMixin
 from django.contrib.auth.mixins import LoginRequiredMixin
+from django.http import HttpResponse
+from django.template.loader import render_to_string
 
 from .models import Person, Company
 from .forms import PersonCreationForm
@@ -54,4 +56,6 @@ class PersonCreateView(LoginRequiredMixin, SuccessMessageMixin, CreateView):
         return super().form_valid(form)
 
     def form_invalid(self, form):
-        return reverse_lazy('supplier:supplier_list')
+        form_context = render_to_string(
+            'overseas_supplier/partials/person_form.html', {'form': form})
+        return HttpResponse(form_context, status=400)

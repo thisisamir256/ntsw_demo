@@ -1,3 +1,4 @@
+{% load static %}
 {% load widget_tweaks %}
 <form class="row"
       method="post"
@@ -5,6 +6,7 @@
       action="{% url 'supplier:create_person' %}"
       novalidate>
     {% csrf_token %}
+    <div class="col-12">{{ form.errors }}</div>
     <div class="col col-md-6">
         <div class="input-group mb-3">
             <span class="input-group-text" id="basic-addon2">{{ form.first_name.label }}*</span>
@@ -87,3 +89,13 @@
     </div>
 </form>
 {% comment %} todo: add validation to selectize input {% endcomment %}
+<script src="{% static 'js/jquery.min.js' %}"></script>
+<script src="{% static 'selectize-master/js/selectize.min.js' %}"> </script>
+<script src="{% static 'bootstrap-datepicker/js/bootstrap-datepicker.min.js' %}"></script>
+<script>
+$('#id_country, #id_nationality, #id_document_type ').selectize({
+create: false,
+sortField: 'text'
+});
+$('#id_birthday, #id_issue_date,#id_expire_date').datepicker({});
+</script>

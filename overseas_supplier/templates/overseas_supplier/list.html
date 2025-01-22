@@ -98,8 +98,8 @@
                             <option value="p">شخص حقیقی</option>
                             <option value="c">شخص حقوقی</option>
                         </select>
-                        <div id="supplier-container"></div>
                     </div>
+                    <div id="supplier-container"></div>
                     {% comment %} {% include "overseas_supplier/partials/person_form.html" %} {% endcomment %}
                 </div>
             </div>
@@ -125,15 +125,37 @@
             url: url,
             type:'get',
             success: function(data) {                
-                $('#supplier-container').html(data)
-                    $('#id_country, #id_nationality, #id_document_type ').selectize({
-    create: false,
-    sortField: 'text'
-});
-    $('#id_birthday, #id_issue_date,#id_expire_date').datepicker({
-    });
+                $('#supplier-container').html(data)                
             }
         })
     })
+
+
+$(document).on('submit', '#personal-form', function(event) {
+    event.preventDefault(); // جلوگیری از رفتار پیش‌فرض فرم
+
+    let form = $(this); // انتخاب فرم
+    let url = form.attr('action'); // آدرس اکشن
+    let formData = new FormData(this); // جمع‌آوری داده‌های فرم
+
+    $.ajax({
+        url: url,
+        type: 'POST', // نوع درخواست
+        data: formData,
+        processData: false, // جلوگیری از پردازش داده‌ها (برای FormData)
+        contentType: false, // جلوگیری از تنظیم نوع محتوا به صورت خودکار
+        success: function(response) {
+            // جایگزین کردن محتوای فرم با پاسخ دریافتی
+            $('#supplier-container').html(response);
+            alert('عملیات موفق بود.');
+        },
+        error: function(xhr) {
+            // نمایش فرم با پیام‌های خطا
+            $('supplier-container').html(xhr.responseText);
+            alert('خطایی رخ داده است. لطفاً دوباره تلاش کنید.');
+        }
+    });
+});
+
     </script>
 {% endblock js %}
