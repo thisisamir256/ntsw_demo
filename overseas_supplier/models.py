@@ -131,7 +131,7 @@ class Company(supplier):
 
     name = models.CharField('نام فارسی شرکت خارجی', max_length=100)
     en_name = models.CharField('نام لاتین شرکت خارجی', max_length=100)
-    register_number = models.PositiveSmallIntegerField('شماره ثبت شرکت')
+    register_number = models.PositiveSmallIntegerField('شماره ثبت')
     company_type = models.ForeignKey(
         CompanyType, verbose_name='نوع شرکت', on_delete=models.PROTECT)
     registered_country = models.ForeignKey(
@@ -140,7 +140,7 @@ class Company(supplier):
     registered_from = models.ForeignKey(
         "dashboard.country", verbose_name='تابعیت ثبتی شرکت', related_name='registered_from', on_delete=models.PROTECT)
     owner_type = models.ForeignKey(
-        CompanyOwnerType, verbose_name='نوع شرکت', on_delete=models.PROTECT, default=None, blank=True)
+        CompanyOwnerType, verbose_name='نوع مالکیت', on_delete=models.PROTECT, default=None, blank=True)
     subject = models.ForeignKey(
         CompanySubject, verbose_name='موضوع فعالیت شرکت', on_delete=models.PROTECT)
     country = models.CharField('کشور', max_length=50)

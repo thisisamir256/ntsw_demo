@@ -38,11 +38,11 @@
             {% render_field form.register_number class="form-control" %}
         </div>
         <div class="input-group mb-3">
-            <span class="input-group-text" id="basic-addon2">{{ form.company_type.label }}</span>
+            <span class="input-group-text" id="basic-addon2">{{ form.company_type.label }}*</span>
             {% render_field form.company_type class="form-control" %}
         </div>
         <div class="input-group mb-3">
-            <span class="input-group-text" id="basic-addon2">{{ form.registered_country.label }}</span>
+            <span class="input-group-text" id="basic-addon2">{{ form.registered_country.label }}*</span>
             {% render_field form.registered_country class="form-control" %}
         </div>
         <div class="input-group mb-3">
@@ -64,16 +64,16 @@
             {% render_field form.subject class="form-control p-0" %}
         </div>
         <div class="input-group mb-3">
-            <span class="input-group-text" id="basic-addon2">{{ form.address.label }}*</span>
-            {% render_field form.address|attr:"rows:3" class="form-control p-0" %}
-        </div>
-        <div class="input-group mb-3">
             <span class="input-group-text" id="basic-addon2">{{ form.country.label }}*</span>
             {% render_field form.country class="form-control p-0" %}
         </div>
         <div class="input-group mb-3">
             <span class="input-group-text" id="basic-addon2">{{ form.city.label }}*</span>
             {% render_field form.city class="form-control p-0" %}
+        </div>
+        <div class="input-group mb-3">
+            <span class="input-group-text" id="basic-addon2">{{ form.address.label }}*</span>
+            {% render_field form.address|attr:"rows:3" class="form-control p-0" %}
         </div>
         <div class="input-group mb-3">
             <span class="input-group-text" id="basic-addon2">{{ form.postal_code.label }}*</span>
@@ -100,5 +100,5 @@ $('#id_company_type, #id_registered_country, #id_registered_from, #id_owner_type
 create: false,
 sortField: 'text'
 });
-$('#id_birthday, #id_issue_date,#id_expire_date').datepicker({});
+$('#id_registered_date, ').datepicker({});
 </script>
