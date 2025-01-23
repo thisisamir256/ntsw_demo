@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Person, Company, DocumentType
+from .models import Person, Company, DocumentType, CompanyOwnerType, CompanyType, CompanySubject
 
 
 @admin.register(DocumentType)
@@ -14,4 +14,19 @@ class CompanyAdmin(admin.ModelAdmin):
 
 @admin.register(Person)
 class PersonAdmin(admin.ModelAdmin):
+    pass
+
+
+@admin.register(CompanyOwnerType)
+class CompanyOwnerTypeAdmin(admin.ModelAdmin):
+    pass
+
+
+@admin.register(CompanyType)
+class CompanyTypeAdmin(admin.ModelAdmin):
+    pass
+
+
+@admin.register(CompanySubject)
+class CompanySubjectAdmin(admin.ModelAdmin):
     pass
