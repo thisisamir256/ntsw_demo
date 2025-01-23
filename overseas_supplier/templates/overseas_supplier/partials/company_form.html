@@ -3,7 +3,7 @@
 <form class="row"
       method="post"
       id="personal-form"
-      action="{% url 'supplier:create_person' %}"
+      action="{% url 'supplier:create_company' %}"
       novalidate>
     {% csrf_token %}
     <div class="col-12">
@@ -96,9 +96,9 @@
 </form>
 {% comment %} todo: add validation to selectize input {% endcomment %}
 <script>
-$('#id_company_type, #id_registered_country, #id_registered_from, #id_owner_type, #id_subject').selectize({
+$('#id_company_type, #id_registered_country, #id_registered_from, #id_owner_type, #id_subject,#id_country').selectize({
 create: false,
 sortField: 'text'
 });
-$('#id_registered_date, ').datepicker({});
+$('#id_registered_date').datepicker({});
 </script>

@@ -143,7 +143,8 @@ class Company(supplier):
         CompanyOwnerType, verbose_name='نوع مالکیت', on_delete=models.PROTECT, default=None, blank=True)
     subject = models.ForeignKey(
         CompanySubject, verbose_name='موضوع فعالیت شرکت', on_delete=models.PROTECT)
-    country = models.CharField('کشور', max_length=50)
+    country = models.ForeignKey(
+        "dashboard.country", verbose_name='کشور', related_name='country', on_delete=models.PROTECT)
     city = models.CharField('شهر', max_length=50)
     address = models.TextField('آدرس')
     postal_code = models.PositiveSmallIntegerField(
