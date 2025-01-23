@@ -141,7 +141,6 @@ class Company(supplier):
         "dashboard.country", verbose_name='تابعیت ثبتی شرکت', related_name='registered_from', on_delete=models.PROTECT)
     owner_type = models.ForeignKey(
         CompanyOwnerType, verbose_name='نوع شرکت', on_delete=models.PROTECT, default=None, blank=True)
-    # subject =#foregion key
     subject = models.ForeignKey(
         CompanySubject, verbose_name='موضوع فعالیت شرکت', on_delete=models.PROTECT)
     country = models.CharField('کشور', max_length=50)

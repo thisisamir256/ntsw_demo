@@ -32,7 +32,6 @@ class PersonCreationForm(forms.ModelForm):
 
 
 class CompanyForm(forms.ModelForm):
-
     class Meta:
         model = Company
         fields = (
@@ -46,6 +45,7 @@ class CompanyForm(forms.ModelForm):
             'owner_type',
             'country',
             'city',
+            'subject',
             'address',
             'postal_code',
             'phone',
