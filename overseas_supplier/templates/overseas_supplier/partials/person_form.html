@@ -6,7 +6,24 @@
       action="{% url 'supplier:create_person' %}"
       novalidate>
     {% csrf_token %}
-    <div class="col-12">{{ form.errors }}</div>
+    <div class="col-12">
+        {% if form.errors %}
+            <div class="alert alert-danger">
+                <ul>
+                    {% for field in form %}
+                        {% if field.errors %}
+                            <li>
+                                خطاهای :{{ field.label }}
+                                <ul>
+                                    {% for error in field.errors %}<li>{{ error }}</li>{% endfor %}
+                                </ul>
+                            </li>
+                        {% endif %}
+                    {% endfor %}
+                </ul>
+            </div>
+        {% endif %}
+    </div>
     <div class="col col-md-6">
         <div class="input-group mb-3">
             <span class="input-group-text" id="basic-addon2">{{ form.first_name.label }}*</span>

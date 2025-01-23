@@ -4,7 +4,7 @@ from django.contrib.auth import get_user_model
 from django.urls import reverse_lazy
 from django.contrib.messages.views import SuccessMessageMixin
 from django.contrib.auth.mixins import LoginRequiredMixin
-from django.http import HttpResponse
+from django.http import HttpResponse, JsonResponse
 from django.template.loader import render_to_string
 
 from .models import Person, Company
@@ -53,9 +53,16 @@ class PersonCreateView(LoginRequiredMixin, SuccessMessageMixin, CreateView):
     def form_valid(self, form):
         user = self.request.user
         form.instance.user = user
+        form.save()
+        if self.request.headers.get('x-requested-with') == 'XMLHttpRequest':
+            return JsonResponse({'success_url': self.success_url})
+
         return super().form_valid(form)
 
     def form_invalid(self, form):
-        form_context = render_to_string(
-            'overseas_supplier/partials/person_form.html', {'form': form})
-        return HttpResponse(form_context, status=400)
+        if self.request.headers.get('x-requested-with') == 'XMLHttpRequest':
+            print(form)
+            form_context = render_to_string(
+                'overseas_supplier/partials/person_form.html', {'form': form}, request=self.request)
+            return HttpResponse(form_context, status=400)
+        return super.form_invalid(form)

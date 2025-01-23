@@ -145,14 +145,14 @@ $(document).on('submit', '#personal-form', function(event) {
         processData: false, // جلوگیری از پردازش داده‌ها (برای FormData)
         contentType: false, // جلوگیری از تنظیم نوع محتوا به صورت خودکار
         success: function(response) {
-            // جایگزین کردن محتوای فرم با پاسخ دریافتی
-            $('#supplier-container').html(response);
-            alert('عملیات موفق بود.');
+            //بارگذاری دوباره صفحه و اضافه شدن یک ردیف‌های فروشنده
+            window.location.href = response.success_url; 
+
         },
         error: function(xhr) {
             // نمایش فرم با پیام‌های خطا
-            $('supplier-container').html(xhr.responseText);
-            alert('خطایی رخ داده است. لطفاً دوباره تلاش کنید.');
+            $('#supplier-container').html(xhr.responseText);
+            alert('خطایی در ثبت فروشنده رخ داده است. لطفا پس از اصلاح خطاها دوباره امتحان کنید');
         }
     });
 });

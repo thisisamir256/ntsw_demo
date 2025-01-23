@@ -72,7 +72,7 @@ class Person(supplier):
         'وضعیت تاهل', max_length=50, choices=MARIED_CHOISES)  # tod: add choises
     personal_image = models.ImageField(
         'تصویر پرسنلی',
-        upload_to='uploads/overseas_supplier/',
+        upload_to='overseas_supplier/',
         max_length=1000,
         default=None,
         blank=True
