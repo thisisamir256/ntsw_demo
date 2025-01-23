@@ -71,34 +71,37 @@
             <span class="input-group-text" id="basic-addon2">{{ form.city.label }}*</span>
             {% render_field form.city class="form-control p-0" %}
         </div>
-        <div class="input-group mb-3">
-            <span class="input-group-text" id="basic-addon2">{{ form.address.label }}*</span>
-            {% render_field form.address|attr:"rows:3" class="form-control p-0" %}
+        <div class="mb-3">
+            <p class="border-start-4 border-dark"
+            </div>
+            <div class="input-group mb-3">
+                <span class="input-group-text" id="basic-addon2">{{ form.address.label }}*</span>
+                {% render_field form.address|attr:"rows:3" class="form-control p-0" %}
+            </div>
+            <div class="input-group mb-3">
+                <span class="input-group-text" id="basic-addon2">{{ form.postal_code.label }}*</span>
+                {% render_field form.postal_code class="form-control p-0" %}
+            </div>
+            <div class="input-group mb-3">
+                <span class="input-group-text" id="basic-addon2">{{ form.phone.label }}*</span>
+                {% render_field form.phone class="form-control p-0" %}
+            </div>
         </div>
-        <div class="input-group mb-3">
-            <span class="input-group-text" id="basic-addon2">{{ form.postal_code.label }}*</span>
-            {% render_field form.postal_code class="form-control p-0" %}
+        <div class="d-flex justify-content-between">
+            <div>
+                <button type="submit" class="btn btn-primary">ثبت اطلاعات</button>
+                <button type="reset" class="btn btn-primary">خالی کردن مقادیر</button>
+            </div>
+            <div>
+                <button type="button" class="btn btn-danger" data-bs-dismiss="modal">بستن</button>
+            </div>
         </div>
-        <div class="input-group mb-3">
-            <span class="input-group-text" id="basic-addon2">{{ form.phone.label }}*</span>
-            {% render_field form.phone class="form-control p-0" %}
-        </div>
-    </div>
-    <div class="d-flex justify-content-between">
-        <div>
-            <button type="submit" class="btn btn-primary">ثبت اطلاعات</button>
-            <button type="reset" class="btn btn-primary">خالی کردن مقادیر</button>
-        </div>
-        <div>
-            <button type="button" class="btn btn-danger" data-bs-dismiss="modal">بستن</button>
-        </div>
-    </div>
-</form>
-{% comment %} todo: add validation to selectize input {% endcomment %}
-<script>
+    </form>
+    {% comment %} todo: add validation to selectize input {% endcomment %}
+    <script>
 $('#id_company_type, #id_registered_country, #id_registered_from, #id_owner_type, #id_subject,#id_country').selectize({
 create: false,
 sortField: 'text'
 });
 $('#id_registered_date').datepicker({});
-</script>
+    </script>

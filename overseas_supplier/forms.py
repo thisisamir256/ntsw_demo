@@ -53,8 +53,4 @@ class CompanyForm(forms.ModelForm):
 
     def __init__(self, *args, **kwargs):
         super(CompanyForm, self).__init__(*args, **kwargs)
-        # for field_name, field in self.fields.items():
-        #     self.fields[field_name].widget.attrs['placeholder'] = field.label
-        print(self.fields)
-        print(self.fields['company_type'].__dir__())
         self.fields['company_type'].widget.attrs['placeholder'] = 'جستجو کنید'
