@@ -52,6 +52,7 @@ INSTALLED_APPS += [
     'dashboard.apps.DashboardConfig',
     # 'product_identifier.apps.ProductIdentifierConfig',
     'overseas_supplier.apps.OverseasSupplierConfig',
+    'order_registration.apps.OrderRegistrationConfig',
     'extensions',
 ]
 
