@@ -71,7 +71,6 @@
             </table>
         </div>
     </div>
-    {% comment %} form modal {% endcomment %}
     <!-- Modal -->
     <div class="modal fade "
          id="exampleModal"
@@ -119,8 +118,7 @@
             url = '{% url 'supplier:create_person' %}';
         }
         else {
-            url = '';
-            return
+            url = '{% url 'supplier:create_person' %}';
         }
         $.ajax({
             url: url,

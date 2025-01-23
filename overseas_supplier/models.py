@@ -100,7 +100,8 @@ class Company(supplier):
     en_name = models.CharField('نام لاتین شرکت خارجی', max_length=100)
     register_number = models.PositiveSmallIntegerField('شماره ثبت شرکت')
     company_type = models.CharField('نوع شرکت', max_length=50)
-    registered_country = models.CharField('کشور محل ثبت', max_length=50)
+    registered_country = models.ForeignKey(
+        "dashboard.country", verbose_name='کشور محل ثبت', on_delete=models.PROTECT)
     registered_date = models.DateField('تاریخ ثبت')
     registered_from = models.CharField('تابعیت ثبتی شرکت', max_length=50)
     owner_type = models.CharField('نوع مالکیت', max_length=50)

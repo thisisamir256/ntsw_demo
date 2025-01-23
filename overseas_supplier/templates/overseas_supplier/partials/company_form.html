@@ -1,1 +1,137 @@
-
+{% load static %}
+{% load widget_tweaks %}
+<form class="row"
+      method="post"
+      id="personal-form"
+      action="{% url 'supplier:create_person' %}"
+      novalidate>
+    {% csrf_token %}
+    <div class="col-12">
+        {% if form.errors %}
+            <div class="alert alert-danger">
+                <ul>
+                    {% for field in form %}
+                        {% if field.errors %}
+                            <li>
+                                خطاهای :{{ field.label }}
+                                <ul>
+                                    {% for error in field.errors %}<li>{{ error }}</li>{% endfor %}
+                                </ul>
+                            </li>
+                        {% endif %}
+                    {% endfor %}
+                </ul>
+            </div>
+        {% endif %}
+    </div>
+    <div class="col col-md-6">
+        <div class="input-group mb-3">
+            <span class="input-group-text" id="basic-addon2">{{ form.name.label }}*</span>
+            {% render_field form.name class="form-control" %}
+        </div>
+        <div class="input-group mb-3">
+            <span class="input-group-text" id="basic-addon2">{{ form.en_name.label }}*</span>
+            {% render_field form.en_name class="form-control" %}
+        </div>
+        <div class="input-group mb-3">
+            <span class="input-group-text" id="basic-addon2">{{ form.register_number.label }}*</span>
+            {% render_field form.register_number class="form-control" %}
+        </div>
+        <div class="input-group mb-3">
+            <span class="input-group-text" id="basic-addon2">{{ form.company_type.label }}</span>
+            {% render_field form.company_type class="form-control" %}
+        </div>
+        <div class="input-group mb-3">
+            <span class="input-group-text" id="basic-addon2">{{ form.registered_country.label }}</span>
+            {% render_field form.registered_country class="form-control" %}
+        </div>
+        <div class="input-group mb-3">
+            <span class="input-group-text" id="basic-addon2">{{ form.country.label }}*</span>
+            {% render_field form.country class="form-control p-0" %}
+        </div>
+        <div class="input-group mb-3">
+            <span class="input-group-text" id="basic-addon2">{{ form.city.label }}</span>
+            {% render_field form.city class="form-control" %}
+        </div>
+        <div class="d-flex justify-content-start mb-3">
+            <p class="me-5">جنسیت*</p>
+            {{ form.gender }}
+        </div>
+        <div class="input-group mb-3">
+            <span class="input-group-text" id="basic-addon2">{{ form.birthday.label }}*</span>
+            {% render_field form.birthday class="form-control" %}
+        </div>
+        <div class="input-group mb-3">
+            <span class="input-group-text" id="basic-addon2">{{ form.nationality.label }}*</span>
+            {% render_field form.nationality class="form-control p-0" %}
+        </div>
+        <div class="input-group mb-3">
+            <span class="input-group-text" id="basic-addon2">{{ form.maried.label }}*</span>
+            {% render_field form.maried class="form-control" %}
+        </div>
+    </div>
+    <div class="col col-md-6">
+        <div class="d-flex  align-items-center align-items-stretch mb-3 rounded border"
+             style="background:#e9ecef">
+            <div class="align-self-center">
+                <span class="p-2">{{ form.personal_image.label }}</span>
+            </div>
+            <div>
+                <img src="{% static 'images/avatar.png' %}"
+                     class=""
+                     alt="تصویر پرسنل"
+                     id="img-preview"
+                     width="100px"
+                     height="100px">
+            </div>
+            <div class="align-self-center">
+                <label class="btn btn-primary mx-3" role="button">
+                    <span>آپلود فایل</span>
+                    {% render_field form.personal_image class="form-control d-none" id="choose-file" %}
+                </label>
+            </div>
+        </div>
+        <div class="input-group mb-3">
+            <span class="px-4 py-2 shadow-sm border-start border-dark border-4">اندازه تصویر باید کمتر از ۱۰۰ کیلو بایت باشد</span>
+        </div>
+        <div class="input-group mb-3">
+            <span class="px-4 py-2 shadow-sm border-start border-dark border-4">اطلاعات مدرک شناسایی</span>
+        </div>
+        <div class="input-group mb-3">
+            <span class="input-group-text" id="basic-addon2">{{ form.document_type.label }}*</span>
+            {% render_field form.document_type class="form-control p-0" %}
+        </div>
+        <div class="input-group mb-3">
+            <span class="input-group-text" id="basic-addon2">{{ form.document_number.label }}*</span>
+            {% render_field form.document_number class="form-control" %}
+        </div>
+        <div class="input-group mb-3">
+            <span class="input-group-text" id="basic-addon2">{{ form.issue_date.label }}*</span>
+            {% render_field form.issue_date class="form-control" %}
+        </div>
+        <div class="input-group mb-3">
+            <span class="input-group-text" id="basic-addon2">{{ form.expire_date.label }}*</span>
+            {% render_field form.expire_date class="form-control" %}
+        </div>
+    </div>
+    <div class="d-flex justify-content-between">
+        <div>
+            <button type="submit" class="btn btn-primary">ثبت اطلاعات</button>
+            <button type="reset" class="btn btn-primary">خالی کردن مقادیر</button>
+        </div>
+        <div>
+            <button type="button" class="btn btn-danger" data-bs-dismiss="modal">بستن</button>
+        </div>
+    </div>
+</form>
+{% comment %} todo: add validation to selectize input {% endcomment %}
+<script src="{% static 'js/jquery.min.js' %}"></script>
+<script src="{% static 'selectize-master/js/selectize.min.js' %}"> </script>
+<script src="{% static 'bootstrap-datepicker/js/bootstrap-datepicker.min.js' %}"></script>
+<script>
+$('#id_country, #id_nationality, #id_document_type ').selectize({
+create: false,
+sortField: 'text'
+});
+$('#id_birthday, #id_issue_date,#id_expire_date').datepicker({});
+</script>
