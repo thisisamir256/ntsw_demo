@@ -95,11 +95,8 @@
     </div>
 </form>
 {% comment %} todo: add validation to selectize input {% endcomment %}
-<script src="{% static 'js/jquery.min.js' %}"></script>
-<script src="{% static 'selectize-master/js/selectize.min.js' %}"> </script>
-<script src="{% static 'bootstrap-datepicker/js/bootstrap-datepicker.min.js' %}"></script>
 <script>
-$('#id_country, #id_nationality, #id_document_type ').selectize({
+$('#id_company_type, #id_registered_country, #id_registered_from, #id_owner_type, #id_subject').selectize({
 create: false,
 sortField: 'text'
 });
