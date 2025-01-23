@@ -8,7 +8,7 @@ from django.http import HttpResponse, JsonResponse
 from django.template.loader import render_to_string
 
 from .models import Person, Company
-from .forms import PersonCreationForm
+from .forms import PersonCreationForm, CompanyForm
 User = get_user_model()
 
 
@@ -27,25 +27,8 @@ class OverSeasSuplierListView(LoginRequiredMixin, View):
 
 
 class PersonCreateView(LoginRequiredMixin, SuccessMessageMixin, CreateView):
+    form_class = PersonCreationForm
     model = Person
-    fields = (
-        'first_name',
-        'last_name',
-        'father_name',
-        'mother_name',
-        'grandfather_name',
-        'country',
-        'city',
-        'gender',
-        'birthday',
-        'nationality',
-        'maried',
-        'personal_image',
-        'document_type',
-        'document_number',
-        'issue_date',
-        'expire_date',
-    )
     template_name = "overseas_supplier/partials/person_form.html"
     success_url = reverse_lazy('supplier:supplier_list')
     success_message = 'فروشنده‌ی شما با موفقیت ایجاد شد'
@@ -67,10 +50,10 @@ class PersonCreateView(LoginRequiredMixin, SuccessMessageMixin, CreateView):
 
 
 class CompanyCreateView(SuccessMessageMixin, LoginRequiredMixin, CreateView):
-    model = Company
     template_name = "overseas_supplier/partials/company_form.html"
     success_url = reverse_lazy('supplier:supplier_list')
     success_message = 'شناسه‌ی فروشنده‌ی خارجی شما با موفقیت صادر گردید'
+    form_class = CompanyForm
 
     def form_valid(self, form):
         user = self.request.user

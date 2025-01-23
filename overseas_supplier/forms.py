@@ -29,3 +29,24 @@ class PersonCreationForm(forms.ModelForm):
             'issue_date',
             'expire_date',
         )
+
+
+class CompanyForm(forms.ModelForm):
+
+    class Meta:
+        model = Company
+        fields = (
+            'name',
+            'en_name',
+            'register_number',
+            'company_type',
+            'registered_country',
+            'registered_date',
+            'registered_from',
+            'owner_type',
+            'country',
+            'city',
+            'address',
+            'postal_code',
+            'phone',
+        )

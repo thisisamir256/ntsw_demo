@@ -46,16 +46,16 @@
             {% render_field form.registered_country class="form-control" %}
         </div>
         <div class="input-group mb-3">
-            <span class="input-group-text" id="basic-addon2">{{ form.country.label }}*</span>
-            {% render_field form.country class="form-control p-0" %}
+            <span class="input-group-text" id="basic-addon2">{{ form.registered_date.label }}*</span>
+            {% render_field form.registered_date class="form-control p-0" %}
         </div>
         <div class="input-group mb-3">
             <span class="input-group-text" id="basic-addon2">{{ form.city.label }}</span>
             {% render_field form.city class="form-control" %}
         </div>
-        <div class="d-flex justify-content-start mb-3">
-            <p class="me-5">جنسیت*</p>
-            {{ form.gender }}
+        <div class="input-group mb-3">
+            <span class="input-group-text" id="basic-addon2">{{ form.city.label }}</span>
+            {% render_field form.city class="form-control" %}
         </div>
         <div class="input-group mb-3">
             <span class="input-group-text" id="basic-addon2">{{ form.birthday.label }}*</span>

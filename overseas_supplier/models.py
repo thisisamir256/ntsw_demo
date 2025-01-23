@@ -16,6 +16,39 @@ class DocumentType(models.Model):
         return self.name
 
 
+class CompanyOwnerType(models.Model):
+    title = models.CharField('عنوان', max_length=50)
+
+    class Meta:
+        verbose_name = 'نوع مالکیت شرکت'
+        verbose_name_plural = 'نوع مالکیت شرکت'
+
+    def __str__(self):
+        return self.title
+
+
+class CompanyType(models.Model):
+    title = models.CharField('نوع کمپانی', max_length=50)
+
+    class Meta:
+        verbose_name = 'نوع شرکت'
+        verbose_name_plural = 'نوع شرکت'
+
+    def __str__(self):
+        return self.title
+
+
+class CompanySubject(models.Model):
+    title = models.CharField('موضوع فعالیت', max_length=50)
+
+    class Meta:
+        verbose_name = 'موضوع فعالیت شرکت'
+        verbose_name_plural = 'موضوع فعالیت شرکت'
+
+    def __str__(self):
+        return self.title
+
+
 class supplier(models.Model):
     user = models.ForeignKey(
         "users.CustomUser",
@@ -99,20 +132,24 @@ class Company(supplier):
     name = models.CharField('نام فارسی شرکت خارجی', max_length=100)
     en_name = models.CharField('نام لاتین شرکت خارجی', max_length=100)
     register_number = models.PositiveSmallIntegerField('شماره ثبت شرکت')
-    company_type = models.CharField('نوع شرکت', max_length=50)
+    company_type = models.ForeignKey(
+        CompanyType, verbose_name='نوع شرکت', on_delete=models.PROTECT)
     registered_country = models.ForeignKey(
         "dashboard.country", verbose_name='کشور محل ثبت', on_delete=models.PROTECT)
     registered_date = models.DateField('تاریخ ثبت')
-    registered_from = models.CharField('تابعیت ثبتی شرکت', max_length=50)
-    owner_type = models.CharField('نوع مالکیت', max_length=50)
+    registered_from = models.ForeignKey(
+        "dashboard.country", verbose_name='تابعیت ثبتی شرکت', related_name='registered_from', on_delete=models.PROTECT)
+    owner_type = models.ForeignKey(
+        CompanyOwnerType, verbose_name='نوع شرکت', on_delete=models.PROTECT, default=None, blank=True)
+    # subject =#foregion key
+    subject = models.ForeignKey(
+        CompanySubject, verbose_name='موضوع فعالیت شرکت', on_delete=models.PROTECT)
     country = models.CharField('کشور', max_length=50)
     city = models.CharField('شهر', max_length=50)
     address = models.TextField('آدرس')
-    postal_code = models.PositiveSmallIntegerField('کد پستی')
+    postal_code = models.PositiveSmallIntegerField(
+        'کد پستی', default=None, blank=True)
     phone = models.CharField('شماره تلفن', max_length=20)
-    status = models.BooleanField("وضعیت", default=True)
-    description = models.TextField('توضیحات')
-    identifier = models.PositiveIntegerField('شناسه فروشنده خارجی')
 
     class Meta:
         verbose_name = 'شرکت'
