@@ -71,12 +71,31 @@
         </div>
     </div>
     <div class="col col-md-6">
-        <div class="input-group mb-3">
-            <span class="input-group-text" id="basic-addon2">{{ form.personal_image.label }}</span>
-            {% render_field form.personal_image class="form-control" %}
+        <div class="d-flex  align-items-center align-items-stretch mb-3 rounded border"
+             style="background:#e9ecef">
+            <div class="align-self-center">
+                <span class="p-2">{{ form.personal_image.label }}</span>
+            </div>
+            <div>
+                <img src="{% static 'images/avatar.png' %}"
+                     class=""
+                     alt="تصویر پرسنل"
+                     id="img-preview"
+                     width="100px"
+                     height="100px">
+            </div>
+            <div class="align-self-center">
+                <label class="btn btn-primary mx-3" role="button">
+                    <span>آپلود فایل</span>
+                    {% render_field form.personal_image class="form-control d-none" id="choose-file" %}
+                </label>
+            </div>
         </div>
         <div class="input-group mb-3">
-            <span class="px-4 py-2 shadow border-start border-dark border-4">اطلاعات مدرک شناسایی</span>
+            <span class="px-4 py-2 shadow-sm border-start border-dark border-4">اندازه تصویر باید کمتر از ۱۰۰ کیلو بایت باشد</span>
+        </div>
+        <div class="input-group mb-3">
+            <span class="px-4 py-2 shadow-sm border-start border-dark border-4">اطلاعات مدرک شناسایی</span>
         </div>
         <div class="input-group mb-3">
             <span class="input-group-text" id="basic-addon2">{{ form.document_type.label }}*</span>
@@ -115,4 +134,5 @@ create: false,
 sortField: 'text'
 });
 $('#id_birthday, #id_issue_date,#id_expire_date').datepicker({});
+previewUploadingImage('choose-file', 'img-preview')
 </script>
