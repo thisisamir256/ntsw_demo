@@ -56,13 +56,33 @@ class PersonCreateView(LoginRequiredMixin, SuccessMessageMixin, CreateView):
         form.save()
         if self.request.headers.get('x-requested-with') == 'XMLHttpRequest':
             return JsonResponse({'success_url': self.success_url})
-
         return super().form_valid(form)
 
     def form_invalid(self, form):
         if self.request.headers.get('x-requested-with') == 'XMLHttpRequest':
-            print(form)
             form_context = render_to_string(
                 'overseas_supplier/partials/person_form.html', {'form': form}, request=self.request)
+            return HttpResponse(form_context, status=400)
+        return super.form_invalid(form)
+
+
+class CompanyCreateView(SuccessMessageMixin, LoginRequiredMixin, CreateView):
+    model = Company
+    template_name = "overseas_supplier/partials/company_form.html"
+    success_url = reverse_lazy('supplier:supplier_list')
+    success_message = 'شناسه‌ی فروشنده‌ی خارجی شما با موفقیت صادر گردید'
+
+    def form_valid(self, form):
+        user = self.request.user
+        form.instance.user = user
+        form.save()
+        if self.request.headers.get('x-requested-with') == 'XMLHttpRequest':
+            return JsonResponse({'success_url': self.success_url})
+        return super.form_invalid(form)
+
+    def form_invalid(self, form):
+        if self.request.headers.get('x-requested-with') == 'XMLHttpRequest':
+            form_context = render_to_string(
+                'overseas_supplier/partials/company_form.html', {'form': form}, request=self.request)
             return HttpResponse(form_context, status=400)
         return super.form_invalid(form)
