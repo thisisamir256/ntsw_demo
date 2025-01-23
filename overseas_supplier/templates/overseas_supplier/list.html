@@ -54,12 +54,24 @@
                     </tr>
                 </thead>
                 <tbody>
-                    {% for p in person %}
+                    {% for p in combined %}
                         <tr>
                             <td>{{ forloop.counter }}</td>
                             <td>{{ p.identifier }}</td>
-                            <td>{{ p.first_name }}</td>
-                            <td>{{ p.last_name }}</td>
+                            <td>
+                                {% if p.first_name %}
+                                    {{ p.first_name }}
+                                {% else %}
+                                    {{ p.name }}
+                                {% endif %}
+                            </td>
+                            <td>
+                                {% if p.last_name %}
+                                    {{ p.last_name }}
+                                {% else %}
+                                    {{ p.en_name }}
+                                {% endif %}
+                            </td>
                             <td>{{ p.country }}</td>
                             <td>{{ p.created_at| to_jalali }}</td>
                             <td>

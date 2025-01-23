@@ -6,9 +6,12 @@ from django.contrib.messages.views import SuccessMessageMixin
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.http import HttpResponse, JsonResponse
 from django.template.loader import render_to_string
+from itertools import chain
+from operator import attrgetter
 
 from .models import Person, Company
 from .forms import PersonCreationForm, CompanyForm
+
 User = get_user_model()
 
 
@@ -17,13 +20,13 @@ class OverSeasSuplierListView(LoginRequiredMixin, View):
         user = request.user
         p_q = Person.objects.filter(user=user)
         c_q = Company.objects.filter(user=user)
-        person_creation_form = PersonCreationForm()
-        context = {
-            'person_form': person_creation_form,
-            'person': p_q,
-            'company': c_q,
-        }
-        return render(request, 'overseas_supplier/list.html', context)
+        combined = sorted(
+            chain(p_q, c_q),
+            key=attrgetter('created_at'),
+            reverse=True  # برای مرتب‌سازی نزولی
+        )
+
+        return render(request, 'overseas_supplier/list.html', {'combined': combined})
 
 
 class PersonCreateView(LoginRequiredMixin, SuccessMessageMixin, CreateView):
