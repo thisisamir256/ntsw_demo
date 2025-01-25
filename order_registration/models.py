@@ -312,13 +312,6 @@ class Ware(models.Model):
     class Meta:
         verbose_name = 'کالا'
         verbose_name_plural = 'کالاها'
-        constraints = [
-            models.CheckConstraint(
-                check=models.Q(technical_specifications_isnull=False) | models.Q(
-                    standard_isnull=False),
-                name='technical_specifications_or_standard_not_null'
-            )
-        ]
 
     def __str__(self):
         return self.name
