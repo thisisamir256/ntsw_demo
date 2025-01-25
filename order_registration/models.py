@@ -119,7 +119,7 @@ class Currency(models.Model):
         return self.title
 
 
-class CuotmsAndShipping(models.Model):
+class CustomsAndShipping(models.Model):
     SHIPPING_NATIONALITY = {
         'un': 'نامشخص',  # uncertain
         'ir': 'ایرانی',  # iranian
