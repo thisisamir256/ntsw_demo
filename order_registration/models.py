@@ -3,6 +3,7 @@ from django.contrib.contenttypes.models import ContentType
 from django.contrib.contenttypes.fields import GenericForeignKey
 from django.conf import settings
 from django.core.exceptions import ValidationError
+from extensions.utils import generate_random_number
 
 
 class OrderRegistrationCase(models.Model):
@@ -78,6 +79,8 @@ class MainData(models.Model):
         'a': 'کشاورزی',  # agriculture
         'e': 'ورازت نیرو',  # energy
     }
+    identifier = models.PositiveIntegerField(
+        'شماره پرونده', default=generate_random_number)
     proforma_invoice = models.CharField('شماره پیش فاکتور', max_length=50)
     beneficiary_country = models.ForeignKey(
         "dashboard.country", verbose_name='کشور ذینفع', on_delete=models.PROTECT)
