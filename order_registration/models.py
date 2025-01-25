@@ -82,6 +82,11 @@ class MainData(models.Model):
         'a': 'کشاورزی',  # agriculture
         'e': 'ورازت نیرو',  # energy
     }
+    STATUS_CHOICES = {
+        'p': 'پیش نویس',
+        'n': 'جدید',
+        'r': 'ثبت سفارش',
+    }
     identifier = models.PositiveIntegerField(
         'شماره پرونده', default=generate_random_number)
     proforma_invoice = models.CharField('شماره پیش فاکتور', max_length=50)
@@ -99,6 +104,8 @@ class MainData(models.Model):
         'نوع واحدهای تولیدی', choices=PRODUCER_TYPE, max_length=1)
     user = models.ForeignKey(settings.AUTH_USER_MODEL,
                              verbose_name='کاربر', on_delete=models.CASCADE)
+    status = models.CharField(
+        'وضعیت پرونده', max_length=1, choices=STATUS_CHOICES, default='p')
 
     class Meta:
         verbose_name = 'اطلاعات اصلی'

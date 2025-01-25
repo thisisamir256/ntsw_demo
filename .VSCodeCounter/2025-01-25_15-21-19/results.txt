@@ -1,0 +1,385 @@
+Date : 2025-01-25 15:21:19
+Directory : /home/amir/Project/ntsw_demo
+Total : 288 files,  67629 codes, 2402 comments, 8481 blanks, all 78512 lines
+
+Languages
++-------------+------------+------------+------------+------------+------------+
+| language    | files      | code       | comment    | blank      | total      |
++-------------+------------+------------+------------+------------+------------+
+| CSS         |         45 |     42,736 |        516 |      3,094 |     46,346 |
+| JavaScript  |        104 |     18,083 |      1,699 |      4,691 |     24,473 |
+| Python      |         79 |      1,859 |        107 |        568 |      2,534 |
+| Django HTML |         21 |      1,480 |          0 |         36 |      1,516 |
+| Less        |         13 |      1,343 |         33 |         39 |      1,415 |
+| SCSS        |         13 |      1,343 |         33 |         39 |      1,415 |
+| XML         |          1 |        565 |          0 |          0 |        565 |
+| JSON        |          8 |        167 |          0 |          1 |        168 |
+| Batch       |          1 |         28 |         14 |         11 |         53 |
+| Django txt  |          3 |         25 |          0 |          2 |         27 |
++-------------+------------+------------+------------+------------+------------+
+
+Directories
++---------------------------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| path                                                                                                                      | files      | code       | comment    | blank      | total      |
++---------------------------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| .                                                                                                                         |        288 |     67,629 |      2,402 |      8,481 |     78,512 |
+| . (Files)                                                                                                                 |          3 |         41 |          1 |          7 |         49 |
+| config                                                                                                                    |          5 |        159 |         17 |         72 |        248 |
+| dashboard                                                                                                                 |         14 |        104 |          3 |         42 |        149 |
+| dashboard (Files)                                                                                                         |          7 |         51 |          1 |         26 |         78 |
+| dashboard/migrations                                                                                                      |          2 |         18 |          1 |          8 |         27 |
+| dashboard/templates                                                                                                       |          3 |         19 |          0 |          3 |         22 |
+| dashboard/templates/dashboard                                                                                             |          3 |         19 |          0 |          3 |         22 |
+| dashboard/templatetags                                                                                                    |          2 |         16 |          1 |          5 |         22 |
+| extensions                                                                                                                |          2 |          5 |          0 |          4 |          9 |
+| order_registration                                                                                                        |          7 |        328 |         20 |        113 |        461 |
+| order_registration (Files)                                                                                                |          6 |        328 |         20 |        112 |        460 |
+| order_registration/migrations                                                                                             |          1 |          0 |          0 |          1 |          1 |
+| overseas_supplier                                                                                                         |         20 |        967 |         10 |        134 |      1,111 |
+| overseas_supplier (Files)                                                                                                 |          8 |        272 |          2 |         75 |        349 |
+| overseas_supplier/migrations                                                                                              |          9 |        280 |          8 |         50 |        338 |
+| overseas_supplier/templates                                                                                               |          3 |        415 |          0 |          9 |        424 |
+| overseas_supplier/templates/overseas_supplier                                                                             |          3 |        415 |          0 |          9 |        424 |
+| overseas_supplier/templates/overseas_supplier (Files)                                                                     |          1 |        169 |          0 |          7 |        176 |
+| overseas_supplier/templates/overseas_supplier/partials                                                                    |          2 |        246 |          0 |          2 |        248 |
+| product_identifier                                                                                                        |          8 |        115 |          9 |         33 |        157 |
+| product_identifier (Files)                                                                                                |          6 |         55 |          8 |         25 |         88 |
+| product_identifier/migrations                                                                                             |          2 |         60 |          1 |          8 |         69 |
+| sample                                                                                                                    |          6 |        108 |          0 |          0 |        108 |
+| sample/product_identifier                                                                                                 |          6 |        108 |          0 |          0 |        108 |
+| statics                                                                                                                   |        179 |     64,157 |      2,295 |      7,875 |     74,327 |
+| statics (Files)                                                                                                           |          1 |          7 |          1 |          1 |          9 |
+| statics/bootstrap-5.2.3                                                                                                   |         22 |     48,869 |      1,613 |      6,587 |     57,069 |
+| statics/bootstrap-5.2.3/css                                                                                               |         16 |     36,682 |        138 |      2,699 |     39,519 |
+| statics/bootstrap-5.2.3/js                                                                                                |          6 |     12,187 |      1,475 |      3,888 |     17,550 |
+| statics/bootstrap-datepicker                                                                                              |         93 |      4,213 |        139 |        189 |      4,541 |
+| statics/bootstrap-datepicker/css                                                                                          |          8 |      2,358 |         44 |          8 |      2,410 |
+| statics/bootstrap-datepicker/js                                                                                           |          2 |      1,772 |         95 |        181 |      2,048 |
+| statics/bootstrap-datepicker/locales                                                                                      |         83 |         83 |          0 |          0 |         83 |
+| statics/css                                                                                                               |          3 |         81 |          0 |         17 |         98 |
+| statics/js                                                                                                                |          2 |         32 |          2 |          5 |         39 |
+| statics/persianDatepicker                                                                                                 |         48 |      7,297 |        338 |        393 |      8,028 |
+| statics/persianDatepicker/css                                                                                             |         40 |      6,334 |        259 |        330 |      6,923 |
+| statics/persianDatepicker/css (Files)                                                                                     |          9 |      1,231 |        181 |        250 |      1,662 |
+| statics/persianDatepicker/css/fontawesome                                                                                 |         31 |      5,103 |         78 |         80 |      5,261 |
+| statics/persianDatepicker/css/fontawesome (Files)                                                                         |          2 |         59 |          0 |          1 |         60 |
+| statics/persianDatepicker/css/fontawesome/css                                                                             |          2 |      1,793 |         12 |          1 |      1,806 |
+| statics/persianDatepicker/css/fontawesome/fonts                                                                           |          1 |        565 |          0 |          0 |        565 |
+| statics/persianDatepicker/css/fontawesome/less                                                                            |         13 |      1,343 |         33 |         39 |      1,415 |
+| statics/persianDatepicker/css/fontawesome/scss                                                                            |         13 |      1,343 |         33 |         39 |      1,415 |
+| statics/persianDatepicker/js                                                                                              |          8 |        963 |         79 |         63 |      1,105 |
+| statics/select-box-search-option                                                                                          |          2 |        121 |         23 |         28 |        172 |
+| statics/select-box-search-option/css                                                                                      |          1 |          2 |          0 |          1 |          3 |
+| statics/select-box-search-option/js                                                                                       |          1 |        119 |         23 |         27 |        169 |
+| statics/selectize-master                                                                                                  |          8 |      3,537 |        179 |        655 |      4,371 |
+| statics/selectize-master/css                                                                                              |          6 |        589 |        141 |        118 |        848 |
+| statics/selectize-master/js                                                                                               |          2 |      2,948 |         38 |        537 |      3,523 |
+| templates                                                                                                                 |          7 |        348 |          0 |          7 |        355 |
+| templates (Files)                                                                                                         |          1 |         85 |          0 |          1 |         86 |
+| templates/partials                                                                                                        |          6 |        263 |          0 |          6 |        269 |
+| upload_qualifications                                                                                                     |         11 |        393 |          4 |         49 |        446 |
+| upload_qualifications (Files)                                                                                             |          7 |         75 |          2 |         34 |        111 |
+| upload_qualifications/migrations                                                                                          |          3 |         38 |          2 |         14 |         54 |
+| upload_qualifications/templates                                                                                           |          1 |        280 |          0 |          1 |        281 |
+| upload_qualifications/templates/upload_qualifications                                                                     |          1 |        280 |          0 |          1 |        281 |
+| users                                                                                                                     |         26 |        904 |         43 |        145 |      1,092 |
+| users (Files)                                                                                                             |          8 |        275 |         34 |         73 |        382 |
+| users/migrations                                                                                                          |         10 |        210 |          9 |         56 |        275 |
+| users/templates                                                                                                           |          8 |        419 |          0 |         16 |        435 |
+| users/templates/users                                                                                                     |          8 |        419 |          0 |         16 |        435 |
++---------------------------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+
+Files
++---------------------------------------------------------------------------------------------------------------------------+-------------+------------+------------+------------+------------+
+| filename                                                                                                                  | language    | code       | comment    | blank      | total      |
++---------------------------------------------------------------------------------------------------------------------------+-------------+------------+------------+------------+------------+
+| /home/amir/Project/ntsw_demo/config/__init__.py                                                                           | Python      |          0 |          0 |          1 |          1 |
+| /home/amir/Project/ntsw_demo/config/asgi.py                                                                               | Python      |         10 |          0 |          7 |         17 |
+| /home/amir/Project/ntsw_demo/config/settings.py                                                                           | Python      |         97 |         17 |         47 |        161 |
+| /home/amir/Project/ntsw_demo/config/urls.py                                                                               | Python      |         42 |          0 |         10 |         52 |
+| /home/amir/Project/ntsw_demo/config/wsgi.py                                                                               | Python      |         10 |          0 |          7 |         17 |
+| /home/amir/Project/ntsw_demo/dashboard/__init__.py                                                                        | Python      |          0 |          0 |          1 |          1 |
+| /home/amir/Project/ntsw_demo/dashboard/admin.py                                                                           | Python      |          5 |          0 |          3 |          8 |
+| /home/amir/Project/ntsw_demo/dashboard/apps.py                                                                            | Python      |          5 |          0 |          3 |          8 |
+| /home/amir/Project/ntsw_demo/dashboard/migrations/0001_initial.py                                                         | Python      |         18 |          1 |          7 |         26 |
+| /home/amir/Project/ntsw_demo/dashboard/migrations/__init__.py                                                             | Python      |          0 |          0 |          1 |          1 |
+| /home/amir/Project/ntsw_demo/dashboard/models.py                                                                          | Python      |          8 |          0 |          6 |         14 |
+| /home/amir/Project/ntsw_demo/dashboard/templates/dashboard/base_role_index.html                                           | Django HTML |          9 |          0 |          1 |         10 |
+| /home/amir/Project/ntsw_demo/dashboard/templates/dashboard/business_role_index.html                                       | Django HTML |          5 |          0 |          1 |          6 |
+| /home/amir/Project/ntsw_demo/dashboard/templates/dashboard/trader_role_index.html                                         | Django HTML |          5 |          0 |          1 |          6 |
+| /home/amir/Project/ntsw_demo/dashboard/templatetags/__int__.py                                                            | Python      |          0 |          0 |          1 |          1 |
+| /home/amir/Project/ntsw_demo/dashboard/templatetags/date_filters.py                                                       | Python      |         16 |          1 |          4 |         21 |
+| /home/amir/Project/ntsw_demo/dashboard/tests.py                                                                           | Python      |          1 |          1 |          2 |          4 |
+| /home/amir/Project/ntsw_demo/dashboard/urls.py                                                                            | Python      |          9 |          0 |          4 |         13 |
+| /home/amir/Project/ntsw_demo/dashboard/views.py                                                                           | Python      |         23 |          0 |          7 |         30 |
+| /home/amir/Project/ntsw_demo/extensions/__init__.py                                                                       | Python      |          0 |          0 |          1 |          1 |
+| /home/amir/Project/ntsw_demo/extensions/utils.py                                                                          | Python      |          5 |          0 |          3 |          8 |
+| /home/amir/Project/ntsw_demo/manage.py                                                                                    | Python      |         17 |          1 |          5 |         23 |
+| /home/amir/Project/ntsw_demo/order_registration/__init__.py                                                               | Python      |          0 |          0 |          1 |          1 |
+| /home/amir/Project/ntsw_demo/order_registration/admin.py                                                                  | Python      |         63 |          3 |         35 |        101 |
+| /home/amir/Project/ntsw_demo/order_registration/apps.py                                                                   | Python      |          5 |          0 |          3 |          8 |
+| /home/amir/Project/ntsw_demo/order_registration/migrations/__init__.py                                                    | Python      |          0 |          0 |          1 |          1 |
+| /home/amir/Project/ntsw_demo/order_registration/models.py                                                                 | Python      |        258 |         15 |         69 |        342 |
+| /home/amir/Project/ntsw_demo/order_registration/tests.py                                                                  | Python      |          1 |          1 |          2 |          4 |
+| /home/amir/Project/ntsw_demo/order_registration/views.py                                                                  | Python      |          1 |          1 |          2 |          4 |
+| /home/amir/Project/ntsw_demo/overseas_supplier/__init__.py                                                                | Python      |          0 |          0 |          1 |          1 |
+| /home/amir/Project/ntsw_demo/overseas_supplier/admin.py                                                                   | Python      |         20 |          0 |         13 |         33 |
+| /home/amir/Project/ntsw_demo/overseas_supplier/apps.py                                                                    | Python      |          5 |          0 |          3 |          8 |
+| /home/amir/Project/ntsw_demo/overseas_supplier/forms.py                                                                   | Python      |         49 |          0 |          8 |         57 |
+| /home/amir/Project/ntsw_demo/overseas_supplier/migrations/0001_initial.py                                                 | Python      |         80 |          1 |          7 |         88 |
+| /home/amir/Project/ntsw_demo/overseas_supplier/migrations/0002_rename_create_date_person_issue_date_and_more.py           | Python      |         19 |          1 |          6 |         26 |
+| /home/amir/Project/ntsw_demo/overseas_supplier/migrations/0003_rename_sex_person_gender_alter_person_maried_and_more.py   | Python      |         24 |          1 |          6 |         31 |
+| /home/amir/Project/ntsw_demo/overseas_supplier/migrations/0004_alter_person_birthday_alter_person_personal_image.py       | Python      |         17 |          1 |          6 |         24 |
+| /home/amir/Project/ntsw_demo/overseas_supplier/migrations/0005_alter_person_identifier.py                                 | Python      |         14 |          1 |          6 |         21 |
+| /home/amir/Project/ntsw_demo/overseas_supplier/migrations/0006_alter_company_created_at_alter_person_created_at.py        | Python      |         17 |          1 |          6 |         24 |
+| /home/amir/Project/ntsw_demo/overseas_supplier/migrations/0007_companyownertype_companysubject_companytype_and_more.py    | Python      |         85 |          1 |          6 |         92 |
+| /home/amir/Project/ntsw_demo/overseas_supplier/migrations/0008_alter_company_country_alter_company_owner_type_and_more.py | Python      |         24 |          1 |          6 |         31 |
+| /home/amir/Project/ntsw_demo/overseas_supplier/migrations/__init__.py                                                     | Python      |          0 |          0 |          1 |          1 |
+| /home/amir/Project/ntsw_demo/overseas_supplier/models.py                                                                  | Python      |        128 |          1 |         31 |        160 |
+| /home/amir/Project/ntsw_demo/overseas_supplier/templates/overseas_supplier/list.html                                      | Django HTML |        169 |          0 |          7 |        176 |
+| /home/amir/Project/ntsw_demo/overseas_supplier/templates/overseas_supplier/partials/company_form.html                     | Django HTML |        108 |          0 |          1 |        109 |
+| /home/amir/Project/ntsw_demo/overseas_supplier/templates/overseas_supplier/partials/person_form.html                      | Django HTML |        138 |          0 |          1 |        139 |
+| /home/amir/Project/ntsw_demo/overseas_supplier/tests.py                                                                   | Python      |          1 |          1 |          2 |          4 |
+| /home/amir/Project/ntsw_demo/overseas_supplier/urls.py                                                                    | Python      |          8 |          0 |          3 |         11 |
+| /home/amir/Project/ntsw_demo/overseas_supplier/views.py                                                                   | Python      |         61 |          0 |         14 |         75 |
+| /home/amir/Project/ntsw_demo/product_identifier/__init__.py                                                               | Python      |          0 |          0 |          1 |          1 |
+| /home/amir/Project/ntsw_demo/product_identifier/admin.py                                                                  | Python      |          1 |          1 |          2 |          4 |
+| /home/amir/Project/ntsw_demo/product_identifier/apps.py                                                                   | Python      |          5 |          0 |          3 |          8 |
+| /home/amir/Project/ntsw_demo/product_identifier/migrations/0001_initial.py                                                | Python      |         60 |          1 |          7 |         68 |
+| /home/amir/Project/ntsw_demo/product_identifier/migrations/__init__.py                                                    | Python      |          0 |          0 |          1 |          1 |
+| /home/amir/Project/ntsw_demo/product_identifier/models.py                                                                 | Python      |         47 |          5 |         15 |         67 |
+| /home/amir/Project/ntsw_demo/product_identifier/tests.py                                                                  | Python      |          1 |          1 |          2 |          4 |
+| /home/amir/Project/ntsw_demo/product_identifier/views.py                                                                  | Python      |          1 |          1 |          2 |          4 |
+| /home/amir/Project/ntsw_demo/requirments.txt                                                                              | Django txt  |         12 |          0 |          1 |         13 |
+| /home/amir/Project/ntsw_demo/requirments_dev.txt                                                                          | Django txt  |         12 |          0 |          1 |         13 |
+| /home/amir/Project/ntsw_demo/sample/product_identifier/cpc.json                                                           | JSON        |          8 |          0 |          0 |          8 |
+| /home/amir/Project/ntsw_demo/sample/product_identifier/gtin.json                                                          | JSON        |          8 |          0 |          0 |          8 |
+| /home/amir/Project/ntsw_demo/sample/product_identifier/hs.json                                                            | JSON        |          8 |          0 |          0 |          8 |
+| /home/amir/Project/ntsw_demo/sample/product_identifier/isic.json                                                          | JSON        |          8 |          0 |          0 |          8 |
+| /home/amir/Project/ntsw_demo/sample/product_identifier/mandatory_descriptive_fields.json                                  | JSON        |         38 |          0 |          0 |         38 |
+| /home/amir/Project/ntsw_demo/sample/product_identifier/optional_fields.json                                               | JSON        |         38 |          0 |          0 |         38 |
+| /home/amir/Project/ntsw_demo/statics/bootstrap-5.2.3/css/bootstrap-grid.css                                               | CSS         |      3,925 |          7 |        192 |      4,124 |
+| /home/amir/Project/ntsw_demo/statics/bootstrap-5.2.3/css/bootstrap-grid.min.css                                           | CSS         |          1 |          6 |          0 |          7 |
+| /home/amir/Project/ntsw_demo/statics/bootstrap-5.2.3/css/bootstrap-grid.rtl.css                                           | CSS         |      3,925 |          7 |        191 |      4,123 |
+| /home/amir/Project/ntsw_demo/statics/bootstrap-5.2.3/css/bootstrap-grid.rtl.min.css                                       | CSS         |          1 |          6 |          0 |          7 |
+| /home/amir/Project/ntsw_demo/statics/bootstrap-5.2.3/css/bootstrap-reboot.css                                             | CSS         |        409 |         15 |         64 |        488 |
+| /home/amir/Project/ntsw_demo/statics/bootstrap-5.2.3/css/bootstrap-reboot.min.css                                         | CSS         |          1 |          6 |          0 |          7 |
+| /home/amir/Project/ntsw_demo/statics/bootstrap-5.2.3/css/bootstrap-reboot.rtl.css                                         | CSS         |        415 |          7 |         63 |        485 |
+| /home/amir/Project/ntsw_demo/statics/bootstrap-5.2.3/css/bootstrap-reboot.rtl.min.css                                     | CSS         |          1 |          6 |          0 |          7 |
+| /home/amir/Project/ntsw_demo/statics/bootstrap-5.2.3/css/bootstrap-utilities.css                                          | CSS         |      3,898 |          9 |        359 |      4,266 |
+| /home/amir/Project/ntsw_demo/statics/bootstrap-5.2.3/css/bootstrap-utilities.min.css                                      | CSS         |          1 |          6 |          0 |          7 |
+| /home/amir/Project/ntsw_demo/statics/bootstrap-5.2.3/css/bootstrap-utilities.rtl.css                                      | CSS         |      3,894 |          7 |        356 |      4,257 |
+| /home/amir/Project/ntsw_demo/statics/bootstrap-5.2.3/css/bootstrap-utilities.rtl.min.css                                  | CSS         |          1 |          6 |          0 |          7 |
+| /home/amir/Project/ntsw_demo/statics/bootstrap-5.2.3/css/bootstrap.css                                                    | CSS         |     10,102 |         33 |        743 |     10,878 |
+| /home/amir/Project/ntsw_demo/statics/bootstrap-5.2.3/css/bootstrap.min.css                                                | CSS         |          2 |          5 |          0 |          7 |
+| /home/amir/Project/ntsw_demo/statics/bootstrap-5.2.3/css/bootstrap.rtl.css                                                | CSS         |     10,104 |          7 |        731 |     10,842 |
+| /home/amir/Project/ntsw_demo/statics/bootstrap-5.2.3/css/bootstrap.rtl.min.css                                            | CSS         |          2 |          5 |          0 |          7 |
+| /home/amir/Project/ntsw_demo/statics/bootstrap-5.2.3/js/bootstrap.bundle.js                                               | JavaScript  |      5,047 |        535 |      1,494 |      7,076 |
+| /home/amir/Project/ntsw_demo/statics/bootstrap-5.2.3/js/bootstrap.bundle.min.js                                           | JavaScript  |          1 |          6 |          0 |          7 |
+| /home/amir/Project/ntsw_demo/statics/bootstrap-5.2.3/js/bootstrap.esm.js                                                  | JavaScript  |      3,550 |        458 |      1,195 |      5,203 |
+| /home/amir/Project/ntsw_demo/statics/bootstrap-5.2.3/js/bootstrap.esm.min.js                                              | JavaScript  |          1 |          6 |          0 |          7 |
+| /home/amir/Project/ntsw_demo/statics/bootstrap-5.2.3/js/bootstrap.js                                                      | JavaScript  |      3,587 |        464 |      1,199 |      5,250 |
+| /home/amir/Project/ntsw_demo/statics/bootstrap-5.2.3/js/bootstrap.min.js                                                  | JavaScript  |          1 |          6 |          0 |          7 |
+| /home/amir/Project/ntsw_demo/statics/bootstrap-datepicker/css/bootstrap-datepicker.css                                    | CSS         |        470 |          6 |          1 |        477 |
+| /home/amir/Project/ntsw_demo/statics/bootstrap-datepicker/css/bootstrap-datepicker.min.css                                | CSS         |          1 |          5 |          1 |          7 |
+| /home/amir/Project/ntsw_demo/statics/bootstrap-datepicker/css/bootstrap-datepicker.standalone.css                         | CSS         |        503 |          6 |          1 |        510 |
+| /home/amir/Project/ntsw_demo/statics/bootstrap-datepicker/css/bootstrap-datepicker.standalone.min.css                     | CSS         |          1 |          5 |          1 |          7 |
+| /home/amir/Project/ntsw_demo/statics/bootstrap-datepicker/css/bootstrap-datepicker3.css                                   | CSS         |        676 |          6 |          1 |        683 |
+| /home/amir/Project/ntsw_demo/statics/bootstrap-datepicker/css/bootstrap-datepicker3.min.css                               | CSS         |          1 |          5 |          1 |          7 |
+| /home/amir/Project/ntsw_demo/statics/bootstrap-datepicker/css/bootstrap-datepicker3.standalone.css                        | CSS         |        705 |          6 |          1 |        712 |
+| /home/amir/Project/ntsw_demo/statics/bootstrap-datepicker/css/bootstrap-datepicker3.standalone.min.css                    | CSS         |          1 |          5 |          1 |          7 |
+| /home/amir/Project/ntsw_demo/statics/bootstrap-datepicker/js/bootstrap-datepicker.js                                      | JavaScript  |      1,770 |         90 |        180 |      2,040 |
+| /home/amir/Project/ntsw_demo/statics/bootstrap-datepicker/js/bootstrap-datepicker.min.js                                  | JavaScript  |          2 |          5 |          1 |          8 |
+| /home/amir/Project/ntsw_demo/statics/bootstrap-datepicker/locales/bootstrap-datepicker-en-CA.min.js                       | JavaScript  |          1 |          0 |          0 |          1 |
+| /home/amir/Project/ntsw_demo/statics/bootstrap-datepicker/locales/bootstrap-datepicker.ar-tn.min.js                       | JavaScript  |          1 |          0 |          0 |          1 |
+| /home/amir/Project/ntsw_demo/statics/bootstrap-datepicker/locales/bootstrap-datepicker.ar.min.js                          | JavaScript  |          1 |          0 |          0 |          1 |
+| /home/amir/Project/ntsw_demo/statics/bootstrap-datepicker/locales/bootstrap-datepicker.az.min.js                          | JavaScript  |          1 |          0 |          0 |          1 |
+| /home/amir/Project/ntsw_demo/statics/bootstrap-datepicker/locales/bootstrap-datepicker.bg.min.js                          | JavaScript  |          1 |          0 |          0 |          1 |
+| /home/amir/Project/ntsw_demo/statics/bootstrap-datepicker/locales/bootstrap-datepicker.bm.min.js                          | JavaScript  |          1 |          0 |          0 |          1 |
+| /home/amir/Project/ntsw_demo/statics/bootstrap-datepicker/locales/bootstrap-datepicker.bn.min.js                          | JavaScript  |          1 |          0 |          0 |          1 |
+| /home/amir/Project/ntsw_demo/statics/bootstrap-datepicker/locales/bootstrap-datepicker.br.min.js                          | JavaScript  |          1 |          0 |          0 |          1 |
+| /home/amir/Project/ntsw_demo/statics/bootstrap-datepicker/locales/bootstrap-datepicker.bs.min.js                          | JavaScript  |          1 |          0 |          0 |          1 |
+| /home/amir/Project/ntsw_demo/statics/bootstrap-datepicker/locales/bootstrap-datepicker.ca.min.js                          | JavaScript  |          1 |          0 |          0 |          1 |
+| /home/amir/Project/ntsw_demo/statics/bootstrap-datepicker/locales/bootstrap-datepicker.cs.min.js                          | JavaScript  |          1 |          0 |          0 |          1 |
+| /home/amir/Project/ntsw_demo/statics/bootstrap-datepicker/locales/bootstrap-datepicker.cy.min.js                          | JavaScript  |          1 |          0 |          0 |          1 |
+| /home/amir/Project/ntsw_demo/statics/bootstrap-datepicker/locales/bootstrap-datepicker.da.min.js                          | JavaScript  |          1 |          0 |          0 |          1 |
+| /home/amir/Project/ntsw_demo/statics/bootstrap-datepicker/locales/bootstrap-datepicker.de.min.js                          | JavaScript  |          1 |          0 |          0 |          1 |
+| /home/amir/Project/ntsw_demo/statics/bootstrap-datepicker/locales/bootstrap-datepicker.el.min.js                          | JavaScript  |          1 |          0 |          0 |          1 |
+| /home/amir/Project/ntsw_demo/statics/bootstrap-datepicker/locales/bootstrap-datepicker.en-AU.min.js                       | JavaScript  |          1 |          0 |          0 |          1 |
+| /home/amir/Project/ntsw_demo/statics/bootstrap-datepicker/locales/bootstrap-datepicker.en-CA.min.js                       | JavaScript  |          1 |          0 |          0 |          1 |
+| /home/amir/Project/ntsw_demo/statics/bootstrap-datepicker/locales/bootstrap-datepicker.en-GB.min.js                       | JavaScript  |          1 |          0 |          0 |          1 |
+| /home/amir/Project/ntsw_demo/statics/bootstrap-datepicker/locales/bootstrap-datepicker.en-IE.min.js                       | JavaScript  |          1 |          0 |          0 |          1 |
+| /home/amir/Project/ntsw_demo/statics/bootstrap-datepicker/locales/bootstrap-datepicker.en-NZ.min.js                       | JavaScript  |          1 |          0 |          0 |          1 |
+| /home/amir/Project/ntsw_demo/statics/bootstrap-datepicker/locales/bootstrap-datepicker.en-ZA.min.js                       | JavaScript  |          1 |          0 |          0 |          1 |
+| /home/amir/Project/ntsw_demo/statics/bootstrap-datepicker/locales/bootstrap-datepicker.eo.min.js                          | JavaScript  |          1 |          0 |          0 |          1 |
+| /home/amir/Project/ntsw_demo/statics/bootstrap-datepicker/locales/bootstrap-datepicker.es.min.js                          | JavaScript  |          1 |          0 |          0 |          1 |
+| /home/amir/Project/ntsw_demo/statics/bootstrap-datepicker/locales/bootstrap-datepicker.et.min.js                          | JavaScript  |          1 |          0 |          0 |          1 |
+| /home/amir/Project/ntsw_demo/statics/bootstrap-datepicker/locales/bootstrap-datepicker.eu.min.js                          | JavaScript  |          1 |          0 |          0 |          1 |
+| /home/amir/Project/ntsw_demo/statics/bootstrap-datepicker/locales/bootstrap-datepicker.fa.min.js                          | JavaScript  |          1 |          0 |          0 |          1 |
+| /home/amir/Project/ntsw_demo/statics/bootstrap-datepicker/locales/bootstrap-datepicker.fi.min.js                          | JavaScript  |          1 |          0 |          0 |          1 |
+| /home/amir/Project/ntsw_demo/statics/bootstrap-datepicker/locales/bootstrap-datepicker.fo.min.js                          | JavaScript  |          1 |          0 |          0 |          1 |
+| /home/amir/Project/ntsw_demo/statics/bootstrap-datepicker/locales/bootstrap-datepicker.fr-CH.min.js                       | JavaScript  |          1 |          0 |          0 |          1 |
+| /home/amir/Project/ntsw_demo/statics/bootstrap-datepicker/locales/bootstrap-datepicker.fr.min.js                          | JavaScript  |          1 |          0 |          0 |          1 |
+| /home/amir/Project/ntsw_demo/statics/bootstrap-datepicker/locales/bootstrap-datepicker.gl.min.js                          | JavaScript  |          1 |          0 |          0 |          1 |
+| /home/amir/Project/ntsw_demo/statics/bootstrap-datepicker/locales/bootstrap-datepicker.he.min.js                          | JavaScript  |          1 |          0 |          0 |          1 |
+| /home/amir/Project/ntsw_demo/statics/bootstrap-datepicker/locales/bootstrap-datepicker.hi.min.js                          | JavaScript  |          1 |          0 |          0 |          1 |
+| /home/amir/Project/ntsw_demo/statics/bootstrap-datepicker/locales/bootstrap-datepicker.hr.min.js                          | JavaScript  |          1 |          0 |          0 |          1 |
+| /home/amir/Project/ntsw_demo/statics/bootstrap-datepicker/locales/bootstrap-datepicker.hu.min.js                          | JavaScript  |          1 |          0 |          0 |          1 |
+| /home/amir/Project/ntsw_demo/statics/bootstrap-datepicker/locales/bootstrap-datepicker.hy.min.js                          | JavaScript  |          1 |          0 |          0 |          1 |
+| /home/amir/Project/ntsw_demo/statics/bootstrap-datepicker/locales/bootstrap-datepicker.id.min.js                          | JavaScript  |          1 |          0 |          0 |          1 |
+| /home/amir/Project/ntsw_demo/statics/bootstrap-datepicker/locales/bootstrap-datepicker.is.min.js                          | JavaScript  |          1 |          0 |          0 |          1 |
+| /home/amir/Project/ntsw_demo/statics/bootstrap-datepicker/locales/bootstrap-datepicker.it-CH.min.js                       | JavaScript  |          1 |          0 |          0 |          1 |
+| /home/amir/Project/ntsw_demo/statics/bootstrap-datepicker/locales/bootstrap-datepicker.it.min.js                          | JavaScript  |          1 |          0 |          0 |          1 |
+| /home/amir/Project/ntsw_demo/statics/bootstrap-datepicker/locales/bootstrap-datepicker.ja.min.js                          | JavaScript  |          1 |          0 |          0 |          1 |
+| /home/amir/Project/ntsw_demo/statics/bootstrap-datepicker/locales/bootstrap-datepicker.ka.min.js                          | JavaScript  |          1 |          0 |          0 |          1 |
+| /home/amir/Project/ntsw_demo/statics/bootstrap-datepicker/locales/bootstrap-datepicker.kh.min.js                          | JavaScript  |          1 |          0 |          0 |          1 |
+| /home/amir/Project/ntsw_demo/statics/bootstrap-datepicker/locales/bootstrap-datepicker.kk.min.js                          | JavaScript  |          1 |          0 |          0 |          1 |
+| /home/amir/Project/ntsw_demo/statics/bootstrap-datepicker/locales/bootstrap-datepicker.km.min.js                          | JavaScript  |          1 |          0 |          0 |          1 |
+| /home/amir/Project/ntsw_demo/statics/bootstrap-datepicker/locales/bootstrap-datepicker.ko.min.js                          | JavaScript  |          1 |          0 |          0 |          1 |
+| /home/amir/Project/ntsw_demo/statics/bootstrap-datepicker/locales/bootstrap-datepicker.kr.min.js                          | JavaScript  |          1 |          0 |          0 |          1 |
+| /home/amir/Project/ntsw_demo/statics/bootstrap-datepicker/locales/bootstrap-datepicker.lt.min.js                          | JavaScript  |          1 |          0 |          0 |          1 |
+| /home/amir/Project/ntsw_demo/statics/bootstrap-datepicker/locales/bootstrap-datepicker.lv.min.js                          | JavaScript  |          1 |          0 |          0 |          1 |
+| /home/amir/Project/ntsw_demo/statics/bootstrap-datepicker/locales/bootstrap-datepicker.me.min.js                          | JavaScript  |          1 |          0 |          0 |          1 |
+| /home/amir/Project/ntsw_demo/statics/bootstrap-datepicker/locales/bootstrap-datepicker.mk.min.js                          | JavaScript  |          1 |          0 |          0 |          1 |
+| /home/amir/Project/ntsw_demo/statics/bootstrap-datepicker/locales/bootstrap-datepicker.mn.min.js                          | JavaScript  |          1 |          0 |          0 |          1 |
+| /home/amir/Project/ntsw_demo/statics/bootstrap-datepicker/locales/bootstrap-datepicker.ms.min.js                          | JavaScript  |          1 |          0 |          0 |          1 |
+| /home/amir/Project/ntsw_demo/statics/bootstrap-datepicker/locales/bootstrap-datepicker.nl-BE.min.js                       | JavaScript  |          1 |          0 |          0 |          1 |
+| /home/amir/Project/ntsw_demo/statics/bootstrap-datepicker/locales/bootstrap-datepicker.nl.min.js                          | JavaScript  |          1 |          0 |          0 |          1 |
+| /home/amir/Project/ntsw_demo/statics/bootstrap-datepicker/locales/bootstrap-datepicker.no.min.js                          | JavaScript  |          1 |          0 |          0 |          1 |
+| /home/amir/Project/ntsw_demo/statics/bootstrap-datepicker/locales/bootstrap-datepicker.oc.min.js                          | JavaScript  |          1 |          0 |          0 |          1 |
+| /home/amir/Project/ntsw_demo/statics/bootstrap-datepicker/locales/bootstrap-datepicker.pl.min.js                          | JavaScript  |          1 |          0 |          0 |          1 |
+| /home/amir/Project/ntsw_demo/statics/bootstrap-datepicker/locales/bootstrap-datepicker.pt-BR.min.js                       | JavaScript  |          1 |          0 |          0 |          1 |
+| /home/amir/Project/ntsw_demo/statics/bootstrap-datepicker/locales/bootstrap-datepicker.pt.min.js                          | JavaScript  |          1 |          0 |          0 |          1 |
+| /home/amir/Project/ntsw_demo/statics/bootstrap-datepicker/locales/bootstrap-datepicker.ro.min.js                          | JavaScript  |          1 |          0 |          0 |          1 |
+| /home/amir/Project/ntsw_demo/statics/bootstrap-datepicker/locales/bootstrap-datepicker.rs-latin.min.js                    | JavaScript  |          1 |          0 |          0 |          1 |
+| /home/amir/Project/ntsw_demo/statics/bootstrap-datepicker/locales/bootstrap-datepicker.rs.min.js                          | JavaScript  |          1 |          0 |          0 |          1 |
+| /home/amir/Project/ntsw_demo/statics/bootstrap-datepicker/locales/bootstrap-datepicker.ru.min.js                          | JavaScript  |          1 |          0 |          0 |          1 |
+| /home/amir/Project/ntsw_demo/statics/bootstrap-datepicker/locales/bootstrap-datepicker.si.min.js                          | JavaScript  |          1 |          0 |          0 |          1 |
+| /home/amir/Project/ntsw_demo/statics/bootstrap-datepicker/locales/bootstrap-datepicker.sk.min.js                          | JavaScript  |          1 |          0 |          0 |          1 |
+| /home/amir/Project/ntsw_demo/statics/bootstrap-datepicker/locales/bootstrap-datepicker.sl.min.js                          | JavaScript  |          1 |          0 |          0 |          1 |
+| /home/amir/Project/ntsw_demo/statics/bootstrap-datepicker/locales/bootstrap-datepicker.sq.min.js                          | JavaScript  |          1 |          0 |          0 |          1 |
+| /home/amir/Project/ntsw_demo/statics/bootstrap-datepicker/locales/bootstrap-datepicker.sr-latin.min.js                    | JavaScript  |          1 |          0 |          0 |          1 |
+| /home/amir/Project/ntsw_demo/statics/bootstrap-datepicker/locales/bootstrap-datepicker.sr.min.js                          | JavaScript  |          1 |          0 |          0 |          1 |
+| /home/amir/Project/ntsw_demo/statics/bootstrap-datepicker/locales/bootstrap-datepicker.sv.min.js                          | JavaScript  |          1 |          0 |          0 |          1 |
+| /home/amir/Project/ntsw_demo/statics/bootstrap-datepicker/locales/bootstrap-datepicker.sw.min.js                          | JavaScript  |          1 |          0 |          0 |          1 |
+| /home/amir/Project/ntsw_demo/statics/bootstrap-datepicker/locales/bootstrap-datepicker.ta.min.js                          | JavaScript  |          1 |          0 |          0 |          1 |
+| /home/amir/Project/ntsw_demo/statics/bootstrap-datepicker/locales/bootstrap-datepicker.tg.min.js                          | JavaScript  |          1 |          0 |          0 |          1 |
+| /home/amir/Project/ntsw_demo/statics/bootstrap-datepicker/locales/bootstrap-datepicker.th.min.js                          | JavaScript  |          1 |          0 |          0 |          1 |
+| /home/amir/Project/ntsw_demo/statics/bootstrap-datepicker/locales/bootstrap-datepicker.tk.min.js                          | JavaScript  |          1 |          0 |          0 |          1 |
+| /home/amir/Project/ntsw_demo/statics/bootstrap-datepicker/locales/bootstrap-datepicker.tr.min.js                          | JavaScript  |          1 |          0 |          0 |          1 |
+| /home/amir/Project/ntsw_demo/statics/bootstrap-datepicker/locales/bootstrap-datepicker.uk.min.js                          | JavaScript  |          1 |          0 |          0 |          1 |
+| /home/amir/Project/ntsw_demo/statics/bootstrap-datepicker/locales/bootstrap-datepicker.uz-cyrl.min.js                     | JavaScript  |          1 |          0 |          0 |          1 |
+| /home/amir/Project/ntsw_demo/statics/bootstrap-datepicker/locales/bootstrap-datepicker.uz-latn.min.js                     | JavaScript  |          1 |          0 |          0 |          1 |
+| /home/amir/Project/ntsw_demo/statics/bootstrap-datepicker/locales/bootstrap-datepicker.vi.min.js                          | JavaScript  |          1 |          0 |          0 |          1 |
+| /home/amir/Project/ntsw_demo/statics/bootstrap-datepicker/locales/bootstrap-datepicker.zh-CN.min.js                       | JavaScript  |          1 |          0 |          0 |          1 |
+| /home/amir/Project/ntsw_demo/statics/bootstrap-datepicker/locales/bootstrap-datepicker.zh-TW.min.js                       | JavaScript  |          1 |          0 |          0 |          1 |
+| /home/amir/Project/ntsw_demo/statics/css/dashboard-style.css                                                              | CSS         |         12 |          0 |          2 |         14 |
+| /home/amir/Project/ntsw_demo/statics/css/sidebars.css                                                                     | CSS         |         59 |          0 |         13 |         72 |
+| /home/amir/Project/ntsw_demo/statics/css/style.css                                                                        | CSS         |         10 |          0 |          2 |         12 |
+| /home/amir/Project/ntsw_demo/statics/js/dashboard-main.js                                                                 | JavaScript  |         31 |          1 |          4 |         36 |
+| /home/amir/Project/ntsw_demo/statics/js/jquery.min.js                                                                     | JavaScript  |          1 |          1 |          1 |          3 |
+| /home/amir/Project/ntsw_demo/statics/persianDatepicker/css/fontawesome/.bower.json                                        | JSON        |         36 |          0 |          0 |         36 |
+| /home/amir/Project/ntsw_demo/statics/persianDatepicker/css/fontawesome/bower.json                                         | JSON        |         23 |          0 |          1 |         24 |
+| /home/amir/Project/ntsw_demo/statics/persianDatepicker/css/fontawesome/css/font-awesome.css                               | CSS         |      1,792 |          9 |          1 |      1,802 |
+| /home/amir/Project/ntsw_demo/statics/persianDatepicker/css/fontawesome/css/font-awesome.min.css                           | CSS         |          1 |          3 |          0 |          4 |
+| /home/amir/Project/ntsw_demo/statics/persianDatepicker/css/fontawesome/fonts/fontawesome-webfont.svg                      | XML         |        565 |          0 |          0 |        565 |
+| /home/amir/Project/ntsw_demo/statics/persianDatepicker/css/fontawesome/less/animated.less                                 | Less        |         28 |          2 |          5 |         35 |
+| /home/amir/Project/ntsw_demo/statics/persianDatepicker/css/fontawesome/less/bordered-pulled.less                          | Less        |         11 |          2 |          4 |         17 |
+| /home/amir/Project/ntsw_demo/statics/persianDatepicker/css/fontawesome/less/core.less                                     | Less        |          9 |          2 |          3 |         14 |
+| /home/amir/Project/ntsw_demo/statics/persianDatepicker/css/fontawesome/less/fixed-width.less                              | Less        |          4 |          2 |          1 |          7 |
+| /home/amir/Project/ntsw_demo/statics/persianDatepicker/css/fontawesome/less/font-awesome.less                             | Less        |         12 |          4 |          2 |         18 |
+| /home/amir/Project/ntsw_demo/statics/persianDatepicker/css/fontawesome/less/icons.less                                    | Less        |        593 |          2 |          2 |        597 |
+| /home/amir/Project/ntsw_demo/statics/persianDatepicker/css/fontawesome/less/larger.less                                   | Less        |          9 |          3 |          2 |         14 |
+| /home/amir/Project/ntsw_demo/statics/persianDatepicker/css/fontawesome/less/list.less                                     | Less        |         16 |          2 |          2 |         20 |
+| /home/amir/Project/ntsw_demo/statics/persianDatepicker/css/fontawesome/less/mixins.less                                   | Less        |         21 |          2 |          5 |         28 |
+| /home/amir/Project/ntsw_demo/statics/persianDatepicker/css/fontawesome/less/path.less                                     | Less        |         11 |          3 |          2 |         16 |
+| /home/amir/Project/ntsw_demo/statics/persianDatepicker/css/fontawesome/less/rotated-flipped.less                          | Less        |         12 |          4 |          5 |         21 |
+| /home/amir/Project/ntsw_demo/statics/persianDatepicker/css/fontawesome/less/stacked.less                                  | Less        |         17 |          2 |          2 |         21 |
+| /home/amir/Project/ntsw_demo/statics/persianDatepicker/css/fontawesome/less/variables.less                                | Less        |        600 |          3 |          4 |        607 |
+| /home/amir/Project/ntsw_demo/statics/persianDatepicker/css/fontawesome/scss/_animated.scss                                | SCSS        |         28 |          2 |          5 |         35 |
+| /home/amir/Project/ntsw_demo/statics/persianDatepicker/css/fontawesome/scss/_bordered-pulled.scss                         | SCSS        |         11 |          2 |          4 |         17 |
+| /home/amir/Project/ntsw_demo/statics/persianDatepicker/css/fontawesome/scss/_core.scss                                    | SCSS        |          9 |          2 |          3 |         14 |
+| /home/amir/Project/ntsw_demo/statics/persianDatepicker/css/fontawesome/scss/_fixed-width.scss                             | SCSS        |          4 |          2 |          1 |          7 |
+| /home/amir/Project/ntsw_demo/statics/persianDatepicker/css/fontawesome/scss/_icons.scss                                   | SCSS        |        593 |          2 |          2 |        597 |
+| /home/amir/Project/ntsw_demo/statics/persianDatepicker/css/fontawesome/scss/_larger.scss                                  | SCSS        |          9 |          3 |          2 |         14 |
+| /home/amir/Project/ntsw_demo/statics/persianDatepicker/css/fontawesome/scss/_list.scss                                    | SCSS        |         16 |          2 |          2 |         20 |
+| /home/amir/Project/ntsw_demo/statics/persianDatepicker/css/fontawesome/scss/_mixins.scss                                  | SCSS        |         21 |          2 |          5 |         28 |
+| /home/amir/Project/ntsw_demo/statics/persianDatepicker/css/fontawesome/scss/_path.scss                                    | SCSS        |         11 |          3 |          2 |         16 |
+| /home/amir/Project/ntsw_demo/statics/persianDatepicker/css/fontawesome/scss/_rotated-flipped.scss                         | SCSS        |         12 |          4 |          5 |         21 |
+| /home/amir/Project/ntsw_demo/statics/persianDatepicker/css/fontawesome/scss/_stacked.scss                                 | SCSS        |         17 |          2 |          2 |         21 |
+| /home/amir/Project/ntsw_demo/statics/persianDatepicker/css/fontawesome/scss/_variables.scss                               | SCSS        |        600 |          3 |          4 |        607 |
+| /home/amir/Project/ntsw_demo/statics/persianDatepicker/css/fontawesome/scss/font-awesome.scss                             | SCSS        |         12 |          4 |          2 |         18 |
+| /home/amir/Project/ntsw_demo/statics/persianDatepicker/css/normalize.css                                                  | CSS         |        180 |        162 |         86 |        428 |
+| /home/amir/Project/ntsw_demo/statics/persianDatepicker/css/persianDatepicker-dark.css                                     | CSS         |        175 |          1 |         25 |        201 |
+| /home/amir/Project/ntsw_demo/statics/persianDatepicker/css/persianDatepicker-default.css                                  | CSS         |        174 |          1 |         23 |        198 |
+| /home/amir/Project/ntsw_demo/statics/persianDatepicker/css/persianDatepicker-latoja.css                                   | CSS         |        191 |          1 |         25 |        217 |
+| /home/amir/Project/ntsw_demo/statics/persianDatepicker/css/persianDatepicker-lightorang.css                               | CSS         |        177 |          1 |         24 |        202 |
+| /home/amir/Project/ntsw_demo/statics/persianDatepicker/css/persianDatepicker-melon.css                                    | CSS         |        174 |          1 |         24 |        199 |
+| /home/amir/Project/ntsw_demo/statics/persianDatepicker/css/prism.css                                                      | CSS         |         94 |          8 |         20 |        122 |
+| /home/amir/Project/ntsw_demo/statics/persianDatepicker/css/style.css                                                      | CSS         |         65 |          6 |         23 |         94 |
+| /home/amir/Project/ntsw_demo/statics/persianDatepicker/css/vertical-responsive-menu.min.css                               | CSS         |          1 |          0 |          0 |          1 |
+| /home/amir/Project/ntsw_demo/statics/persianDatepicker/js/ajaxmin.bat                                                     | Batch       |         28 |         14 |         11 |         53 |
+| /home/amir/Project/ntsw_demo/statics/persianDatepicker/js/angular.min.js                                                  | JavaScript  |        244 |          6 |          1 |        251 |
+| /home/amir/Project/ntsw_demo/statics/persianDatepicker/js/jquery-1.10.1.min.js                                            | JavaScript  |          3 |          3 |          1 |          7 |
+| /home/amir/Project/ntsw_demo/statics/persianDatepicker/js/persianDatepicker.js                                            | JavaScript  |        680 |         40 |         48 |        768 |
+| /home/amir/Project/ntsw_demo/statics/persianDatepicker/js/persianDatepicker.min.js                                        | JavaScript  |          1 |         15 |          1 |         17 |
+| /home/amir/Project/ntsw_demo/statics/persianDatepicker/js/prism.js                                                        | JavaScript  |          5 |          1 |          1 |          7 |
+| /home/amir/Project/ntsw_demo/statics/persianDatepicker/js/prism.min.js                                                    | JavaScript  |          1 |          0 |          0 |          1 |
+| /home/amir/Project/ntsw_demo/statics/persianDatepicker/js/vertical-responsive-menu.min.js                                 | JavaScript  |          1 |          0 |          0 |          1 |
+| /home/amir/Project/ntsw_demo/statics/select-box-search-option/css/common.css                                              | CSS         |          2 |          0 |          1 |          3 |
+| /home/amir/Project/ntsw_demo/statics/select-box-search-option/js/jquery-searchbox.js                                      | JavaScript  |        119 |         23 |         27 |        169 |
+| /home/amir/Project/ntsw_demo/statics/selectize-master/css/selectize.bootstrap2.css                                        | CSS         |          1 |         19 |          0 |         20 |
+| /home/amir/Project/ntsw_demo/statics/selectize-master/css/selectize.bootstrap3.css                                        | CSS         |          1 |         19 |          0 |         20 |
+| /home/amir/Project/ntsw_demo/statics/selectize-master/css/selectize.bootstrap4.css                                        | CSS         |          1 |         19 |          0 |         20 |
+| /home/amir/Project/ntsw_demo/statics/selectize-master/css/selectize.bootstrap5.css                                        | CSS         |        584 |         46 |        118 |        748 |
+| /home/amir/Project/ntsw_demo/statics/selectize-master/css/selectize.css                                                   | CSS         |          1 |         19 |          0 |         20 |
+| /home/amir/Project/ntsw_demo/statics/selectize-master/css/selectize.default.css                                           | CSS         |          1 |         19 |          0 |         20 |
+| /home/amir/Project/ntsw_demo/statics/selectize-master/js/selectize.js                                                     | JavaScript  |      2,935 |         19 |        536 |      3,490 |
+| /home/amir/Project/ntsw_demo/statics/selectize-master/js/selectize.min.js                                                 | JavaScript  |         13 |         19 |          1 |         33 |
+| /home/amir/Project/ntsw_demo/statics/sidebars.js                                                                          | JavaScript  |          7 |          1 |          1 |          9 |
+| /home/amir/Project/ntsw_demo/templates/base.html                                                                          | Django HTML |         85 |          0 |          1 |         86 |
+| /home/amir/Project/ntsw_demo/templates/partials/base_role_sidebar.html                                                    | Django HTML |         97 |          0 |          1 |         98 |
+| /home/amir/Project/ntsw_demo/templates/partials/business_sidebar.html                                                     | Django HTML |         84 |          0 |          1 |         85 |
+| /home/amir/Project/ntsw_demo/templates/partials/header.html                                                               | Django HTML |         56 |          0 |          1 |         57 |
+| /home/amir/Project/ntsw_demo/templates/partials/internal_trader_sidebar.html                                              | Django HTML |          4 |          0 |          1 |          5 |
+| /home/amir/Project/ntsw_demo/templates/partials/page_header.html                                                          | Django HTML |         13 |          0 |          1 |         14 |
+| /home/amir/Project/ntsw_demo/templates/partials/sidebar.html                                                              | Django HTML |          9 |          0 |          1 |         10 |
+| /home/amir/Project/ntsw_demo/upload_qualifications/__init__.py                                                            | Python      |          0 |          0 |          1 |          1 |
+| /home/amir/Project/ntsw_demo/upload_qualifications/admin.py                                                               | Python      |          1 |          1 |          2 |          4 |
+| /home/amir/Project/ntsw_demo/upload_qualifications/apps.py                                                                | Python      |          4 |          0 |          3 |          7 |
+| /home/amir/Project/ntsw_demo/upload_qualifications/migrations/0001_initial.py                                             | Python      |         26 |          1 |          7 |         34 |
+| /home/amir/Project/ntsw_demo/upload_qualifications/migrations/0002_alter_businesscard_created_at.py                       | Python      |         12 |          1 |          6 |         19 |
+| /home/amir/Project/ntsw_demo/upload_qualifications/migrations/__init__.py                                                 | Python      |          0 |          0 |          1 |          1 |
+| /home/amir/Project/ntsw_demo/upload_qualifications/models.py                                                              | Python      |         23 |          0 |          7 |         30 |
+| /home/amir/Project/ntsw_demo/upload_qualifications/templates/upload_qualifications/business_card_list.html                | Django HTML |        280 |          0 |          1 |        281 |
+| /home/amir/Project/ntsw_demo/upload_qualifications/tests.py                                                               | Python      |          1 |          1 |          2 |          4 |
+| /home/amir/Project/ntsw_demo/upload_qualifications/urls.py                                                                | Python      |         10 |          0 |          6 |         16 |
+| /home/amir/Project/ntsw_demo/upload_qualifications/views.py                                                               | Python      |         36 |          0 |         13 |         49 |
+| /home/amir/Project/ntsw_demo/users/__init__.py                                                                            | Python      |          0 |          0 |          1 |          1 |
+| /home/amir/Project/ntsw_demo/users/admin.py                                                                               | Python      |         22 |          0 |          5 |         27 |
+| /home/amir/Project/ntsw_demo/users/apps.py                                                                                | Python      |          4 |          0 |          3 |          7 |
+| /home/amir/Project/ntsw_demo/users/forms.py                                                                               | Python      |         49 |          0 |         11 |         60 |
+| /home/amir/Project/ntsw_demo/users/migrations/0001_initial.py                                                             | Python      |         45 |          1 |          7 |         53 |
+| /home/amir/Project/ntsw_demo/users/migrations/0002_customuser_uuid_verificationcode.py                                    | Python      |         31 |          1 |          6 |         38 |
+| /home/amir/Project/ntsw_demo/users/migrations/0003_customuser_mobile_verified.py                                          | Python      |         12 |          1 |          6 |         19 |
+| /home/amir/Project/ntsw_demo/users/migrations/0004_remove_customuser_mobile_verified.py                                   | Python      |         11 |          1 |          6 |         18 |
+| /home/amir/Project/ntsw_demo/users/migrations/0005_role_userrole.py                                                       | Python      |         26 |          1 |          6 |         33 |
+| /home/amir/Project/ntsw_demo/users/migrations/0006_alter_role_options_alter_userrole_options.py                           | Python      |         15 |          1 |          6 |         22 |
+| /home/amir/Project/ntsw_demo/users/migrations/0007_remove_userrole_role_remove_userrole_user_and_more.py                  | Python      |         36 |          1 |          6 |         43 |
+| /home/amir/Project/ntsw_demo/users/migrations/0008_alter_customuser_base_and_more.py                                      | Python      |         22 |          1 |          6 |         29 |
+| /home/amir/Project/ntsw_demo/users/migrations/0009_customuser_active_role.py                                              | Python      |         12 |          1 |          6 |         19 |
+| /home/amir/Project/ntsw_demo/users/migrations/__init__.py                                                                 | Python      |          0 |          0 |          1 |          1 |
+| /home/amir/Project/ntsw_demo/users/models.py                                                                              | Python      |         77 |          0 |         12 |         89 |
+| /home/amir/Project/ntsw_demo/users/templates/users/base.html                                                              | Django HTML |         58 |          0 |          1 |         59 |
+| /home/amir/Project/ntsw_demo/users/templates/users/login.html                                                             | Django HTML |         85 |          0 |          1 |         86 |
+| /home/amir/Project/ntsw_demo/users/templates/users/register.html                                                          | Django HTML |        133 |          0 |          7 |        140 |
+| /home/amir/Project/ntsw_demo/users/templates/users/reset_password.html                                                    | Django HTML |         34 |          0 |          1 |         35 |
+| /home/amir/Project/ntsw_demo/users/templates/users/select_verification_mod.html                                           | Django HTML |         17 |          0 |          1 |         18 |
+| /home/amir/Project/ntsw_demo/users/templates/users/send_reset_code.html                                                   | Django HTML |         27 |          0 |          1 |         28 |
+| /home/amir/Project/ntsw_demo/users/templates/users/sms.txt                                                                | Django txt  |          1 |          0 |          0 |          1 |
+| /home/amir/Project/ntsw_demo/users/templates/users/verify_phone.html                                                      | Django HTML |         64 |          0 |          4 |         68 |
+| /home/amir/Project/ntsw_demo/users/tests.py                                                                               | Python      |          1 |          1 |          2 |          4 |
+| /home/amir/Project/ntsw_demo/users/urls.py                                                                                | Python      |         19 |         24 |         10 |         53 |
+| /home/amir/Project/ntsw_demo/users/views.py                                                                               | Python      |        103 |          9 |         29 |        141 |
+| Total                                                                                                                     |             |     67,629 |      2,402 |      8,481 |     78,512 |
++---------------------------------------------------------------------------------------------------------------------------+-------------+------------+------------+------------+------------+
