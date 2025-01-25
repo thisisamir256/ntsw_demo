@@ -4,11 +4,14 @@ from overseas_supplier.models import Person, Company
 
 
 class MainDataForm(forms.ModelForm):
-    choices = [
-        ('person', 'حقیقی'),
-        ('company', 'حقوقی')
-    ]
-    related_object_id = forms.IntegerField()
+    supplier = forms.ChoiceField(
+        choices=[
+            ('person', 'شخص حقیقی'),
+            ('company', 'شخص حقوقی'),
+        ],
+        label="نوع فروشنده خارجی"
+    )
+    related_object_id = forms.IntegerField(label='انتخاب فروشنده خارجی')
 
     class Meta:
         model = MainData
@@ -19,6 +22,7 @@ class MainDataForm(forms.ModelForm):
             'proforam_invoice_expire_date',
             'order_registration_case',
             'producer_type',
+            'supplier',
         )
 
         def save(self, commit=True):

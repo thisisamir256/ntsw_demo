@@ -4,10 +4,10 @@
 {% load widget_tweaks %}
 {% load date_filters %}
 {% block title %}
-    مدیریت فروشندگان خارجی
+    پرونده ثبت سفارش
 {% endblock title %}
 {% block page-title %}
-    مدیریت فروشندگان خارجی
+    مدیریت پرونده
 {% endblock page-title %}
 {% block head %}
     <link href="{% static 'selectize-master/css/selectize.css' %}"
@@ -16,10 +16,96 @@
           rel="stylesheet">
 {% endblock head %}
 {% block main %}
+    <div class="row mb-3">
+        <div class="col-12 col-md-3">
+            <label class="visually-hidden" for="specificSizeInputGroupUsername">سطح دسترسی</label>
+            <div class="input-group">
+                <div class="input-group-text disabled">سطح دسترسی</div>
+                <input type="text"
+                       class="form-control"
+                       id="specificSizeInputGroupUsername"
+                       placeholder=""
+                       value="کامل"
+                       disabled>
+            </div>
+        </div>
+    </div>
     <form method="post">
         {% csrf_token %}
-        {{ form.as_p }}
-        <button type="submit">بعدی</button>
+        <div class="row">
+            <div class="col-12 mb-3">
+                <span class="px-4 py-2 shadow-sm border-start border-dark border-4 bg-white">اطلاعات پرونده</span>
+            </div>
+            <div class="row">
+                <div class="col-12 col-md-6">
+                    <div class="input-group mb-3">
+                        <span class="input-group-text" id="basic-addon2">{{ form.proforma_invoice.label }}*</span>
+                        {% render_field form.proforma_invoice class="form-control p-0" %}
+                    </div>
+                </div>
+                <div class="col-12 col-md-6">
+                    <div class="input-group mb-3">
+                        <span class="input-group-text" id="basic-addon2">{{ form.beneficiary_country.label }}*</span>
+                        {% render_field form.beneficiary_country class="form-control p-0" %}
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12 col-md-6">
+                    <div class="input-group mb-3">
+                        <span class="input-group-text" id="basic-addon2">{{ form.proforma_invoice_issue_date.label }}*</span>
+                        {% render_field form.proforma_invoice_issue_date class="form-control p-0" %}
+                    </div>
+                </div>
+                <div class="col-12 col-md-6">
+                    <div class="input-group mb-3">
+                        <span class="input-group-text" id="basic-addon2">{{ form.proforam_invoice_expire_date.label }}*</span>
+                        {% render_field form.proforam_invoice_expire_date class="form-control p-0" %}
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 mb-3">
+                <span class="px-4 py-2 shadow-sm border-start border-dark border-4">اطلاعات حالت ثبت سفارش</span>
+            </div>
+            <div class="row">
+                <div class="col-12 col-md-6">
+                    <div class="input-group mb-3">
+                        <span class="input-group-text" id="basic-addon2">{{ form.order_registration_case.label }}*</span>
+                        {% render_field form.order_registration_case class="form-control p-0" %}
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 mb-3">
+                <span class="px-4 py-2 bg-white shadow-sm border-start border-dark border-4">اطلاعات فروشنده خارجی</span>
+            </div>
+            <div class="row">
+                <div class="col-12 col-md-6">
+                    <div class="input-group mb-3">
+                        <span class="input-group-text" id="basic-addon2">{{ form.supplier.label }}*</span>
+                        {% render_field form.supplier class="form-control p-0" dir="rtl" %}
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12 col-md-6">
+                    <div class="input-group mb-3">
+                        <span class="input-group-text" id="basic-addon2">{{ form.related_object_id.label }}*</span>
+                        {% render_field form.related_object_id class="form-control p-0" dir="rtl" %}
+                    </div>
+                </div>
+            </div>
+            <div class="d-flex justify-content-between">
+                <div>
+                    <span class="p-4 text-bg-light">
+                        <span class="">وضعیت پرونده:</span><span class="text-danger">ثبت سفارش</span>
+                    </span>
+                </div>
+                <div>
+                    <button class="btn btn-primary" type="button">انصراف</button>
+                    <button class="btn btn-primary" type="submit">بعدی</button>
+                </div>
+            </div>
+        </div>
     </form>
 {% endblock main %}
 {% block js %}
@@ -27,10 +113,64 @@
     <script src="{% static 'selectize-master/js/selectize.min.js' %}"> </script>
     <script src="{% static 'bootstrap-datepicker/js/bootstrap-datepicker.min.js' %}"></script>
     <script>
-            {% comment %} $('#id_proforma_invoice_issue_date, #id_proforam_invoice_expire_date').selectize({
+            var eventHandler = function(name) {
+                    return function() {
+                        let personJsonUrl = '{% url 'supplier:person_json' %}'
+                        $.get(url,function(data,status){
+                            if(status=='success') {
+                                
+                            }
+                            else {
+                                alert('مشکلی در دریافت داده‌ها پیش آمده است. لطفا با پشتیبان دموی سامانه جامع تجارت تماس بگیرید.');
+                            }
+                        })
+                    console.log(arguments[0]);
+                };
+            }
+             $('#id_beneficiary_country').selectize({
                 create: false,
                 sortField: 'text'
-}); {% endcomment %}
+}); 
                 $('#id_proforma_invoice_issue_date, #id_proforam_invoice_expire_date').datepicker({});
+                $('#id_supplier').change(function(e){
+                    let supplierType = e.target.value;
+                    alert(supplierType)
+                    let url ='';
+                    if (supplierType== 'person') {
+                        alert('ok');
+                        url = '{% url 'supplier:person_json_list' %}';
+                    }
+                    else if(supplierType == 'company') {
+                        url = '{% url 'supplier:company_json_list' %}';
+                    }
+                    $.get(
+                        url,
+                        function(data,status) {
+                            if (status== 'success') {
+                                var identifierOptions =[]                                
+                                data.forEach(value => {
+                                            console.log(value.identifier)
+                                            identifierOptions.push({id:value.identifier, title:value.identifier})                                        
+                                        });
+                                $('#id_related_object_id').selectize({
+                                    maxItems: 1,
+                                    valueField: 'id',
+                                    labelField: 'title',
+                                    searchField: 'title',
+                                    options: identifierOptions,                                                                            
+                                    create: false,
+                                    onChange: eventHandler('onChange'),
+                                    });
+                            }else {
+                                alert('خطایی در ارتباط با سرور پیش آمده است لطفا با مدیر دمو تماس بگیرید.')
+                            }
+                        }
+                    )
+                });
+
+                $('#id_related_object_id').change(function(e){
+                    alert('ok');
+                });                
+                
     </script>
 {% endblock js %}

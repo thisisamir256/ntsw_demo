@@ -1,5 +1,6 @@
-from django.shortcuts import render
-from django.views.generic import View, CreateView
+from django.forms.models import model_to_dict
+from django.shortcuts import render, get_object_or_404
+from django.views.generic import View, CreateView, ListView
 from django.contrib.auth import get_user_model
 from django.urls import reverse_lazy
 from django.contrib.messages.views import SuccessMessageMixin
@@ -52,6 +53,29 @@ class PersonCreateView(LoginRequiredMixin, SuccessMessageMixin, CreateView):
         return super.form_invalid(form)
 
 
+class PersonJsonListView(View):
+    def get(self, request):
+        user = self.request.user
+        q = Person.objects.filter(user=user).values('identifier')
+        data = list(q)
+        return JsonResponse(data=data, safe=False)
+
+
+class PersonJson(View):
+    def get(self, request, id, *args, **kwargs):
+        user = self.request.user
+        # q = get_object_or_404(Person, user=user, id=id)
+        q = Person.objects.get(user=user, pk=id)
+        data = {
+            'first_name': q.first_name,
+            'last_name': q.last_name,
+            'country': q.country.name
+        }
+        print(data)
+        # data = model_to_dict(q, fields=['first_name', 'last_name', 'country'])
+        return JsonResponse(data=data, safe=False)
+
+
 class CompanyCreateView(SuccessMessageMixin, LoginRequiredMixin, CreateView):
     template_name = "overseas_supplier/partials/company_form.html"
     success_url = reverse_lazy('supplier:supplier_list')
@@ -72,3 +96,25 @@ class CompanyCreateView(SuccessMessageMixin, LoginRequiredMixin, CreateView):
                 'overseas_supplier/partials/company_form.html', {'form': form}, request=self.request)
             return HttpResponse(form_context, status=400)
         return super.form_invalid(form)
+
+
+class CompanyJson(View):
+    def get(self, request, company_id):
+        user = request.user
+        q = get_object_or_404(Company, user=user, pk=company_id)
+        data = {
+            'name': q.name,
+            'register_number': q.register_number,
+            'registered_country': q.registered_country.name,
+            'address': q.address,
+            'phone': q.phone
+        }
+        return JsonResponse(data=data, safe=False)
+
+
+class CompanyJsonListView(View):
+    def get(self, request):
+        user = self.request.user
+        q = Company.objects.filter(user=user).values('identifier')
+        data = list(q)
+        return JsonResponse(data=data, safe=False)

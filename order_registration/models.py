@@ -49,8 +49,8 @@ class ShippingType(models.Model):
         EntranceEdg, verbose_name='مرزهای ورودی')
 
     class Meta:
-        verbose_name = "shippingtype"
-        verbose_name_plural = "shippingtypes"
+        verbose_name = "نوع حمل"
+        verbose_name_plural = "نوع حمل"
 
     def __str__(self):
         return self.title

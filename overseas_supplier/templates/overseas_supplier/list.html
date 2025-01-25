@@ -125,7 +125,6 @@
     <script src="{% static 'bootstrap-datepicker/js/bootstrap-datepicker.min.js' %}"></script>
     <script>
     $('#select-supplier-type').change(function(e){
-        console.log(e.target.value)
         let url = '';
         if (e.target.value == 'p') {
             url = '{% url 'supplier:create_person' %}';
