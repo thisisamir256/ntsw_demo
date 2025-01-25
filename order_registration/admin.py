@@ -70,8 +70,8 @@ class BankBranch(admin.ModelAdmin):
     pass
 
 
-@admin.register( CurrencySupply)
-class  CurrencySupplyAdming(admin.ModelAdmin):
+@admin.register(CurrencySupply)
+class CurrencySupplyAdming(admin.ModelAdmin):
     pass
 
 
@@ -95,6 +95,6 @@ class WareAdming(admin.ModelAdmin):
     pass
 
 
-@admin.register(Documents)
-class DocumentsAdming(admin.ModelAdmin):
-    pass
+# @admin.register(Documents)
+# class DocumentsAdming(admin.ModelAdmin):
+#     pass
