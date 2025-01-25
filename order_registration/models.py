@@ -4,6 +4,9 @@ from django.contrib.contenttypes.fields import GenericForeignKey
 from django.conf import settings
 from django.core.exceptions import ValidationError
 from extensions.utils import generate_random_number
+from functools import partial
+
+rand_with_10_digits = partial(generate_random_number, 10)
 
 
 class OrderRegistrationCase(models.Model):
@@ -269,6 +272,8 @@ class Ware(models.Model):
         'r': 'بازسازی شده',
         'w': 'پسماند',
     }
+    virtual_code = models.PositiveIntegerField(
+        'کد مجازی', default=rand_with_10_digits)
     hs_code = models.PositiveSmallIntegerField('شماره تعرفه')
     representation_status = models.CharField(
         'وضعیت نمایندگی', choices=REPRESENTATION_STATUS_CHOICES, max_length=2)
