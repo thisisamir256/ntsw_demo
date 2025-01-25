@@ -1,1 +1,36 @@
-{{ form.as_p }}
+{% extends "base.html" %}
+{% load static %}
+{% load date_filters %}
+{% load widget_tweaks %}
+{% load date_filters %}
+{% block title %}
+    مدیریت فروشندگان خارجی
+{% endblock title %}
+{% block page-title %}
+    مدیریت فروشندگان خارجی
+{% endblock page-title %}
+{% block head %}
+    <link href="{% static 'selectize-master/css/selectize.css' %}"
+          rel="stylesheet">
+    <link href="{% static 'bootstrap-datepicker/css/bootstrap-datepicker.min.css' %}"
+          rel="stylesheet">
+{% endblock head %}
+{% block main %}
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">بعدی</button>
+    </form>
+{% endblock main %}
+{% block js %}
+    <script src="{% static 'js/jquery.min.js' %}"></script>
+    <script src="{% static 'selectize-master/js/selectize.min.js' %}"> </script>
+    <script src="{% static 'bootstrap-datepicker/js/bootstrap-datepicker.min.js' %}"></script>
+    <script>
+            {% comment %} $('#id_proforma_invoice_issue_date, #id_proforam_invoice_expire_date').selectize({
+                create: false,
+                sortField: 'text'
+}); {% endcomment %}
+                $('#id_proforma_invoice_issue_date, #id_proforam_invoice_expire_date').datepicker({});
+    </script>
+{% endblock js %}
