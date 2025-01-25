@@ -322,13 +322,13 @@ class Ware(models.Model):
             return ValidationError(f'{self.technical_specifications} , {self.standard} نمی‌تواند همزمان خالی باشد.')
 
 
-class Documents(models.Model):
-    main_data = models.ForeignKey(
-        MainData, verbose_name='مستندات', on_delete=models.PROTECT)
+# class Documents(models.Model):
+#     main_data = models.ForeignKey(
+#         MainData, verbose_name='مستندات', on_delete=models.PROTECT)
 
-    class Meta:
-        verbose_name = 'مستدات پرونده'
-        verbose_name_plural = 'مستندات پرونده'
+#     class Meta:
+#         verbose_name = 'مستدات پرونده'
+#         verbose_name_plural = 'مستندات پرونده'
 
-    def __str__(self):
-        return self.name
+#     def __str__(self):
+#         return self.
