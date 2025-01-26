@@ -115,13 +115,10 @@
     <script>
         var mainURL = "{% if request.is_secure %}https://{% else %}http://{% endif %}"
         mainURL +=  '{{ request.META.HTTP_HOST }}'
-        console.log(mainURL);
             var eventHandler = function(name) {
                     return function() {
                         let ContentType = document.getElementById('id_supplier');
-
                         let url = ContentType == 'person'? `${mainURL}/supplier/person-json/${arguments[0]}`:`${mainURL}/supplier/company-json/${arguments[0]}`;
-                        console.log('url:',url);
                         $.get(url,function(data,status){
                             if(status=='success') {
                                 console.log(data);
