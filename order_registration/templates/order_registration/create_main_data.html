@@ -113,18 +113,23 @@
     <script src="{% static 'selectize-master/js/selectize.min.js' %}"> </script>
     <script src="{% static 'bootstrap-datepicker/js/bootstrap-datepicker.min.js' %}"></script>
     <script>
+        var mainURL = "{% if request.is_secure %}https://{% else %}http://{% endif %}"
+        mainURL +=  '{{ request.META.HTTP_HOST }}'
+        console.log(mainURL);
             var eventHandler = function(name) {
                     return function() {
-                        let personJsonUrl = '{% url 'supplier:person_json' %}'
+                        let ContentType = document.getElementById('id_supplier');
+
+                        let url = ContentType == 'person'? `${mainURL}/supplier/person-json/${arguments[0]}`:`${mainURL}/supplier/company-json/${arguments[0]}`;
+                        console.log('url:',url);
                         $.get(url,function(data,status){
                             if(status=='success') {
-                                
+                                console.log(data);
                             }
                             else {
                                 alert('مشکلی در دریافت داده‌ها پیش آمده است. لطفا با پشتیبان دموی سامانه جامع تجارت تماس بگیرید.');
                             }
                         })
-                    console.log(arguments[0]);
                 };
             }
              $('#id_beneficiary_country').selectize({
@@ -137,7 +142,6 @@
                     alert(supplierType)
                     let url ='';
                     if (supplierType== 'person') {
-                        alert('ok');
                         url = '{% url 'supplier:person_json_list' %}';
                     }
                     else if(supplierType == 'company') {
@@ -149,8 +153,9 @@
                             if (status== 'success') {
                                 var identifierOptions =[]                                
                                 data.forEach(value => {
-                                            console.log(value.identifier)
-                                            identifierOptions.push({id:value.identifier, title:value.identifier})                                        
+                                            console.log(value.identifier);
+                                            console.log(value.pk);
+                                            identifierOptions.push({id:value.pk, title:value.identifier})                                        
                                         });
                                 $('#id_related_object_id').selectize({
                                     maxItems: 1,

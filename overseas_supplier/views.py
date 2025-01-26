@@ -53,26 +53,24 @@ class PersonCreateView(LoginRequiredMixin, SuccessMessageMixin, CreateView):
         return super.form_invalid(form)
 
 
-class PersonJsonListView(View):
+class PersonJsonListView(LoginRequiredMixin, View):
     def get(self, request):
         user = self.request.user
-        q = Person.objects.filter(user=user).values('identifier')
+        q = Person.objects.filter(user=user).values('pk', 'identifier')
         data = list(q)
         return JsonResponse(data=data, safe=False)
 
 
-class PersonJson(View):
+class PersonJson(LoginRequiredMixin, View):
     def get(self, request, id, *args, **kwargs):
         user = self.request.user
-        # q = get_object_or_404(Person, user=user, id=id)
         q = Person.objects.get(user=user, pk=id)
         data = {
+            'id': q.pk,
             'first_name': q.first_name,
             'last_name': q.last_name,
             'country': q.country.name
         }
-        print(data)
-        # data = model_to_dict(q, fields=['first_name', 'last_name', 'country'])
         return JsonResponse(data=data, safe=False)
 
 
@@ -98,11 +96,12 @@ class CompanyCreateView(SuccessMessageMixin, LoginRequiredMixin, CreateView):
         return super.form_invalid(form)
 
 
-class CompanyJson(View):
+class CompanyJson(LoginRequiredMixin, View):
     def get(self, request, company_id):
         user = request.user
         q = get_object_or_404(Company, user=user, pk=company_id)
         data = {
+            'id': q.pk,
             'name': q.name,
             'register_number': q.register_number,
             'registered_country': q.registered_country.name,
@@ -112,9 +111,9 @@ class CompanyJson(View):
         return JsonResponse(data=data, safe=False)
 
 
-class CompanyJsonListView(View):
+class CompanyJsonListView(LoginRequiredMixin, View):
     def get(self, request):
         user = self.request.user
-        q = Company.objects.filter(user=user).values('identifier')
+        q = Company.objects.filter(user=user).values('pk', 'identifier')
         data = list(q)
         return JsonResponse(data=data, safe=False)
